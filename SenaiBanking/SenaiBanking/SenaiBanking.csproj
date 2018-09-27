@@ -82,7 +82,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Models\Conta.cs" />
     <Compile Include="Models\ContaCorrente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
