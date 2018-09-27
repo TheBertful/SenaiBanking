@@ -71,6 +71,8 @@
   <ItemGroup>
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Login.css" />
+    <Content Include="css\Principal.css" />
+    <Content Include="css\Sacar.css" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -81,7 +83,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Views\Depositar.aspx" />
+    <Content Include="Views\Extrato.aspx" />
     <Content Include="Views\Login.aspx" />
+    <Content Include="Views\Principal.aspx" />
+    <Content Include="Views\Sacar.aspx" />
+    <Content Include="Views\Saldo.aspx" />
+    <Content Include="Views\Transferir.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,12 +109,54 @@
     <Compile Include="Models\InvestimentoPoupanca.cs" />
     <Compile Include="Models\InvestimentoTesouroDireto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Depositar.aspx.cs">
+      <DependentUpon>Depositar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Depositar.aspx.designer.cs">
+      <DependentUpon>Depositar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Extrato.aspx.cs">
+      <DependentUpon>Extrato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Extrato.aspx.designer.cs">
+      <DependentUpon>Extrato.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sacar.aspx.cs">
+      <DependentUpon>Sacar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Sacar.aspx.designer.cs">
+      <DependentUpon>Sacar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Saldo.aspx.cs">
+      <DependentUpon>Saldo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Saldo.aspx.designer.cs">
+      <DependentUpon>Saldo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Transferir.aspx.cs">
+      <DependentUpon>Transferir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Transferir.aspx.designer.cs">
+      <DependentUpon>Transferir.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

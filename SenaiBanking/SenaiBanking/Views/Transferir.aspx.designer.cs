@@ -10,7 +10,7 @@
 namespace SenaiBanking.Views {
     
     
-    public partial class Login {
+    public partial class Transferir {
         
         /// <summary>
         /// Controle form1.
@@ -22,49 +22,58 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle lblCpf.
+        /// Controle lblConta.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCpf;
+        protected global::System.Web.UI.WebControls.Label lblConta;
         
         /// <summary>
-        /// Controle txtCpf.
+        /// Controle txtConta.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCpf;
+        protected global::System.Web.UI.WebControls.TextBox txtConta;
         
         /// <summary>
-        /// Controle lblSenha.
+        /// Controle lblValor.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSenha;
+        protected global::System.Web.UI.WebControls.Label lblValor;
         
         /// <summary>
-        /// Controle txtSenha.
+        /// Controle txtValor.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSenha;
+        protected global::System.Web.UI.WebControls.TextBox txtValor;
         
         /// <summary>
-        /// Controle btnEntrar.
+        /// Controle btnTransferir.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEntrar;
+        protected global::System.Web.UI.WebControls.Button btnTransferir;
+        
+        /// <summary>
+        /// Controle btnVoltar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVoltar;
         
         /// <summary>
         /// Controle lblAviso.

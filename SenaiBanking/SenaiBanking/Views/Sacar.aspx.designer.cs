@@ -10,7 +10,7 @@
 namespace SenaiBanking.Views {
     
     
-    public partial class Login {
+    public partial class Saque {
         
         /// <summary>
         /// Controle form1.
@@ -22,49 +22,40 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle lblCpf.
+        /// Controle lblSacar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCpf;
+        protected global::System.Web.UI.WebControls.Label lblSacar;
         
         /// <summary>
-        /// Controle txtCpf.
+        /// Controle txtSacar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCpf;
+        protected global::System.Web.UI.WebControls.TextBox txtSacar;
         
         /// <summary>
-        /// Controle lblSenha.
+        /// Controle btnSacar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSenha;
+        protected global::System.Web.UI.WebControls.Button btnSacar;
         
         /// <summary>
-        /// Controle txtSenha.
+        /// Controle btnVoltar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSenha;
-        
-        /// <summary>
-        /// Controle btnEntrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEntrar;
+        protected global::System.Web.UI.WebControls.Button btnVoltar;
         
         /// <summary>
         /// Controle lblAviso.
