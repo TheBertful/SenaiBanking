@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SenaiBanking.Models
 {
-    public class InvestimentoPoupanca
+    public class InvestimentoPoupanca : Investimento
     {
     }
 }
