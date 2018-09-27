@@ -10,7 +10,7 @@
 namespace SenaiBanking.Views {
     
     
-    public partial class Saque {
+    public partial class Sacar {
         
         /// <summary>
         /// Controle form1.

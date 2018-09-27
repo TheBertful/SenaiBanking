@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Saque.aspx.cs" Inherits="SenaiBanking.Views.Saque" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Depositar.aspx.cs" Inherits="SenaiBanking.Views.Depositar" %>
 
 <!DOCTYPE html>
 
@@ -12,13 +12,13 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
-            <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+             <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
                 <div class="ajuste col-lg-12 col-md-6 col-sm-12 col-xl-12">
-                    <asp:Label ID="lblSacar" runat="server" Text="Valor "></asp:Label>
-                    <asp:TextBox ID="txtSacar" runat="server" class="form-control" Width="20%"></asp:TextBox>
+                    <asp:Label ID="lblDeposito" runat="server" Text="Valor "></asp:Label>
+                    <asp:TextBox ID="txtDeposito" runat="server" class="form-control" Width="20%"></asp:TextBox>
                 </div>
                 <div class="ajuste col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <asp:Button class="btn btn-secondary" ID="btnSacar" runat="server" Text="Sacar" />
+                    <asp:Button class="btn btn-secondary" ID="btnDepositar" runat="server" Text="Depositar" />
                     <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" />
                 </div>
                 <div>
