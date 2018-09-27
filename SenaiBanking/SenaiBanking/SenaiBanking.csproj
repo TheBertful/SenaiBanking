@@ -87,6 +87,7 @@
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\Principal.aspx" />
     <Content Include="Views\Sacar.aspx" />
+    <Content Include="Views\Saldo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +134,13 @@
     </Compile>
     <Compile Include="Views\Sacar.aspx.designer.cs">
       <DependentUpon>Sacar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Saldo.aspx.cs">
+      <DependentUpon>Saldo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Saldo.aspx.designer.cs">
+      <DependentUpon>Saldo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
