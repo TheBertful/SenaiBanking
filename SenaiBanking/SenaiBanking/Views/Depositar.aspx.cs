@@ -13,5 +13,15 @@ namespace SenaiBanking.Views
         {
 
         }
+
+        protected void btnDepositar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

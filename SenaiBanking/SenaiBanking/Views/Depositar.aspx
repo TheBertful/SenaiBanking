@@ -18,8 +18,8 @@
                     <asp:TextBox ID="txtDeposito" runat="server" class="form-control" Width="20%"></asp:TextBox>
                 </div>
                 <div class="ajuste col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <asp:Button class="btn btn-secondary" ID="btnDepositar" runat="server" Text="Depositar" />
-                    <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" />
+                    <asp:Button class="btn btn-secondary" ID="btnDepositar" runat="server" Text="Depositar" OnClick="btnDepositar_Click" />
+                    <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
                 </div>
                 <div>
                   <asp:Label ID="lblAviso" runat="server"></asp:Label>
