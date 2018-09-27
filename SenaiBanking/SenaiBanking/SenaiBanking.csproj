@@ -72,6 +72,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Login.css" />
     <Content Include="css\Principal.css" />
+    <Content Include="css\Sacar.css" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -84,6 +85,7 @@
     <Content Include="Global.asax" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\Principal.aspx" />
+    <Content Include="Views\Saque.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +115,13 @@
     </Compile>
     <Compile Include="Views\Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Saque.aspx.cs">
+      <DependentUpon>Saque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Saque.aspx.designer.cs">
+      <DependentUpon>Saque.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

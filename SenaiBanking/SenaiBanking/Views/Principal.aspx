@@ -35,6 +35,9 @@
                     <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
                         <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnExtrato" runat="server" Text="Extrato" OnClick="btnExtrato_Click" />
                     </div>
+                    <div>
+                        <asp:Label ID="lblAviso" runat="server"></asp:Label>
+                    </div>
                 </div>
             </div>
         </div>

@@ -20,10 +20,13 @@
                     </div>
                     <div class="ajuste col-lg-12 col-sm-12 col-md-12">
                         <asp:Label ID="lblSenha" runat="server" Text="Senha"></asp:Label>
-                        <asp:TextBox ID="txtSenha" runat="server" class="form-control" Width="40%"></asp:TextBox>
+                        <asp:TextBox ID="txtSenha" runat="server" TextMode="Password" class="form-control" Width="40%"></asp:TextBox>
                     </div>
                     <div class="ajuste">
                         <asp:Button class="btn btn-secondary" ID="btnEntrar" runat="server" Text="Entrar" OnClick="btnEntrar_Click" />
+                    </div>
+                    <div>
+                        <asp:Label ID="lblAviso" runat="server"></asp:Label>
                     </div>
                  </div>
             </div>
