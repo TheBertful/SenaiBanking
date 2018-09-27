@@ -14,13 +14,13 @@
         <div>
             <div class="container">
                 <div class="row">
-                    <div class="ajuste col-lg-12 col-sm-12">
+                    <div class="ajuste col-lg-3 col-sm-3">
                         <asp:Label ID="lblCpf" runat="server" Text="CPF"></asp:Label>
-                        <asp:TextBox ID="txtCpf" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtCpf" runat="server" class="form-control"></asp:TextBox>
                     </div>
-                    <div class="ajuste col-lg-12 col-sm-12 col-md-12">
+                    <div class="ajuste col-lg-3 col-sm-3 col-md-3">
                         <asp:Label ID="lblSenha" runat="server" Text="Senha"></asp:Label>
-                        <asp:TextBox ID="txtSenha" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtSenha" runat="server" class="form-control"></asp:TextBox>
                     </div>
                     <div class="ajuste">
                         <asp:Button class="btn btn-secondary" ID="btnEntrar" runat="server" Text="Entrar" OnClick="btnEntrar_Click" />
