@@ -9,9 +9,14 @@
 
 .ajuste {
     margin-bottom: 15px;
-    text-align: center;
+    text-align:left;
 }
 
 .btn{
-    margin-left:550px;
+    margin-left:180px;
+    width:40%;
+}
+
+.form-control{
+    text-align:center;
 }
