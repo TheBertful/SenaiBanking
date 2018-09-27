@@ -102,12 +102,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-<<<<<<< HEAD
+
     <Folder Include="DAO\" />
     <Folder Include="Views\" />
-=======
     <Folder Include="Models\" />
->>>>>>> 13e2b013e735b096cb70033b6c1054dc9c013e4d
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
