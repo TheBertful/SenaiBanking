@@ -84,6 +84,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Views\Depositar.aspx" />
+    <Content Include="Views\Extrato.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\Principal.aspx" />
     <Content Include="Views\Sacar.aspx" />
@@ -114,6 +115,13 @@
     </Compile>
     <Compile Include="Views\Depositar.aspx.designer.cs">
       <DependentUpon>Depositar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Extrato.aspx.cs">
+      <DependentUpon>Extrato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Extrato.aspx.designer.cs">
+      <DependentUpon>Extrato.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

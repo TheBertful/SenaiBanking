@@ -16,17 +16,18 @@ namespace SenaiBanking.Views
 
         protected void btnSaque_Click(object sender, EventArgs e)
         {
+            Response.Redirect("~/Views/Sacar.aspx");
 
         }
 
         protected void btnDeposito_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Views/Depositar.aspx");
         }
 
         protected void btnTransferencia_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Views/Transferir.aspx");
         }
 
         protected void btnInvestimento_Click(object sender, EventArgs e)
@@ -41,12 +42,12 @@ namespace SenaiBanking.Views
 
         protected void btnSaldo_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Views/Saldo.aspx");
         }
 
         protected void btnExtrato_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Views/Extrato.aspx");
         }
     }
 }
