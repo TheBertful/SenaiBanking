@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sacar.aspx.cs" Inherits="SenaiBanking.Views.Sacar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sacar.aspx.cs" Inherits="SenaiBanking.Views.Saque" %>
 
 <!DOCTYPE html>
 
@@ -19,7 +19,7 @@
                 </div>
                 <div class="ajuste col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <asp:Button class="btn btn-secondary" ID="btnSacar" runat="server" Text="Sacar" OnClick="btnSacar_Click"/>
-                    <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnBoltar_Click"/>
+                    <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click"/>
                 </div>
                 <div>
                   <asp:Label ID="lblAviso" runat="server"></asp:Label>

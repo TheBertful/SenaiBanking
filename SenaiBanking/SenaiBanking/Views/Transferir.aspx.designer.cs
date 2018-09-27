@@ -10,7 +10,7 @@
 namespace SenaiBanking.Views {
     
     
-    public partial class Saque {
+    public partial class Transferir {
         
         /// <summary>
         /// Controle form1.
@@ -22,31 +22,49 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle lblSacar.
+        /// Controle lblConta.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSacar;
+        protected global::System.Web.UI.WebControls.Label lblConta;
         
         /// <summary>
-        /// Controle txtSacar.
+        /// Controle txtConta.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSacar;
+        protected global::System.Web.UI.WebControls.TextBox txtConta;
         
         /// <summary>
-        /// Controle btnSacar.
+        /// Controle lblValor.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSacar;
+        protected global::System.Web.UI.WebControls.Label lblValor;
+        
+        /// <summary>
+        /// Controle txtValor.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtValor;
+        
+        /// <summary>
+        /// Controle btnTransferir.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTransferir;
         
         /// <summary>
         /// Controle btnVoltar.
