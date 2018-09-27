@@ -71,8 +71,11 @@
   <ItemGroup>
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Login.css" />
+<<<<<<< HEAD
     <Content Include="css\Principal.css" />
     <Content Include="css\Sacar.css" />
+=======
+>>>>>>> 7d090772c986ebc8669cfba27caea9137c5bcc56
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -84,8 +87,11 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Views\Login.aspx" />
+<<<<<<< HEAD
     <Content Include="Views\Principal.aspx" />
     <Content Include="Views\Saque.aspx" />
+=======
+>>>>>>> 7d090772c986ebc8669cfba27caea9137c5bcc56
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +107,9 @@
     <Compile Include="Models\ContaCorrente.cs" />
     <Compile Include="Models\Emprestimo.cs" />
     <Compile Include="Models\Investimento.cs" />
+    <Compile Include="Models\InvestimentoCDB.cs" />
+    <Compile Include="Models\InvestimentoPoupanca.cs" />
+    <Compile Include="Models\InvestimentoTesouroDireto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -109,6 +118,7 @@
     <Compile Include="Views\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Views\Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,6 +133,8 @@
     <Compile Include="Views\Saque.aspx.designer.cs">
       <DependentUpon>Saque.aspx</DependentUpon>
     </Compile>
+=======
+>>>>>>> 7d090772c986ebc8669cfba27caea9137c5bcc56
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
