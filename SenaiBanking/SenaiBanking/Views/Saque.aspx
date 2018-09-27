@@ -21,8 +21,8 @@
                     <asp:Button class="btn btn-secondary" ID="btnSacar" runat="server" Text="Sacar" />
                     <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" />
                 </div>
-                <div class="sacar col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                  
+                <div>
+                  <asp:Label ID="lblAviso" runat="server"></asp:Label>
                 </div>
             </div>
         </div>
