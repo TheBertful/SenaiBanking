@@ -23,7 +23,7 @@
                         <asp:TextBox ID="txtSenha" runat="server"></asp:TextBox>
                     </div>
                     <div class="ajuste">
-                        <asp:Button class="btn btn-secondary" ID="btnEntrar" runat="server" Text="Entrar" />
+                        <asp:Button class="btn btn-secondary" ID="btnEntrar" runat="server" Text="Entrar" OnClick="btnEntrar_Click" />
                     </div>
                  </div>
             </div>
