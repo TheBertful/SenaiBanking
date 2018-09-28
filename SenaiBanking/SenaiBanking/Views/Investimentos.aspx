@@ -7,7 +7,6 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/Principal.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
 <body>
@@ -21,7 +20,12 @@
                     <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnAplicacao" runat="server" Text="Aplicação" OnClick="btnAplicacao_Click" />
                 </div>
                 <div class="ajuste col-lg-6 col-md-6 col-sm-6 col-xl-12">
+
                     <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnResgate" runat="server" Text="Resgate" OnClick="btnResgate_Click" />
+                    <br />
+                    <div class="ajuste col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+                    </div>
                 </div>
                 <div>
                     <asp:Label ID="lblAviso" runat="server"></asp:Label>
