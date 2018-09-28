@@ -14,10 +14,6 @@ namespace SenaiBanking.Views
 
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 23b78e21f201696ec5b6be33f8e36432f67643d7
         protected void btnTesouro_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Aplicacoes.aspx");
@@ -26,29 +22,16 @@ namespace SenaiBanking.Views
         protected void btnCDB_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Aplicacoes.aspx");
-<<<<<<< HEAD
-<<<<<<< HEAD
         }
 
         protected void btnCdb_Click(object sender, EventArgs e)
         {
-=======
->>>>>>> 0cc546e4d368e9ba8fdc4d4dc0cbf3394a05b21f
 
-=======
->>>>>>> 23b78e21f201696ec5b6be33f8e36432f67643d7
         }
 
         protected void btnPoupanca_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
             Response.Redirect("~/Views/Aplicacoes.aspx");
-
-
-=======
-            Response.Redirect("~/Views/Aplicacoes.aspx");
->>>>>>> 23b78e21f201696ec5b6be33f8e36432f67643d7
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
