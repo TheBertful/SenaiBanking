@@ -81,6 +81,10 @@ namespace SenaiBanking.Models
                 Saldo -= valor;
                 favorecido.Saldo += valor;
             }
+            else
+            {
+                // Tratar caso não tenha saldo
+            }
         }
 
         // Retorna lista de Transacoes do tipo Saque, Depósito e Transferência
@@ -97,7 +101,12 @@ namespace SenaiBanking.Models
             return extrato;
         }
 
+        public void
 
+        public void ResgatarInvestimento(Investimento investimento)
+        {
+
+        }
 
         private bool SaldoSuficiente(double valor)
         {
