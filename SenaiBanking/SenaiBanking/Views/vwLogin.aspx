@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SenaiBanking.Views.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="vwLogin.aspx.cs" Inherits="SenaiBanking.Views.Login" %>
 
 <!DOCTYPE html>
 

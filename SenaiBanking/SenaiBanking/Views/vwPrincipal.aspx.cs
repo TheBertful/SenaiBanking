@@ -46,7 +46,7 @@ namespace SenaiBanking.Views
 
         protected void btnEmprestimo_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Views/vwEmprestimo.aspx");
         }
 
         protected void btnSaldo_Click(object sender, EventArgs e)

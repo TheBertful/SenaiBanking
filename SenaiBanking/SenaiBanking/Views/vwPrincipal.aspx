@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Principal.aspx.cs" Inherits="SenaiBanking.Views.Principal" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="vwPrincipal.aspx.cs" Inherits="SenaiBanking.Views.Principal" %>
 
 <!DOCTYPE html>
 
