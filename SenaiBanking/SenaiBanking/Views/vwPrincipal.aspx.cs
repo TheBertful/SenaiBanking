@@ -19,29 +19,29 @@ namespace SenaiBanking.Views
             }
             else
             {
-                Response.Redirect("~/Views/Login.aspx");
+                Response.Redirect("~/Views/vwLogin.aspx");
             }
         }
 
         protected void btnSaque_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Sacar.aspx");
+            Response.Redirect("~/Views/vwSacar.aspx");
 
         }
 
         protected void btnDeposito_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Depositar.aspx");
+            Response.Redirect("~/Views/vwDepositar.aspx");
         }
 
         protected void btnTransferencia_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Transferir.aspx");
+            Response.Redirect("~/Views/vwTransferir.aspx");
         }
 
         protected void btnInvestimento_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Investimentos.aspx");
+            Response.Redirect("~/Views/vwInvestimentos.aspx");
         }
 
         protected void btnEmprestimo_Click(object sender, EventArgs e)
@@ -51,12 +51,12 @@ namespace SenaiBanking.Views
 
         protected void btnSaldo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Saldo.aspx");
+            Response.Redirect("~/Views/vwSaldo.aspx");
         }
 
         protected void btnExtrato_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Extrato.aspx");
+            Response.Redirect("~/Views/vwExtrato.aspx");
         }
     }
 }
