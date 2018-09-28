@@ -83,8 +83,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Views\Aplicacoes.aspx" />
     <Content Include="Views\Depositar.aspx" />
     <Content Include="Views\Extrato.aspx" />
+    <Content Include="Views\Investimentos.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\Principal.aspx" />
     <Content Include="Views\Sacar.aspx" />
@@ -110,6 +112,13 @@
     <Compile Include="Models\InvestimentoPoupanca.cs" />
     <Compile Include="Models\InvestimentoTesouroDireto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Aplicacoes.aspx.cs">
+      <DependentUpon>Aplicacoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Aplicacoes.aspx.designer.cs">
+      <DependentUpon>Aplicacoes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Depositar.aspx.cs">
       <DependentUpon>Depositar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,6 +132,13 @@
     </Compile>
     <Compile Include="Views\Extrato.aspx.designer.cs">
       <DependentUpon>Extrato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Investimentos.aspx.cs">
+      <DependentUpon>Investimentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Investimentos.aspx.designer.cs">
+      <DependentUpon>Investimentos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
