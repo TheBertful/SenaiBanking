@@ -12,15 +12,15 @@ namespace SenaiBanking.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtAviso.Visible = false;
-        }
-
-        public double Deposito(double valor)
-        {
-            ContaCorrente conta = new ContaCorrente();
-            conta.Saldo += valor;
-            return valor;
-
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            if (conta != null)
+            {
+                txtAviso.Visible = false;
+            }
+            else
+            {
+                Response.Redirect("~/Views/vwLogin.aspx");
+            }
         }
 
         protected void btnDepositar_Click(object sender, EventArgs e)
@@ -28,12 +28,15 @@ namespace SenaiBanking.Views
             try
             {
                 ContaCorrente conta = Session["contacorrrente"] as ContaCorrente;
-                double valor = Convert.ToDouble(txtDeposito);
-                valor = Deposito(valor);
+                double valor = Convert.ToDouble(txtDeposito.Text);
+                conta.Depositar(valor);
+                txtAviso.Visible = true;
                 txtAviso.Text = "O deposito foi realizado com sucesso, R$" + valor + " | Seu saldo atual é de R$" + conta.Saldo;
             }
             catch(Exception erro)
             {
+                Console.WriteLine(erro);
+                txtAviso.Visible = true;
                 txtAviso.Text = "Não foi possível realizar o seu deposito";
             }
 
