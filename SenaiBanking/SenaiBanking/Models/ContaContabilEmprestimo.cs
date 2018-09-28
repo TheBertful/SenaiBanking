@@ -5,7 +5,18 @@ using System.Web;
 
 namespace SenaiBanking.Models
 {
-    public class ContaContabilEmprestimo : ContaContabil
+    public class ContaContabilEmprestimo : IContaContabil
     {
+        public List<Emprestimo> Emprestimos { get; set; }
+
+        public double CalcularSaldo()
+        {
+            double saldo = 0;
+            foreach (Emprestimo emprestimo in Emprestimos)
+            {
+                saldo += emprestimo.Valor;
+            }
+            return saldo;
+        }
     }
 }
