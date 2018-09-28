@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Extrato.aspx.cs" Inherits="SenaiBanking.Views.Extrato" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="vwExtrato.aspx.cs" Inherits="SenaiBanking.Views.Extrato" %>
 
 <!DOCTYPE html>
 

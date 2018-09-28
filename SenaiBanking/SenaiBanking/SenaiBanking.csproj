@@ -83,17 +83,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Views\Aplicacoes.aspx" />
-    <Content Include="Views\Depositar.aspx" />
-    <Content Include="Views\Emprestimo.aspx" />
-    <Content Include="Views\Extrato.aspx" />
-    <Content Include="Views\Investimentos.aspx" />
-    <Content Include="Views\Login.aspx" />
-    <Content Include="Views\Principal.aspx" />
-    <Content Include="Views\Sacar.aspx" />
-    <Content Include="Views\Saldo.aspx" />
-    <Content Include="Views\TiposInvestimento.aspx" />
-    <Content Include="Views\Transferir.aspx" />
+    <Content Include="Views\vwAplicacoes.aspx" />
+    <Content Include="Views\vwDepositar.aspx" />
+    <Content Include="Views\vwExtrato.aspx" />
+    <Content Include="Views\vwInvestimentos.aspx" />
+    <Content Include="Views\vwLogin.aspx" />
+    <Content Include="Views\vwPrincipal.aspx" />
+    <Content Include="Views\vwSacar.aspx" />
+    <Content Include="Views\vwSaldo.aspx" />
+    <Content Include="Views\vwTiposInvestimento.aspx" />
+    <Content Include="Views\vwTransferir.aspx" />
+    <Content Include="Views\vwEmprestimo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -117,81 +117,82 @@
     <Compile Include="Models\Transacao.cs" />
     <Compile Include="Models\Transferencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Aplicacoes.aspx.cs">
-      <DependentUpon>Aplicacoes.aspx</DependentUpon>
+    <Compile Include="Views\vwAplicacoes.aspx.cs">
+      <DependentUpon>vwAplicacoes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Aplicacoes.aspx.designer.cs">
-      <DependentUpon>Aplicacoes.aspx</DependentUpon>
+    <Compile Include="Views\vwAplicacoes.aspx.designer.cs">
+      <DependentUpon>vwAplicacoes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Depositar.aspx.cs">
-      <DependentUpon>Depositar.aspx</DependentUpon>
+    <Compile Include="Views\vwDepositar.aspx.cs">
+      <DependentUpon>vwDepositar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Depositar.aspx.designer.cs">
-      <DependentUpon>Depositar.aspx</DependentUpon>
+    <Compile Include="Views\vwDepositar.aspx.designer.cs">
+      <DependentUpon>vwDepositar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Emprestimo.aspx.cs">
-      <DependentUpon>Emprestimo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Emprestimo.aspx.designer.cs">
-      <DependentUpon>Emprestimo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Extrato.aspx.cs">
-      <DependentUpon>Extrato.aspx</DependentUpon>
+    <Compile Include="Views\vwExtrato.aspx.cs">
+      <DependentUpon>vwExtrato.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Extrato.aspx.designer.cs">
-      <DependentUpon>Extrato.aspx</DependentUpon>
+    <Compile Include="Views\vwExtrato.aspx.designer.cs">
+      <DependentUpon>vwExtrato.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Investimentos.aspx.cs">
-      <DependentUpon>Investimentos.aspx</DependentUpon>
+    <Compile Include="Views\vwInvestimentos.aspx.cs">
+      <DependentUpon>vwInvestimentos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Investimentos.aspx.designer.cs">
-      <DependentUpon>Investimentos.aspx</DependentUpon>
+    <Compile Include="Views\vwInvestimentos.aspx.designer.cs">
+      <DependentUpon>vwInvestimentos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Views\vwLogin.aspx.cs">
+      <DependentUpon>vwLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Views\vwLogin.aspx.designer.cs">
+      <DependentUpon>vwLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Principal.aspx.cs">
-      <DependentUpon>Principal.aspx</DependentUpon>
+    <Compile Include="Views\vwPrincipal.aspx.cs">
+      <DependentUpon>vwPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Principal.aspx.designer.cs">
-      <DependentUpon>Principal.aspx</DependentUpon>
+    <Compile Include="Views\vwPrincipal.aspx.designer.cs">
+      <DependentUpon>vwPrincipal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Sacar.aspx.cs">
-      <DependentUpon>Sacar.aspx</DependentUpon>
+    <Compile Include="Views\vwSacar.aspx.cs">
+      <DependentUpon>vwSacar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Sacar.aspx.designer.cs">
-      <DependentUpon>Sacar.aspx</DependentUpon>
+    <Compile Include="Views\vwSacar.aspx.designer.cs">
+      <DependentUpon>vwSacar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Saldo.aspx.cs">
-      <DependentUpon>Saldo.aspx</DependentUpon>
+    <Compile Include="Views\vwSaldo.aspx.cs">
+      <DependentUpon>vwSaldo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Saldo.aspx.designer.cs">
-      <DependentUpon>Saldo.aspx</DependentUpon>
+    <Compile Include="Views\vwSaldo.aspx.designer.cs">
+      <DependentUpon>vwSaldo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\TiposInvestimento.aspx.cs">
-      <DependentUpon>TiposInvestimento.aspx</DependentUpon>
+    <Compile Include="Views\vwTiposInvestimento.aspx.cs">
+      <DependentUpon>vwTiposInvestimento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\TiposInvestimento.aspx.designer.cs">
-      <DependentUpon>TiposInvestimento.aspx</DependentUpon>
+    <Compile Include="Views\vwTiposInvestimento.aspx.designer.cs">
+      <DependentUpon>vwTiposInvestimento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Transferir.aspx.cs">
-      <DependentUpon>Transferir.aspx</DependentUpon>
+    <Compile Include="Views\vwTransferir.aspx.cs">
+      <DependentUpon>vwTransferir.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Transferir.aspx.designer.cs">
-      <DependentUpon>Transferir.aspx</DependentUpon>
+    <Compile Include="Views\vwTransferir.aspx.designer.cs">
+      <DependentUpon>vwTransferir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\vwEmprestimo.aspx.cs">
+      <DependentUpon>vwEmprestimo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vwEmprestimo.aspx.designer.cs">
+      <DependentUpon>vwEmprestimo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
