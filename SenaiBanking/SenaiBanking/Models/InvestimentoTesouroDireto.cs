@@ -18,7 +18,7 @@ namespace SenaiBanking.Models
 
         public override double CalcularImposto()
         {
-            double dias = DateTime.Now.Subtract(DataInvestimento).TotalDays;
+            double dias = DateTime.Now.Subtract(Data).TotalDays;
             if (dias < 180)
             {
                 Imposto = 22.5;
