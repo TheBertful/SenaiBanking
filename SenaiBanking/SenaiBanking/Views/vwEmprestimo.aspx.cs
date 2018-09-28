@@ -128,7 +128,7 @@ namespace SenaiBanking.Views
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Principal.aspx");
+            Response.Redirect("~/Views/vwPrincipal.aspx");
         }
     }
 }
