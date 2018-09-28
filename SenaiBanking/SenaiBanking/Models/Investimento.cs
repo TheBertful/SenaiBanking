@@ -5,12 +5,12 @@ using System.Web;
 
 namespace SenaiBanking.Models
 {
-    public class Investimento
+    public class Investimento : Transacao
     {
-        public DateTime DataInvestimento { get; set; } // Data em que o investimento foi feito
+        // Data em que o investimento foi feito herdado de Transacao
         public DateTime Vencimento { get; set; } // Data em que o investimento vence
         public double ValorInicial { get; set; } // Valor inicialmente aplicado
-        public double Valor { get; set; } // Valor que está aplicado atualmente (vamos trabalhar somente com retirada integral)
+        // Valor que está aplicado atualmente (vamos trabalhar somente com retirada integral) herdado de Transacao
         public double Rendimento { get; set; } // Porcentagem de rendimento. Pode variar(Posfix) e ser indexado em outro valor, ser ao ano, semestral ou mensal
         public string Liquidez { get; set; } // Indica se a retirada é possível diariamente, ou apenas no vencimento
         public double Taxa { get; set; } // Taxa cobrada para cálculo do rendimento líquido X bruto, em % também

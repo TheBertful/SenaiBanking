@@ -22,6 +22,18 @@ namespace SenaiBanking.Views
                 Senha = "123"
             };
             Session["Cliente"] = cliente;
+
+            Session["ContaCorrente"] = new ContaCorrente()
+            {
+                Id = 1,
+                ClienteProp = cliente,
+                Limite = 1000.00,
+                Numero = 1,
+                Saldo = 1500.00,
+                Tipo = "Gold",
+            };
+
+            Session["Emprestimos"] = new List<Emprestimo>();
         }
 
         protected void btnEntrar_Click(object sender, EventArgs e)

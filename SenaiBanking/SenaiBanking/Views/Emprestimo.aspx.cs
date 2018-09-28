@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SenaiBanking.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -99,6 +100,18 @@ namespace SenaiBanking.Views
             btnConcluir.Visible = false;
             ddlQuantidadeParcelas.Visible = false;
 
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            List<Emprestimo> emprestimos = Session["Emprestimos"] as List<Emprestimo>;
+
+
+            conta.Saldo = conta.Saldo + Convert.ToDouble(txtValor.Text);
+
+            Emprestimo emp = new Emprestimo()
+            {
+            };
+            emprestimos.Add(emp);
+            Session["Emprestimos"] = emprestimos;
+            Session["ContaCorrente"] = conta;
             lblAviso.Text = "Emprestimo realizado com sucesso!";
         }
 
