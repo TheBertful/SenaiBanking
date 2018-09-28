@@ -10,6 +10,6 @@ namespace SenaiBanking.Models
         // Valor é herdado de Transacao
         public List<Parcela> Parcelas { get; set; }
         public string FormaPagamento { get; set; }
-        public int MyProperty { get; set; }
+        
     }
 }
