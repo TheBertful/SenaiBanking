@@ -32,7 +32,7 @@ namespace SenaiBanking.Views
 
         protected void btnInvestimento_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Views/TiposInvestimento.aspx");
         }
 
         protected void btnEmprestimo_Click(object sender, EventArgs e)
