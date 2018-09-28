@@ -26,7 +26,7 @@ namespace SenaiBanking.Views
         {
             try
             {
-                ContaCorrente conta = new ContaCorrente();
+                ContaCorrente conta = Session['contacorrente'] as ContaCorrente;
                 double valor = Convert.ToDouble(txtSacar.Text);
                 valor = Sacar(valor);
                 txtMsg.Visible = true;

@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
-                <asp:TextBox class="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12" ID="txtMsg" runat="server" role="alert"></asp:TextBox>
+                <asp:TextBox class="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsg" runat="server" role="alert"></asp:TextBox>
                 <div class="ajuste col-lg-12 col-md-6 col-sm-12 col-xl-12">
                     <asp:Label ID="lblSacar" runat="server" Text="Valor "></asp:Label>
                     <asp:TextBox ID="txtSacar" runat="server" class="form-control" Width="20%"></asp:TextBox>
@@ -29,4 +29,7 @@
         </div>
     </form>
 </body>
+    <script>
+        
+    </script>
 </html>
