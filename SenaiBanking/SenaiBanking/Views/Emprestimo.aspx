@@ -13,14 +13,18 @@
     <form id="form1" runat="server">
             <div class="container">
                 <br/>
-                    <div class="row">
-                        <asp:Label ID="lblLimite" runat="server" CssClass="text-warning"></asp:Label><br/>
+                    <div class="col-lg-12 col-sm-12 col-md-12">
+                        <asp:Label ID="lblAviso" runat="server" Text="O empréstimo tem juros de 5% ao mês." CssClass="badge-info"></asp:Label><br/>
+                        <asp:Label ID="lblLimite" runat="server"></asp:Label><br/>
                     </div><br/>
-                    <div class="">
+                    <div class="col-lg-12 col-sm-12 col-md-12">
+                        <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+                    </div><br/>
+                    <div class="col-lg-12 col-sm-12 col-md-12">
                         <asp:Label ID="lblValor" runat="server" Text="Valor"></asp:Label><br/>
                         <asp:TextBox ID="txtValor" runat="server" CssClass="form-control col-4" AutoPostBack="True" OnTextChanged="txtValor_TextChanged"></asp:TextBox>
                     </div><br/>
-                    <div class="">
+                    <div class="col-lg-12 col-sm-12 col-md-12">
                         <asp:Label ID="lblQuantidadeParcelas" runat="server" Text="Quantidade de parcelas"></asp:Label><br/>
                         <asp:DropDownList ID="ddlQuantidadeParcelas" runat="server" CssClass="form-control col-4" AutoPostBack="True" OnSelectedIndexChanged="ddlQuantidadeParcelas_SelectedIndexChanged">
                             <asp:ListItem>1</asp:ListItem>
@@ -35,14 +39,13 @@
                             <asp:ListItem>10</asp:ListItem>
                         </asp:DropDownList>
                     </div><br/>
-                   <div>
+                   <div class="col-lg-12 col-sm-12 col-md-12">
                        <asp:GridView ID="gdvParcelas" runat="server" CssClass="table-secondary col-6"></asp:GridView>
                    </div><br/>
-                    <div>
+                    <div class="col-lg-12 col-sm-12 col-md-12">
                         <asp:Button CssClass="btn btn-secondary" ID="btnConcluir" runat="server" Text="Concluir" OnClick="btnConcluir_Click" />
                     </div><br/>
                     <div>
-                        <asp:Label ID="lblAviso" runat="server"></asp:Label>
                     </div>
                 </div>
     </form>

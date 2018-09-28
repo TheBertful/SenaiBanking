@@ -13,6 +13,10 @@ namespace SenaiBanking.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             lblLimite.Text = "Você possui R$ 900,00 de limite para o empréstimo.";
+            if (!IsPostBack)
+            {
+                txtValor.Text = "0";
+            }
         }
 
         public void PopulateGrid(string aviso)
@@ -23,21 +27,31 @@ namespace SenaiBanking.Views
 
             DataTable dt = new DataTable();
             dt.Columns.Add("Parcela", Type.GetType("System.Int32"));
-            dt.Columns.Add("Valor", Type.GetType("System.Double"));
+            dt.Columns.Add("Valor", Type.GetType("System.String"));
             dt.Columns.Add("Vencimento", Type.GetType("System.String"));
+
 
             if(valor != 0)
             {
+                var parcela = valor / parcelas;
+                var acumulador = 0.0;
                 for (var i = 0; i < parcelas; i++)
                 {
+                    valor = valor +(valor * 0.05);
+                    acumulador = acumulador + valor;
+                }
+                parcela = acumulador / parcelas;
+
+                for (var i = 0; i < parcelas; i++)
+                {
+                    DateTime dataAtual = DateTime.Now;
                     DataRow dr = dt.NewRow();
                     dr["Parcela"] = i + 1;
-                    dr["Valor"] = Math.Round((valor / parcelas), 2);
-                    DateTime dataAtual = DateTime.Now;
+                    dr["Valor"] = "R$ " + Math.Round(parcela,2);
                     dr["Vencimento"] = dataAtual.AddMonths(i + 1).ToShortDateString();
                     dt.Rows.Add(dr);
+                    gdvParcelas.DataSource = dt;
                 }
-                gdvParcelas.DataSource = dt;
             } else
             {
                 gdvParcelas.DataSource = null;
@@ -68,26 +82,29 @@ namespace SenaiBanking.Views
 
         protected void btnConcluir_Click(object sender, EventArgs e)
         {
-            lblAviso.Text = "Porcessando...";
 
-            DateTime agora = DateTime.Now;
-            DateTime depois = DateTime.Now.AddSeconds(3);
+            //DateTime agora = DateTime.Now;
+            //DateTime depois = DateTime.Now.AddSeconds(3);
 
-            while (agora < depois)
-            {
-                agora = DateTime.Now;
-            }
+            //while (agora < depois)
+            //{
+            //    agora = DateTime.Now;
+            //}
+
+            gdvParcelas.Visible = false;
+            lblLimite.Visible = false;
+            lblQuantidadeParcelas.Visible = false;
+            lblValor.Visible = false;
+            txtValor.Visible = false;
+            btnConcluir.Visible = false;
+            ddlQuantidadeParcelas.Visible = false;
 
             lblAviso.Text = "Emprestimo realizado com sucesso!";
+        }
 
-            agora = DateTime.Now;
-            depois = DateTime.Now.AddSeconds(3);
-
-            while (agora < depois)
-            {
-                agora = DateTime.Now;
-            }
-
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Principal.aspx");
         }
     }
 }
