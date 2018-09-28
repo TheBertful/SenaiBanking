@@ -19,7 +19,7 @@ namespace SenaiBanking.Views
             }
             else
             {
-                Response.Redirect("~/Views/Login.aspx");
+                Response.Redirect("~/Views/vwLogin.aspx");
             }
         }
 
@@ -51,7 +51,7 @@ namespace SenaiBanking.Views
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Principal.aspx");
+            Response.Redirect("~/Views/vwPrincipal.aspx");
         }
     }
 }

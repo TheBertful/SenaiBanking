@@ -20,12 +20,11 @@ namespace SenaiBanking.Views
             }
         }
 
-        public void PopulateGrid(string aviso)
+        public List<Parcela> PopulateGrid()
         {
-            lblAviso.Text = aviso;
             int parcelas = Convert.ToInt32(ddlQuantidadeParcelas.SelectedValue);
             double valor = Convert.ToDouble(txtValor.Text);
-
+            List<Parcela> resultado = new List<Parcela>();
             DataTable dt = new DataTable();
             dt.Columns.Add("Parcela", Type.GetType("System.Int32"));
             dt.Columns.Add("Valor", Type.GetType("System.String"));
@@ -45,6 +44,7 @@ namespace SenaiBanking.Views
 
                 for (var i = 0; i < parcelas; i++)
                 {
+                    resultado.Add(new Parcela());
                     DateTime dataAtual = DateTime.Now;
                     DataRow dr = dt.NewRow();
                     dr["Parcela"] = i + 1;
@@ -59,6 +59,7 @@ namespace SenaiBanking.Views
                 gdvParcelas.DataSource = null;
             }
             gdvParcelas.DataBind();
+            return resultado;
         }
 
         protected void txtValor_TextChanged(object sender, EventArgs e)
@@ -76,12 +77,12 @@ namespace SenaiBanking.Views
             {
                 txtValor.Text = "0";
             }
-            PopulateGrid("");
+            PopulateGrid();
         }
 
         protected void ddlQuantidadeParcelas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PopulateGrid("");
+            PopulateGrid();
         }
 
         protected void btnConcluir_Click(object sender, EventArgs e)
@@ -115,10 +116,10 @@ namespace SenaiBanking.Views
                 Conta = conta,
                 Data = DateTime.Now,
                 Descricao = txtDescricao.Text,
-                Tipo = "",
+                Tipo = ddlTipoEmprestimo.SelectedValue,
                 FormaPagamento = ddlFormaPagamento.SelectedValue,
-                Parcelas = new List<Parcela>()
-        };
+                Parcelas = PopulateGrid()
+            };
             emprestimos.Add(emp);
             Session["Emprestimos"] = emprestimos;
             Session["ContaCorrente"] = conta;
@@ -127,7 +128,7 @@ namespace SenaiBanking.Views
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Principal.aspx");
+            Response.Redirect("~/Views/vwPrincipal.aspx");
         }
     }
 }
