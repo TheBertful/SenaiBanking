@@ -40,7 +40,7 @@ namespace SenaiBanking.Views
             };
 
             conta.Sacar(Convert.ToDouble(txtValor.Text));
-            //conta2.Depositar(Convert.ToDouble(txtValor.Text));
+            conta2.Depositar(Convert.ToDouble(txtValor.Text));
 
             List<Transferencia> classe = Session["Transferir"] as List<Transferencia>;
             classe.Add(transferir);
