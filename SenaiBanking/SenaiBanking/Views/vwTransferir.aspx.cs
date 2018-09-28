@@ -15,6 +15,7 @@ namespace SenaiBanking.Views
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             if (conta != null)
             {
+                //txtMsg.Visible = false;
             }
             else
             {
@@ -25,19 +26,27 @@ namespace SenaiBanking.Views
         protected void btnTransferir_Click(object sender, EventArgs e)
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            ContaCorrente conta2 = Session["ContaCorrente2"] as ContaCorrente;
 
             Transferencia transferir = new Transferencia()
             {
                Conta = conta,
                Data = DateTime.Now,
-               Descricao = "",
-               Favorecido = conta,
+               Descricao = "Transferencia da Conta de numero: "+conta.Numero+" Proprietário: "+conta.ClienteProp.Nome+"  para a Conta de numero: "+
+               conta2.Numero+" Proprietário: "+conta2.ClienteProp.Nome+" no valor de: R$"+ txtValor.Text + " na data referente: "+DateTime.Now,
+               Favorecido = conta2,
                Tipo = "transferencia",
                Valor = Convert.ToDouble(txtValor.Text)
             };
 
+            conta.Sacar(Convert.ToDouble(txtValor.Text));
+            //conta2.Depositar(Convert.ToDouble(txtValor.Text));
+
             List<Transferencia> classe = Session["Transferir"] as List<Transferencia>;
             classe.Add(transferir);
+
+            // txtMsg.Visible = true;
+            // txtMsg.Text = "Transferencia realizada com sucesso... Valor: R$"+txtValor.Text+" para a conta: "+conta2.Numero+" Proprietário: "conta2.conta2.ClienteProp.Nome";
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
