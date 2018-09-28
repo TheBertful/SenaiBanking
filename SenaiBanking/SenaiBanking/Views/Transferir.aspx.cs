@@ -25,13 +25,15 @@ namespace SenaiBanking.Views
         protected void btnTransferir_Click(object sender, EventArgs e)
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
-            Transacao transferir = new Transacao()
+            Transferencia transferir = new Transferencia()
             {
-               Conta = conta.Numero,
-               
+               Conta = conta,
+               Data = DateTime.Now,
+
+
             };
 
-            List<Tranferencia> classe = Session["Transferir"] as List<Tranferencia>;
+            List<Transferencia> classe = Session["Transferir"] as List<Transferencia>;
             classe.Add(transferir);
         }
 
