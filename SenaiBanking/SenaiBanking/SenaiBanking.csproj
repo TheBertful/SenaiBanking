@@ -113,6 +113,8 @@
     <Compile Include="Models\InvestimentoIndexado.cs" />
     <Compile Include="Models\InvestimentoPoupanca.cs" />
     <Compile Include="Models\InvestimentoTesouroDireto.cs" />
+    <Compile Include="Models\Parcela.cs" />
+    <Compile Include="Models\Transacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Aplicacoes.aspx.cs">
       <DependentUpon>Aplicacoes.aspx</DependentUpon>

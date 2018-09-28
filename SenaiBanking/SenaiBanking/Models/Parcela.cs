@@ -5,9 +5,7 @@ using System.Web;
 
 namespace SenaiBanking.Models
 {
-    public class Emprestimo : Transacao
+    public class Parcela
     {
-        // Valor é herdado de Transacao
-
     }
 }
