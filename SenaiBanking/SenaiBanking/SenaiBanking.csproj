@@ -133,7 +133,6 @@
     </Compile>
     <Compile Include="Views\Emprestimo.aspx.cs">
       <DependentUpon>Emprestimo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Emprestimo.aspx.designer.cs">
       <DependentUpon>Emprestimo.aspx</DependentUpon>
