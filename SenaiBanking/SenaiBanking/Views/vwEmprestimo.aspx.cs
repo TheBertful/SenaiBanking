@@ -30,7 +30,7 @@ namespace SenaiBanking.Views
             double valor = Convert.ToDouble(txtValor.Text);
             List<Parcela> resultado = new List<Parcela>();
             DataTable dt = new DataTable();
-            dt.Columns.Add("Parcela", Type.GetType("System.Int32"));
+            dt.Columns.Add("Parcela", Type.GetType("System.String"));
             dt.Columns.Add("Valor", Type.GetType("System.String"));
             dt.Columns.Add("Vencimento", Type.GetType("System.String"));
 
@@ -47,12 +47,18 @@ namespace SenaiBanking.Views
 
                 for (var i = 0; i < parcelas; i++)
                 {
-                    resultado.Add(new Parcela());
                     DateTime dataAtual = DateTime.Now;
+
+                    Parcela p = new Parcela();
+                    p.Valor = Math.Round(parcela, 2);
+                    p.Status = "Pendente";
+                    p.Vencimento = dataAtual.AddMonths(i + 1);
+                    p.Numero = (i + 1).ToString() + " / " + parcelas.ToString();
+                    
                     DataRow dr = dt.NewRow();
-                    dr["Parcela"] = i + 1;
-                    dr["Valor"] = "R$ " + Math.Round(parcela, 2);
-                    dr["Vencimento"] = dataAtual.AddMonths(i + 1).ToShortDateString();
+                    dr["Parcela"] = p.Numero;
+                    dr["Valor"] = "R$ " + p.Valor.ToString();
+                    dr["Vencimento"] = p.Vencimento.ToShortDateString();
                     dt.Rows.Add(dr);
                     gdvParcelas.DataSource = dt;
                 }
