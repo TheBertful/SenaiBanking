@@ -48,7 +48,7 @@ namespace SenaiBanking.Views
                     Id = 1,
                     ClienteProp = cliente,
                     Limite = 1000.00,
-                    Numero = 1,
+                    Numero = "1",
                     Saldo = 1500.00,
                     Tipo = "Silver",
                 };
@@ -58,7 +58,7 @@ namespace SenaiBanking.Views
                     Id = 2,
                     ClienteProp = cliente2,
                     Limite = 6000.00,
-                    Numero = 2,
+                    Numero = "2",
                     Saldo = 8500.00,
                     Tipo = "Gold",
                 };
@@ -72,7 +72,7 @@ namespace SenaiBanking.Views
                     Id = 2,
                     ClienteProp = cliente2,
                     Limite = 6000.00,
-                    Numero = 2,
+                    Numero = "2",
                     Saldo = 8500.00,
                     Tipo = "Gold",
                 };
@@ -82,7 +82,7 @@ namespace SenaiBanking.Views
                     Id = 1,
                     ClienteProp = cliente,
                     Limite = 1000.00,
-                    Numero = 1,
+                    Numero = "1",
                     Saldo = 1500.00,
                     Tipo = "Silver",
                 };
