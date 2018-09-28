@@ -109,6 +109,7 @@
     <Compile Include="Models\Emprestimo.cs" />
     <Compile Include="Models\Investimento.cs" />
     <Compile Include="Models\InvestimentoCDB.cs" />
+    <Compile Include="Models\InvestimentoIndexado.cs" />
     <Compile Include="Models\InvestimentoPoupanca.cs" />
     <Compile Include="Models\InvestimentoTesouroDireto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
