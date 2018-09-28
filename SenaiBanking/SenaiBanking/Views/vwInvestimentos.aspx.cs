@@ -21,17 +21,17 @@ namespace SenaiBanking.Views
 
         protected void btnAplicacao_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/TiposInvestimento.aspx");
+            Response.Redirect("~/Views/vwTiposInvestimento.aspx");
         }
 
         protected void btnResgate_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/TiposResgate.aspx");
+            Response.Redirect("~/Views/vwTiposResgate.aspx");
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Principal.aspx");
+            Response.Redirect("~/Views/vwPrincipal.aspx");
         }
   
     }
