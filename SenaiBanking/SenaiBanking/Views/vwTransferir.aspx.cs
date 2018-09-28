@@ -18,7 +18,7 @@ namespace SenaiBanking.Views
             }
             else
             {
-                Response.Redirect("~/Views/Login.aspx");
+                Response.Redirect("~/Views/vwLogin.aspx");
             }
         }
 
