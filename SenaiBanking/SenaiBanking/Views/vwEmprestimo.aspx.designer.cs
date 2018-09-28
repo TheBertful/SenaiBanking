@@ -22,22 +22,13 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle lblTipoEmprestimo.
+        /// Controle btnVoltar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipoEmprestimo;
-        
-        /// <summary>
-        /// Controle ddlTipoEmprestimo.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoEmprestimo;
+        protected global::System.Web.UI.WebControls.Button btnVoltar;
         
         /// <summary>
         /// Controle lblAviso.
@@ -58,13 +49,22 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.WebControls.Label lblLimite;
         
         /// <summary>
-        /// Controle btnVoltar.
+        /// Controle lblTipoEmprestimo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVoltar;
+        protected global::System.Web.UI.WebControls.Label lblTipoEmprestimo;
+        
+        /// <summary>
+        /// Controle ddlTipoEmprestimo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoEmprestimo;
         
         /// <summary>
         /// Controle lblValor.

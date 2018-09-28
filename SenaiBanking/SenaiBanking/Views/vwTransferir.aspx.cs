@@ -18,23 +18,22 @@ namespace SenaiBanking.Views
             }
             else
             {
-                Response.Redirect("~/Views/Login.aspx");
+                Response.Redirect("~/Views/vwLogin.aspx");
             }
         }
 
         protected void btnTransferir_Click(object sender, EventArgs e)
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+
             Transferencia transferir = new Transferencia()
             {
                Conta = conta,
-<<<<<<< HEAD
                Data = DateTime.Now,
-
-
-=======
-               
->>>>>>> a4f8d2e1bce2c1e8db3360d8c67252004fcd0fa2
+               Descricao = "",
+               Favorecido = conta,
+               Tipo = "transferencia",
+               Valor = Convert.ToDouble(txtValor.Text)
             };
 
             List<Transferencia> classe = Session["Transferir"] as List<Transferencia>;
@@ -43,7 +42,7 @@ namespace SenaiBanking.Views
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Principal.aspx");
+            Response.Redirect("~/Views/vwPrincipal.aspx");
         }
     }
 }
