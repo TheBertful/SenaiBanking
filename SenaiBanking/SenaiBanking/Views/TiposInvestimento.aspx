@@ -14,7 +14,7 @@
         <div>
             <div class="container">
                 <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
-                  
+
                     <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
                         <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnCdb" runat="server" Text="CDB" OnClick="btnCDB_Click" />
                     </div>
@@ -26,6 +26,9 @@
                     </div>
                     <div>
                         <asp:Label ID="lblAviso" runat="server"></asp:Label>
+                    </div>
+                    <div class=" col-lg-6 col-md-6 col-sm-6 col-xl-12">
+                        <asp:Button class="btn btn-secondary btn-lg" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
                     </div>
                 </div>
             </div>
