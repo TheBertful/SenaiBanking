@@ -5,7 +5,8 @@ using System.Web;
 
 namespace SenaiBanking.Models
 {
-    public class InvestimentoCDB
+    public class InvestimentoCDB : InvestimentoIndexado
     {
+
     }
 }
