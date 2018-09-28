@@ -10,7 +10,7 @@
 namespace SenaiBanking.Views {
     
     
-    public partial class Principal {
+    public partial class Emprestimo {
         
         /// <summary>
         /// Controle form1.
@@ -22,85 +22,67 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle lblSaudacao.
+        /// Controle lblLimite.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSaudacao;
+        protected global::System.Web.UI.WebControls.Label lblLimite;
         
         /// <summary>
-        /// Controle lblNumeroConta.
+        /// Controle lblValor.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumeroConta;
+        protected global::System.Web.UI.WebControls.Label lblValor;
         
         /// <summary>
-        /// Controle btnSaque.
+        /// Controle txtValor.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaque;
+        protected global::System.Web.UI.WebControls.TextBox txtValor;
         
         /// <summary>
-        /// Controle btnDeposito.
+        /// Controle lblQuantidadeParcelas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeposito;
+        protected global::System.Web.UI.WebControls.Label lblQuantidadeParcelas;
         
         /// <summary>
-        /// Controle btnTransferencia.
+        /// Controle ddlQuantidadeParcelas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTransferencia;
+        protected global::System.Web.UI.WebControls.DropDownList ddlQuantidadeParcelas;
         
         /// <summary>
-        /// Controle btnInvestimento.
+        /// Controle gdvParcelas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInvestimento;
+        protected global::System.Web.UI.WebControls.GridView gdvParcelas;
         
         /// <summary>
-        /// Controle btnEmprestimo.
+        /// Controle btnConcluir.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEmprestimo;
-        
-        /// <summary>
-        /// Controle btnSaldo.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaldo;
-        
-        /// <summary>
-        /// Controle btnExtrato.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExtrato;
+        protected global::System.Web.UI.WebControls.Button btnConcluir;
         
         /// <summary>
         /// Controle lblAviso.
