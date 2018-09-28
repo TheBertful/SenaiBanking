@@ -107,6 +107,7 @@
     <Compile Include="Models\ContaContabilEmprestimo.cs" />
     <Compile Include="Models\ContaContabilInvestimento.cs" />
     <Compile Include="Models\ContaCorrente.cs" />
+    <Compile Include="Models\Deposito.cs" />
     <Compile Include="Models\Emprestimo.cs" />
     <Compile Include="Models\Investimento.cs" />
     <Compile Include="Models\InvestimentoCDB.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="Models\InvestimentoPoupanca.cs" />
     <Compile Include="Models\InvestimentoTesouroDireto.cs" />
     <Compile Include="Models\Parcela.cs" />
+    <Compile Include="Models\Saque.cs" />
     <Compile Include="Models\Transacao.cs" />
     <Compile Include="Models\Transferencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
