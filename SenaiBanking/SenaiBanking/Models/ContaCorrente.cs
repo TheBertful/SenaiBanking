@@ -17,13 +17,13 @@ namespace SenaiBanking.Models
 
         public void Sacar(double valor)
         {
-            if (valor <= Saldo + Limite)
+            if (SaldoSuficiente(valor))
             {
                 Saque saque = new Saque()
                 {
-                    Valor = valor,
+                    Valor = -valor,
                     Conta = this,
-                    Data = DateTime.Now,
+                    Data = DateTime.Today,
                     Tipo = "Saque",
                     Descricao = "Saque realizado"
                 };
@@ -43,13 +43,65 @@ namespace SenaiBanking.Models
             {
                 Valor = valor,
                 Conta = this,
-                Data = DateTime.Now,
+                Data = DateTime.Today,
                 Tipo = "Depósito",
                 Descricao = "Depósito realizado"
             };
             Transacoes.Add(deposito);
             // Guardar a transação para extrato
             Saldo += valor;
+        }
+
+        public void Transferir(double valor, ContaCorrente favorecido)
+        {
+            if (SaldoSuficiente(valor))
+            {
+                DateTime data = DateTime.Today;
+                Transferencia transferencia = new Transferencia()
+                {
+                    Valor = -valor,
+                    Conta = this,
+                    Data = data,
+                    Tipo = "Transferência",
+                    Descricao = "Transferência realizada",
+                    Favorecido = favorecido
+                };
+                Transacoes.Add(transferencia);
+                Transferencia transferido = new Transferencia()
+                {
+                    Valor = valor,
+                    Conta = favorecido,
+                    Data = data,
+                    Tipo = "Transferência",
+                    Descricao = "Transferência recebida"
+                };
+                favorecido.Transacoes.Add(transferido);
+
+                // Atualizar saldos
+                Saldo -= valor;
+                favorecido.Saldo += valor;
+            }
+        }
+
+        // Retorna lista de Transacoes do tipo Saque, Depósito e Transferência
+        public List<Transacao> ConsultarExtrato(DateTime inicio, DateTime fim)
+        {
+            List<Transacao> extrato = new List<Transacao>();
+            foreach (Transacao t in Transacoes)
+            {
+                if ((t.Tipo == "Saque" || t.Tipo == "Depósito" || t.Tipo == "Transferência") && (t.Data <= fim && t.Data >= inicio))
+                {
+                    extrato.Add(t);
+                }
+            }
+            return extrato;
+        }
+
+
+
+        private bool SaldoSuficiente(double valor)
+        {
+            return valor <= Saldo + Limite;
         }
 
     }
