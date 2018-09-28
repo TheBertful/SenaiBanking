@@ -28,5 +28,10 @@ namespace SenaiBanking.Views
         {
             Response.Redirect("~/Views/TiposInvestimento.aspx");
         }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Principal.aspx");
+        }
     }
 }
