@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace SenaiBanking.Views
 {
-    public partial class Emprestimo : System.Web.UI.Page
+    public partial class vwEmprestimo : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,13 +32,13 @@ namespace SenaiBanking.Views
             dt.Columns.Add("Vencimento", Type.GetType("System.String"));
 
 
-            if(valor != 0)
+            if (valor != 0)
             {
                 var parcela = valor / parcelas;
                 var acumulador = 0.0;
                 for (var i = 0; i < parcelas; i++)
                 {
-                    valor = valor +(valor * 0.05);
+                    valor = valor + (valor * 0.05);
                     acumulador = acumulador + valor;
                 }
                 parcela = acumulador / parcelas;
@@ -48,12 +48,13 @@ namespace SenaiBanking.Views
                     DateTime dataAtual = DateTime.Now;
                     DataRow dr = dt.NewRow();
                     dr["Parcela"] = i + 1;
-                    dr["Valor"] = "R$ " + Math.Round(parcela,2);
+                    dr["Valor"] = "R$ " + Math.Round(parcela, 2);
                     dr["Vencimento"] = dataAtual.AddMonths(i + 1).ToShortDateString();
                     dt.Rows.Add(dr);
                     gdvParcelas.DataSource = dt;
                 }
-            } else
+            }
+            else
             {
                 gdvParcelas.DataSource = null;
             }
@@ -64,13 +65,15 @@ namespace SenaiBanking.Views
         {
             double numero = 0;
 
-            if (double.TryParse(txtValor.Text, out numero)) { 
+            if (double.TryParse(txtValor.Text, out numero))
+            {
                 if (numero > 900)
                 {
                     txtValor.Text = "900";
                 }
             }
-            else {
+            else
+            {
                 txtValor.Text = "0";
             }
             PopulateGrid("");
@@ -108,7 +111,14 @@ namespace SenaiBanking.Views
 
             Emprestimo emp = new Emprestimo()
             {
-            };
+                Valor = Convert.ToDouble(txtValor.Text),
+                Conta = conta,
+                Data = DateTime.Now,
+                Descricao = txtDescricao.Text,
+                Tipo = "",
+                FormaPagamento = ddlFormaPagamento.SelectedValue,
+                Parcelas = new List<Parcela>()
+        };
             emprestimos.Add(emp);
             Session["Emprestimos"] = emprestimos;
             Session["ContaCorrente"] = conta;

@@ -28,9 +28,13 @@ namespace SenaiBanking.Views
             Transferencia transferir = new Transferencia()
             {
                Conta = conta,
+<<<<<<< HEAD
                Data = DateTime.Now,
 
 
+=======
+               
+>>>>>>> a4f8d2e1bce2c1e8db3360d8c67252004fcd0fa2
             };
 
             List<Transferencia> classe = Session["Transferir"] as List<Transferencia>;
