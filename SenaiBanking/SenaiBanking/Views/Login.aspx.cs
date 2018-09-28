@@ -23,15 +23,15 @@ namespace SenaiBanking.Views
             };
             Session["Cliente"] = cliente;
 
-            Session["ContaCorrente"] = new ContaCorrente()
+            Cliente cliente2 = new Cliente()
             {
                 Id = 1,
-                ClienteProp = cliente,
-                Limite = 1000.00,
-                Numero = 1,
-                Saldo = 1500.00,
-                Tipo = "Gold",
+                Nome = "Usuario 2",
+                //Cpf = "00000000000",
+                Cpf = "1",
+                Senha = "123"
             };
+            Session["Cliente2"] = cliente2;
 
             Session["Emprestimos"] = new List<Emprestimo>();
             Session["Transacao"] = new List<Transferencia>();
@@ -40,9 +40,9 @@ namespace SenaiBanking.Views
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
             Cliente cliente = Session["Cliente"] as Cliente;
-            if(cliente.Cpf.Equals(txtCpf.Text) && cliente.Senha.Equals(txtSenha.Text))
+            Cliente cliente2 = Session["Cliente2"] as Cliente;
+            if (cliente.Cpf.Equals(txtCpf.Text) && cliente.Senha.Equals(txtSenha.Text))
             {
-                Session["Cliente"] = cliente;
                 Session["ContaCorrente"] = new ContaCorrente()
                 {
                     Id = 1,
@@ -50,10 +50,43 @@ namespace SenaiBanking.Views
                     Limite = 1000.00,
                     Numero = 1,
                     Saldo = 1500.00,
+                    Tipo = "Silver",
+                };
+
+                Session["ContaCorrente2"] = new ContaCorrente()
+                {
+                    Id = 2,
+                    ClienteProp = cliente2,
+                    Limite = 6000.00,
+                    Numero = 2,
+                    Saldo = 8500.00,
                     Tipo = "Gold",
                 };
 
                 Response.Redirect("~/Views/Principal.aspx");
+            }
+            else if(cliente2.Cpf.Equals(txtCpf.Text) && cliente2.Senha.Equals(txtSenha.Text))
+            {
+                Session["ContaCorrente"] = new ContaCorrente()
+                {
+                    Id = 2,
+                    ClienteProp = cliente2,
+                    Limite = 6000.00,
+                    Numero = 2,
+                    Saldo = 8500.00,
+                    Tipo = "Gold",
+                };
+
+                Session["ContaCorrente2"] = new ContaCorrente()
+                {
+                    Id = 1,
+                    ClienteProp = cliente,
+                    Limite = 1000.00,
+                    Numero = 1,
+                    Saldo = 1500.00,
+                    Tipo = "Silver",
+                };
+ 
             }
             else
             {
