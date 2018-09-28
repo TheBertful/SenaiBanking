@@ -18,6 +18,10 @@ namespace SenaiBanking.Views
             {
                 txtValor.Text = "0";
             }
+            if((Session["ContaCorrente"] as ContaCorrente) == null)
+            {
+                Response.Redirect("~/Views/vwLogin.aspx");
+            }
         }
 
         public List<Parcela> PopulateGrid()
@@ -33,14 +37,13 @@ namespace SenaiBanking.Views
 
             if (valor != 0)
             {
-                var parcela = valor / parcelas;
-                var acumulador = 0.0;
+                //var acumulador = 0.0;
                 for (var i = 0; i < parcelas; i++)
                 {
                     valor = valor + (valor * 0.05);
-                    acumulador = acumulador + valor;
+                    //acumulador = acumulador + valor;
                 }
-                parcela = acumulador / parcelas;
+                var parcela = valor / parcelas;
 
                 for (var i = 0; i < parcelas; i++)
                 {
@@ -103,6 +106,12 @@ namespace SenaiBanking.Views
             txtValor.Visible = false;
             btnConcluir.Visible = false;
             ddlQuantidadeParcelas.Visible = false;
+            lblTipoEmprestimo.Visible = false;
+            ddlTipoEmprestimo.Visible = false;
+            lblDescricao.Visible = false;
+            txtDescricao.Visible = false;
+            lblFormaPagamento.Visible = false;
+            ddlFormaPagamento.Visible = false;
 
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             List<Emprestimo> emprestimos = Session["Emprestimos"] as List<Emprestimo>;
@@ -123,12 +132,12 @@ namespace SenaiBanking.Views
             emprestimos.Add(emp);
             Session["Emprestimos"] = emprestimos;
             Session["ContaCorrente"] = conta;
-            lblAviso.Text = "Emprestimo realizado com sucesso!";
+            lblAviso.Text = "Emprestimo realizado com sucesso! Seu novo saldo é de: R$ " + conta.Saldo.ToString();
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Principal.aspx");
+            Response.Redirect("~/Views/vwPrincipal.aspx");
         }
     }
 }
