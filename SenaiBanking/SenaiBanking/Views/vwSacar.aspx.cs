@@ -15,13 +15,6 @@ namespace SenaiBanking.Views
             txtMsg.Visible = false;
         }
 
-        public double Sacar(double valor)
-        {
-            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
-            conta.Saldo -= valor;
-            return valor;
-        }
-
         protected void btnSacar_Click(object sender, EventArgs e)
         {
             try
@@ -29,7 +22,7 @@ namespace SenaiBanking.Views
                 ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
 
                 double valor = Convert.ToDouble(txtSacar.Text);
-                valor = Sacar(valor);
+                conta.Sacar(valor);
                 txtMsg.Visible = true;
                 txtMsg.Text = "O saque foi realizado com sucesso, R$" + valor + " | Seu saldo atual é de R$" + conta.Saldo;
             }
