@@ -85,7 +85,6 @@
     <Content Include="Global.asax" />
     <Content Include="Views\Aplicacoes.aspx" />
     <Content Include="Views\Depositar.aspx" />
-    <Content Include="Views\Emprestimo.aspx" />
     <Content Include="Views\Extrato.aspx" />
     <Content Include="Views\Investimentos.aspx" />
     <Content Include="Views\Login.aspx" />
@@ -96,6 +95,7 @@
     <Content Include="Views\TiposInvestimento.aspx" />
     <Content Include="Views\TiposResgate.aspx" />
     <Content Include="Views\Transferir.aspx" />
+    <Content Include="Views\vwEmprestimo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -131,13 +131,6 @@
     </Compile>
     <Compile Include="Views\Depositar.aspx.designer.cs">
       <DependentUpon>Depositar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Emprestimo.aspx.cs">
-      <DependentUpon>Emprestimo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Emprestimo.aspx.designer.cs">
-      <DependentUpon>Emprestimo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Extrato.aspx.cs">
       <DependentUpon>Extrato.aspx</DependentUpon>
@@ -208,6 +201,13 @@
     </Compile>
     <Compile Include="Views\Transferir.aspx.designer.cs">
       <DependentUpon>Transferir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\vwEmprestimo.aspx.cs">
+      <DependentUpon>vwEmprestimo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vwEmprestimo.aspx.designer.cs">
+      <DependentUpon>vwEmprestimo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
