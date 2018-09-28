@@ -81,6 +81,10 @@ namespace SenaiBanking.Models
                 Saldo -= valor;
                 favorecido.Saldo += valor;
             }
+            else
+            {
+                // Tratar caso não tenha saldo
+            }
         }
 
         // Retorna lista de Transacoes do tipo Saque, Depósito e Transferência
@@ -97,7 +101,16 @@ namespace SenaiBanking.Models
             return extrato;
         }
 
+        public void AplicarInvestimento(Investimento investimento)
+        {
+            // TODO: Inserir na lista da contaContabil, e na lista de transações, após instanciar
+            // TODO: Atualizar saldo ou não* decidir isso
+        }
 
+        public void ResgatarInvestimento(Investimento investimento)
+        {
+            // TODO: Remover da lista da ContaContabil, status resgatado talvez
+        }
 
         private bool SaldoSuficiente(double valor)
         {
