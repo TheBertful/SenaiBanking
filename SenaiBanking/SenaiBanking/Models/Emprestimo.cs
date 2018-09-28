@@ -7,5 +7,6 @@ namespace SenaiBanking.Models
 {
     public class Emprestimo
     {
+        public double Valor { get; set; }
     }
 }

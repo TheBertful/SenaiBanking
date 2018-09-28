@@ -5,8 +5,8 @@ using System.Web;
 
 namespace SenaiBanking.Models
 {
-    public class ContaContabil
+    public interface IContaContabil
     {
-
+        double CalcularSaldo();
     }
 }
