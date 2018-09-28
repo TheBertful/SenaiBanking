@@ -13,5 +13,14 @@ namespace SenaiBanking.Models
         public double Saldo { get; set; }
         public double Limite { get; set; }
         public string Tipo { get; set; }
+
+        public void Sacar(double valor)
+        {
+            if (valor > Saldo + Limite)
+            {
+
+            }
+        }
+
     }
 }
