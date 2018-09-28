@@ -89,6 +89,7 @@
     <Content Include="Views\Principal.aspx" />
     <Content Include="Views\Sacar.aspx" />
     <Content Include="Views\Saldo.aspx" />
+    <Content Include="Views\TiposInvestimento.aspx" />
     <Content Include="Views\Transferir.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="Views\Saldo.aspx.designer.cs">
       <DependentUpon>Saldo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TiposInvestimento.aspx.cs">
+      <DependentUpon>TiposInvestimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TiposInvestimento.aspx.designer.cs">
+      <DependentUpon>TiposInvestimento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Transferir.aspx.cs">
       <DependentUpon>Transferir.aspx</DependentUpon>
