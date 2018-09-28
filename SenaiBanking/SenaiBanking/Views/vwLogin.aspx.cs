@@ -63,7 +63,7 @@ namespace SenaiBanking.Views
                     Tipo = "Gold",
                 };
 
-                Response.Redirect("~/Views/Principal.aspx");
+                Response.Redirect("~/Views/vwPrincipal.aspx");
             }
             else if(cliente2.Cpf.Equals(txtCpf.Text) && cliente2.Senha.Equals(txtSenha.Text))
             {
