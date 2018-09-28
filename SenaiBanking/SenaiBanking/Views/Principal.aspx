@@ -13,8 +13,11 @@
     <form id="form1" runat="server">
         <div>
             <div class="container">
-                <div class="row col-lg-12 col-sm-12 col-xl-12 col-md-12">
+                <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
                     <asp:Label ID="lblSaudacao" runat="server" Text="Seja Bem-Vindo(a), fulano e tal"></asp:Label>
+                </div>
+                <div class="row col-lg-12 col-sm-12 col-xl-12 col-md-12">
+                    <asp:Label ID="lblNumeroConta" runat="server" Text=""></asp:Label>
                 </div>
                 <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
                     <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
