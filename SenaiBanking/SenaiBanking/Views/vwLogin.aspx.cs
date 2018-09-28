@@ -86,7 +86,8 @@ namespace SenaiBanking.Views
                     Saldo = 1500.00,
                     Tipo = "Silver",
                 };
- 
+
+                Response.Redirect("~/Views/vwPrincipal.aspx");
             }
             else
             {
