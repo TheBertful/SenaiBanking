@@ -13,7 +13,14 @@ namespace SenaiBanking.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
-            lblMostrarSaldo.Text = Convert.ToString(conta.Saldo);
+            if (conta != null)
+            {
+                lblMostrarSaldo.Text = Convert.ToString(conta.Saldo);
+            }
+            else
+            {
+                Response.Redirect("~/Views/vwLogin.aspx");
+            }
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)

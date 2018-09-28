@@ -12,7 +12,15 @@ namespace SenaiBanking.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtMsg.Visible = false;
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            if (conta != null)
+            {
+                txtMsg.Visible = false;
+            }
+            else
+            {
+                Response.Redirect("~/Views/vwLogin.aspx");
+            }
         }
 
         protected void btnSacar_Click(object sender, EventArgs e)
