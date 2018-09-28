@@ -22,12 +22,14 @@ namespace SenaiBanking.Views
                 ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
 
                 double valor = Convert.ToDouble(txtSacar.Text);
+                conta.Transacoes = new List<Transacao>();
                 conta.Sacar(valor);
                 txtMsg.Visible = true;
                 txtMsg.Text = "O saque foi realizado com sucesso, R$" + valor + " | Seu saldo atual é de R$" + conta.Saldo;
             }
             catch (Exception erro)
             {
+                txtMsg.Visible = true;
                 txtMsg.Text = "Valor informado não é valido, Verifique o campo Valor";
             }
         }
