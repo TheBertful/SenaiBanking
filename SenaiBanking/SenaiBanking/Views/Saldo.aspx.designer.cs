@@ -40,13 +40,13 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.WebControls.Label lblSaldo;
         
         /// <summary>
-        /// Controle txtSaldo.
+        /// Controle lblMostrarSaldo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSaldo;
+        protected global::System.Web.UI.WebControls.Label lblMostrarSaldo;
         
         /// <summary>
         /// Controle btnVoltar.

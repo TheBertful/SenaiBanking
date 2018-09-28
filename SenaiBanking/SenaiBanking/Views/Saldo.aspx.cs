@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SenaiBanking.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,8 @@ namespace SenaiBanking.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            lblMostrarSaldo.Text = Convert.ToString(conta.Saldo);
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)

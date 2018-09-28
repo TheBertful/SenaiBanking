@@ -17,7 +17,7 @@ namespace SenaiBanking.Views
 
         public double Sacar(double valor)
         {
-            ContaCorrente conta = new ContaCorrente();
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             conta.Saldo -= valor;
             return valor;
         }
@@ -26,7 +26,8 @@ namespace SenaiBanking.Views
         {
             try
             {
-                ContaCorrente conta = Session["contacorrente"] as ContaCorrente;
+                ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+
                 double valor = Convert.ToDouble(txtSacar.Text);
                 valor = Sacar(valor);
                 txtMsg.Visible = true;

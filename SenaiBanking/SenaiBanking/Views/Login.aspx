@@ -13,6 +13,7 @@
     <form id="form1" runat="server">
         <div>
             <div class="container">
+                <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsg" runat="server" role="alert"></asp:TextBox>
                 <div class="row col-lg-12 col-sm-12">
                     <div class="ajuste col-lg-12 col-sm-12">
                         <asp:Label ID="lblCpf" runat="server" Text="CPF"></asp:Label>

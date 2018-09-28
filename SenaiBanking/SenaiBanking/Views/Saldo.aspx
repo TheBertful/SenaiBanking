@@ -18,7 +18,7 @@
             <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
                 <div class="ajuste col-lg-12 col-md-6 col-sm-12 col-xl-12">
                     <asp:Label ID="lblSaldo" runat="server" Text="Saldo"></asp:Label>
-                    <asp:TextBox ID="txtSaldo" runat="server" class="form-control" Width="20%"></asp:TextBox>
+                    <asp:Label ID="lblMostrarSaldo" runat="server" class="form-control" Width="10%"></asp:Label>
                 </div>
                 <div class="ajuste col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />

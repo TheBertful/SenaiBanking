@@ -25,7 +25,7 @@
                     <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
                 </div>
                 <div>
-                  <asp:Label ID="lblAviso" runat="server"></asp:Label>
+                  <asp:TextBox ID="txtAviso" runat="server"></asp:TextBox>
                 </div>
             </div>
         </div>

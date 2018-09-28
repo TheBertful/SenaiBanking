@@ -14,7 +14,8 @@
         <div>
             <div class="container">
                 <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
-                    <asp:Label ID="lblSaudacao" runat="server" Text="Seja Bem-Vindo(a), fulano e tal"></asp:Label>
+                    <asp:Label ID="lbl" runat="server" Text="Seja Bem-Vindo(a), "></asp:Label>
+                    <asp:Label ID="lblSaudacao" runat="server"></asp:Label>
                 </div>
                 <div class="row col-lg-12 col-sm-12 col-xl-12 col-md-12">
                     <asp:Label ID="lblNumeroConta" runat="server" Text=""></asp:Label>
