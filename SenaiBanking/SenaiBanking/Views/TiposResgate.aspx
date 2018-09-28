@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TiposInvestimento.aspx.cs" Inherits="SenaiBanking.Views.TiposInvestimento" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TiposResgate.aspx.cs" Inherits="SenaiBanking.Views.TiposResgate" %>
 
 <!DOCTYPE html>
 
@@ -12,13 +12,14 @@
 <body>
     <form id="form1" runat="server">
         <div>
-              <br/>
+           
+            <br/>
             <br/>
             <br/>
             <div id="sub-menu">
-            <h3>Tipos de Investimento</h3> 
+            <h3>Tipos para Resgate</h3> 
             </div>
-
+         
             <div class="container">
                 <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
 
@@ -41,5 +42,4 @@
             </div>
         </div>
     </form>
-</body>
-</html>
+</body></html>

@@ -90,9 +90,11 @@
     <Content Include="Views\Investimentos.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Views\Principal.aspx" />
+    <Content Include="Views\Resgate.aspx" />
     <Content Include="Views\Sacar.aspx" />
     <Content Include="Views\Saldo.aspx" />
     <Content Include="Views\TiposInvestimento.aspx" />
+    <Content Include="Views\TiposResgate.aspx" />
     <Content Include="Views\Transferir.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -163,6 +165,13 @@
     <Compile Include="Views\Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Resgate.aspx.cs">
+      <DependentUpon>Resgate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Resgate.aspx.designer.cs">
+      <DependentUpon>Resgate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Sacar.aspx.cs">
       <DependentUpon>Sacar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -183,6 +192,13 @@
     </Compile>
     <Compile Include="Views\TiposInvestimento.aspx.designer.cs">
       <DependentUpon>TiposInvestimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TiposResgate.aspx.cs">
+      <DependentUpon>TiposResgate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TiposResgate.aspx.designer.cs">
+      <DependentUpon>TiposResgate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Transferir.aspx.cs">
       <DependentUpon>Transferir.aspx</DependentUpon>

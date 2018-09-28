@@ -16,7 +16,7 @@ namespace SenaiBanking.Views
 
         protected void btnMeusInvestimentos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/TiposInvestimento.aspx");
+            //SResponse.Redirect("~/Views/TiposInvestimento.aspx");
         }
 
         protected void btnAplicacao_Click(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace SenaiBanking.Views
 
         protected void btnResgate_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/TiposInvestimento.aspx");
+            Response.Redirect("~/Views/TiposResgate.aspx");
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
