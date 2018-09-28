@@ -24,6 +24,11 @@ namespace SenaiBanking.Views
             Response.Redirect("~/Views/Aplicacoes.aspx");
         }
 
+        protected void btnCdb_Click(object sender, EventArgs e)
+        {
+
+        }
+
         protected void btnPoupanca_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Aplicacoes.aspx");
