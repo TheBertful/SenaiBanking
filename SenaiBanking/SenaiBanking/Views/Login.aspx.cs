@@ -34,7 +34,7 @@ namespace SenaiBanking.Views
             };
 
             Session["Emprestimos"] = new List<Emprestimo>();
-            Session["Transacao"] = new List<Tranferencia>();
+            Session["Transacao"] = new List<Transferencia>();
         }
 
         protected void btnEntrar_Click(object sender, EventArgs e)
