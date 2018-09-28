@@ -14,8 +14,10 @@ namespace SenaiBanking.Models
         public double Rendimento { get; set; } // Porcentagem de rendimento. Pode variar(Posfix) e ser indexado em outro valor, ser ao ano, semestral ou mensal
         public string Liquidez { get; set; } // Indica se a retirada é possível diariamente, ou apenas no vencimento
         public double Taxa { get; set; } // Taxa cobrada para cálculo do rendimento líquido X bruto, em % também
-        public int Carencia { get; set; } // Período mínimo, em dias, para retirada do valor. Retirar antes incorre em mais taxas
+        public double Carencia { get; set; } // Período mínimo, em dias, para retirada do valor. Retirar antes incorre em mais taxas
         public double Imposto { get; set; } // Imposto incidido, em porcentagem
+        public string TipoInvestimento { get; set; } // Prefixado ou Posfixado
+        public ContaContabilInvestimento ContaContabil { get; set; } // Conta contábil a que pertence o Investimento
 
         // Método que atualiza o valor aplicado de acordo com a porcentagem de Rendimento
         public virtual void Render()

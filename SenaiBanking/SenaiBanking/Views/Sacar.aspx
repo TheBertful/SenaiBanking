@@ -11,6 +11,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
+                    <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
+                </div>
         <div class="container">
             <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
                 <asp:TextBox class="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsg" runat="server" role="alert"></asp:TextBox>

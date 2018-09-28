@@ -8,6 +8,7 @@ namespace SenaiBanking.Models
     public class InvestimentoPoupanca : InvestimentoIndexado
     {
         public double TaxaReferencial { get; set; }
+        public DateTime Aniversario { get; set; }
 
         public InvestimentoPoupanca() : base()
         {
