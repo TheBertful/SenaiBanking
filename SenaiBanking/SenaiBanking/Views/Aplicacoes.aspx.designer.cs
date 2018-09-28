@@ -10,7 +10,7 @@
 namespace SenaiBanking.Views {
     
     
-    public partial class Extrato {
+    public partial class Aplicacoes {
         
         /// <summary>
         /// Controle form1.
@@ -22,66 +22,66 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle lblDtaInicio.
+        /// Controle lblValorDisponivel.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDtaInicio;
+        protected global::System.Web.UI.WebControls.Label lblValorDisponivel;
         
         /// <summary>
-        /// Controle txtDtaInicio.
+        /// Controle Label1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDtaInicio;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Controle lblDtaFim.
+        /// Controle lblValorAplicar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDtaFim;
+        protected global::System.Web.UI.WebControls.Label lblValorAplicar;
         
         /// <summary>
-        /// Controle txtDtaFim.
+        /// Controle txtValorAplicar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDtaFim;
+        protected global::System.Web.UI.WebControls.TextBox txtValorAplicar;
         
         /// <summary>
-        /// Controle btnVerificar.
+        /// Controle lblDataAplicacao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVerificar;
+        protected global::System.Web.UI.WebControls.Label lblDataAplicacao;
         
         /// <summary>
-        /// Controle gvdExtrato.
+        /// Controle lblData.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvdExtrato;
+        protected global::System.Web.UI.WebControls.Label lblData;
         
         /// <summary>
-        /// Controle btnVoltar.
+        /// Controle btnConfirmar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVoltar;
+        protected global::System.Web.UI.WebControls.Button btnConfirmar;
     }
 }

@@ -10,7 +10,7 @@
 namespace SenaiBanking.Views {
     
     
-    public partial class Extrato {
+    public partial class Investimentos {
         
         /// <summary>
         /// Controle form1.
@@ -22,66 +22,39 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle lblDtaInicio.
+        /// Controle btnMeusInvestimentos.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDtaInicio;
+        protected global::System.Web.UI.WebControls.Button btnMeusInvestimentos;
         
         /// <summary>
-        /// Controle txtDtaInicio.
+        /// Controle btnAplicacao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDtaInicio;
+        protected global::System.Web.UI.WebControls.Button btnAplicacao;
         
         /// <summary>
-        /// Controle lblDtaFim.
+        /// Controle btnResgate.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDtaFim;
+        protected global::System.Web.UI.WebControls.Button btnResgate;
         
         /// <summary>
-        /// Controle txtDtaFim.
+        /// Controle lblAviso.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDtaFim;
-        
-        /// <summary>
-        /// Controle btnVerificar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVerificar;
-        
-        /// <summary>
-        /// Controle gvdExtrato.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvdExtrato;
-        
-        /// <summary>
-        /// Controle btnVoltar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVoltar;
+        protected global::System.Web.UI.WebControls.Label lblAviso;
     }
 }
