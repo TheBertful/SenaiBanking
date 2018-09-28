@@ -13,5 +13,25 @@ namespace SenaiBanking.Views
         {
 
         }
+
+        protected void btnCdb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnTesouro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnPoupanca_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Principal.aspx");
+        }
     }
 }
