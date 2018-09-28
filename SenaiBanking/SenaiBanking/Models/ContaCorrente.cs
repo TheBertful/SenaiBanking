@@ -7,9 +7,9 @@ namespace SenaiBanking.Models
 {
     public class ContaCorrente
     {
-        public int Id { get; set; }
+        public int Id { get; set; } // Banco de dados
         public Cliente ClienteProp { get; set; }
-        public int Numero { get; set; }        
+        public string Numero { get; set; }        
         public double Saldo { get; set; }
         public double Limite { get; set; }
         public string Tipo { get; set; }
