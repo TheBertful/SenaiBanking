@@ -4,9 +4,11 @@
 .ajuste {
     margin-bottom: 15px;
     text-align: left;
+    float:left;
 }
 
 .container {
     margin-top: 150px;
 }
+
 
