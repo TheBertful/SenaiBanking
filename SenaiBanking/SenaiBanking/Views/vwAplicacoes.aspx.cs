@@ -43,8 +43,7 @@ namespace SenaiBanking.Views
                     ValorInicial = Convert.ToDouble(txtValorAplicar.Text),
                     Data = DateTime.Now,
                     Tipo = "Investimento",
-
-
+                    Descricao = "Poupança"
                 };
 
                 conta.AplicarInvestimento(investimentoPoupanca);
