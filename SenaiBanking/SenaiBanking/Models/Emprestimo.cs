@@ -10,18 +10,19 @@ namespace SenaiBanking.Models
         // Valor é herdado de Transacao
         public List<Parcela> Parcelas { get; set; }
         public string FormaPagamento { get; set; }
-        
-        // Verifica as parcelas do empréstimo, se pelo menos uma estiver pendente, ele está pendente
-        public bool IsPendente()
+        public bool Pendente // Indica se há parcelas pendentes
         {
-            foreach (Parcela parcela in Parcelas)
+            get
             {
-                if (parcela.Status.Equals("Pendente"))
+                foreach (Parcela parcela in Parcelas)
                 {
-                    return true;
+                    if (parcela.Status.Equals("Pendente"))
+                    {
+                        return true;
+                    }
                 }
+                return false;
             }
-            return false;
         }
 
         // Quitar uma parcela específica deste empréstimo, adiciona nas transacoes
@@ -45,7 +46,7 @@ namespace SenaiBanking.Models
             foreach (Parcela p in Parcelas)
             {
                 QuitarParcela(p);
-            } 
+            }
         }
 
         public double ValorPendente()

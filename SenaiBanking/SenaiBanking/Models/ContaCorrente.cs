@@ -153,8 +153,10 @@ namespace SenaiBanking.Models
         {
             // Adicionar na lista da conta contábil e de transacoes da conta
             // Atualizar saldo
-            // Na tela de execução, instanciar o Emprestimo com valor lido das boxes, etc
-
+            // Na tela de execução, instanciar o Emprestimo com valor, forma de pagamento lido das boxes, etc
+            // Após confirmação e geração de Parcelas, adiciona-las à LIST parcelas do objeto empréstimo
+            emprestimo.Conta = this;
+            
         }
 
         // Paga parcela de empréstimo
@@ -217,7 +219,7 @@ namespace SenaiBanking.Models
             List<Emprestimo> pendentes = new List<Emprestimo>();
             foreach (Emprestimo e in emprestimos)
             {
-                if (e.IsPendente()) pendentes.Add(e);
+                if (e.Pendente) pendentes.Add(e);
             }
             return pendentes;
         }
