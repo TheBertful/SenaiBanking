@@ -32,9 +32,18 @@ namespace SenaiBanking.Views
                 Senha = "123"
             };
             Session["Cliente2"] = cliente2;
+            ContaContabilEmprestimo cce = new ContaContabilEmprestimo()
+            {
+                Emprestimos = new List<Emprestimo>()
+            };
+            ContaContabilInvestimento cci = new ContaContabilInvestimento()
+            {
+                Investimentos = new List<Investimento>()
+            };
 
-            Session["Emprestimos"] = new List<Emprestimo>();
-            Session["Transacao"] = new List<Transferencia>();
+            Session["Emprestimos"] = cce;
+            Session["Investimentos"] = cci;
+
         }
 
         protected void btnEntrar_Click(object sender, EventArgs e)
@@ -51,6 +60,7 @@ namespace SenaiBanking.Views
                     Numero = "1",
                     Saldo = 1500.00,
                     Tipo = "Silver",
+                    Transacoes = new List<Transacao>()
                 };
 
                 Session["ContaCorrente2"] = new ContaCorrente()
@@ -61,6 +71,7 @@ namespace SenaiBanking.Views
                     Numero = "2",
                     Saldo = 8500.00,
                     Tipo = "Gold",
+                    Transacoes = new List<Transacao>()
                 };
 
                 Response.Redirect("~/Views/vwPrincipal.aspx");
