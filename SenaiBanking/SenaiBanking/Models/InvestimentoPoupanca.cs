@@ -12,7 +12,9 @@ namespace SenaiBanking.Models
             // Tratar valor do rendimento da poupança de acordo com a Selic atual
             // 70% da Selic se ela estiver igual ou abaixo de 8,5%, caso contrário 0.5% ao mês
             // Adicionar a Taxa Referencial, independentemente de qual dos dois casos acima
+            Indexador = 6.5; // Selic Atual
             Porcentagem = 70;
+            TaxaReferencial = 0.6; // Dados de 2017
             if (Indexador > 8.5)
             {
                 Rendimento = 0.5;
@@ -26,6 +28,12 @@ namespace SenaiBanking.Models
 
             // Liquidez é diária/instantânea
             Liquidez = "Diária";
+        }
+
+        public override void Render()
+        {
+            double aumento = Valor * Rendimento / 12; // divide no mês
+            Valor += aumento;
         }
     }
 }
