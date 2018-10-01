@@ -15,7 +15,7 @@ namespace SenaiBanking.Models
             double saldo = 0;
             foreach (Investimento investimento in Investimentos)
             {
-                if(investimento.Status.Equals("Resgatado"))saldo += investimento.Valor;
+                if(investimento.Status.Equals("Aplicado"))saldo += investimento.Valor;
             }
             return saldo;
         }
