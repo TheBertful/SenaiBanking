@@ -17,6 +17,10 @@
             <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
         </div>
         <div class="row col-lg-12 col-sm-12">
+             <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
+                    <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
+                    <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
+                </div>
             <div class="ajuste col-lg-12 col-sm-12">
                 <asp:Label ID="lblValorDisponivel" runat="server" Text="Valor disponível para aplicação"></asp:Label>
                 <br />

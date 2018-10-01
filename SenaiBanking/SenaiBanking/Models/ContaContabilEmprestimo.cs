@@ -14,7 +14,7 @@ namespace SenaiBanking.Models
             double saldo = 0;
             foreach (Emprestimo emprestimo in Emprestimos)
             {
-                saldo += emprestimo.Valor;
+                saldo += emprestimo.ValorPendente();
             }
             return saldo;
         }

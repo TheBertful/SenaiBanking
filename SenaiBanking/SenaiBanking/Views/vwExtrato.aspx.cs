@@ -16,13 +16,31 @@ namespace SenaiBanking.Views
             if(conta != null)
             {
                 txtNumeroConta.Text = conta.Numero.ToString();
+                txtMsgError.Visible = false;
+                txtMsg.Visible = false;
             }
 
         }
 
         protected void btnVerificar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+                DateTime DataIni = Convert.ToDateTime(DtaInicio.SelectedDate.ToShortDateString());
+                DateTime DataFim = Convert.ToDateTime(DtaFim.SelectedDate.ToShortDateString());
 
+                gvdExtrato.DataSource = conta.Transacoes;
+                gvdExtrato.DataBind();
+            }
+            catch(Exception error)
+            {
+                Console.WriteLine(error);
+                txtMsgError.Text = "Verifique se todos os campos estão preenchidos...";
+            }
+           
+
+            
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)

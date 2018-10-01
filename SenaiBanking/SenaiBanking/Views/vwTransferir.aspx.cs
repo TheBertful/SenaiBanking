@@ -43,13 +43,11 @@ namespace SenaiBanking.Views
                             Conta = conta,
                             Data = DateTime.Now,
                             Descricao = "Transferencia da Conta de numero: " + conta.Numero + " Proprietário: " + conta.ClienteProp.Nome + "  para a Conta de numero: " +
-                           conta2.Numero + " Proprietário: " + conta2.ClienteProp.Nome + " no valor de: R$" + valor + " na data referente: " + DateTime.Now,
+                            conta2.Numero + " Proprietário: " + conta2.ClienteProp.Nome + " no valor de: R$" + valor + " na data referente: " + DateTime.Now,
                             Favorecido = conta2,
                             Tipo = "transferencia",
                             Valor = valor
                         };
-                        conta.Transacoes = new List<Transacao>();
-                        conta2.Transacoes = new List<Transacao>();
                         conta.Transferir(valor, conta2);
 
                         txtMsg.Visible = true;

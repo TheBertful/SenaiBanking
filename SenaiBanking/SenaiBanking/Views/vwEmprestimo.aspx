@@ -11,14 +11,11 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
-             <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
-                    <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
-                    <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
-                </div>
-            <br />
-            <div class="col-lg-12 col-sm-12 col-md-12">
-                <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+            <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
+                <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
+                <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
             </div>
+            <br />
             <br />
             <div class="col-lg-12 col-sm-12 col-md-12">
                 <asp:Label ID="lblAviso" runat="server" Text="O empréstimo tem juros de 5% ao mês." CssClass="alert-primary form-control col-6"></asp:Label><br />
@@ -76,6 +73,9 @@
                 <asp:Button CssClass="btn btn-secondary" ID="btnConcluir" runat="server" Text="Concluir" OnClick="btnConcluir_Click" />
             </div>
             <br />
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+            </div>
             <div>
             </div>
         </div>
