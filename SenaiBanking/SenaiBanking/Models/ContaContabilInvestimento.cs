@@ -8,6 +8,7 @@ namespace SenaiBanking.Models
     public class ContaContabilInvestimento : IContaContabil
     {
         public List<Investimento> Investimentos { get; set; }
+        public Banco BancoProp { get; set; }
 
         public double CalcularSaldo()
         {

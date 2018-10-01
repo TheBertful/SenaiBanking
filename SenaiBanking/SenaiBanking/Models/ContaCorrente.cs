@@ -153,6 +153,7 @@ namespace SenaiBanking.Models
         {
             // Adicionar na lista da conta contábil e de transacoes da conta
             // Atualizar saldo
+            // Na tela de execução, instanciar o Emprestimo com valor lido das boxes, etc
 
         }
 
