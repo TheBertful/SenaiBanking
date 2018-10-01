@@ -14,6 +14,7 @@ namespace SenaiBanking.Models
         public double Limite { get; set; } // Limite de crédito disponível
         public string Tipo { get; set; } // Tipo da conta, para eventual valor padrão na criação
         public List<Transacao> Transacoes { get; set; } // Acumulado de transações feitas pela conta
+        public Banco BancoProp { get; set; }
 
         public void Sacar(double valor)
         {
@@ -103,9 +104,26 @@ namespace SenaiBanking.Models
 
         public void AplicarInvestimento(Investimento investimento)
         {
-            // Inserir na lista da contaContabil, e na lista de transações, após instanciar
-            // Atualizar saldo ou não* decidir isso
+            // Inserir na lista da contaContabil, e na lista de transações, e fazer as relações bilaterais
+            // Se saldo for suficiente, instanciar uma Transação de aplicação(p/ extrato) e incluir na lista de transações o investimento em si
+            if(SaldoSuficiente(investimento.Valor))
+            {
+                investimento.Status = "Aplicado";
+                investimento.Conta = this;
+                Transacoes.Add(investimento);
+                investimento.ContaContabil = BancoProp.ContaInvestimento;
+                investimento.ContaContabil.Investimentos.Add(investimento);
+                
+                Transacao t = new Transacao()
+                {
+                    Tipo = "Aplicação",
+                    Conta = this,
+                    Valor = -investimento.Valor,
+                    Data = DateTime.Today,
+                    Descricao = "Aplicação feita no investimento '" + investimento.Descricao + "'"
+                };
 
+            }
         }
 
         public void ResgatarInvestimento(Investimento investimento)
