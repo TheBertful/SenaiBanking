@@ -111,21 +111,20 @@ namespace SenaiBanking.Views
             conta.Saldo = conta.Saldo + Convert.ToDouble(txtValor.Text);
 
             //Criação do objeto emprestimo
-            Emprestimo emp = new Emprestimo()
-            {
-                Id = emprestimos.Count() + 1,
-                Valor = Convert.ToDouble(txtValor.Text),
+            Emprestimo emp = new Emprestimo();
+            emp.Id = emprestimos != null ? emprestimos.Count() + 1 : 1;
+            emp.Valor = Convert.ToDouble(txtValor.Text);
                 //Usa a conta que esta na Session logada para o emprestimo
-                Conta = conta,
-                Data = DateTime.Now,
-                Descricao = txtDescricao.Text,
-                Tipo = ddlTipoEmprestimo.SelectedValue,
-                FormaPagamento = ddlFormaPagamento.SelectedValue,
-                Parcelas = new List<Parcela>(),
-                Limite = 900,
-                NumParcelas = 0,
-                TaxaJuros = 5
-            };
+                emp.Conta = conta;
+                emp.Data = DateTime.Now;
+                emp.Descricao = txtDescricao.Text;
+                emp.Tipo = ddlTipoEmprestimo.SelectedValue;
+                emp.FormaPagamento = ddlFormaPagamento.SelectedValue;
+                emp.Parcelas = new List<Parcela>();
+                emp.Limite = 900;
+                emp.NumParcelas = 0;
+                emp.TaxaJuros = 5;
+                emp.ContaContabil = Session["Emprestimos"] as ContaContabilEmprestimo;
 
             if (valor != 0)
             {
@@ -156,8 +155,7 @@ namespace SenaiBanking.Views
             }
 
             //Adiciona o emprestimo novo a lista de emprestimos e devolve as informações atualizadas a Session respectiva
-            emprestimos.Add(emp);
-            Session["Emprestimos"] = emprestimos;
+            //Session["Emprestimos"] = emp.ContaContabil;
             Session["ContaCorrente"] = conta;
             lblAviso.Text = "Emprestimo realizado com sucesso! Seu novo saldo é de: R$ " + conta.Saldo.ToString();
             conta.SolicitarEmprestimo(emp);
