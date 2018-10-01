@@ -12,15 +12,11 @@
 <body>
     <br />
     <form id="form1" runat="server">
-        <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
-            <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
-            <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
-        </div>
         <div class="row col-lg-12 col-sm-12">
-             <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
-                    <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
-                    <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
-                </div>
+            <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
+                <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
+                <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
+            </div>
             <div class="ajuste col-lg-12 col-sm-12">
                 <asp:Label ID="lblValorDisponivel" runat="server" Text="Valor disponível para aplicação"></asp:Label>
                 <br />
@@ -31,12 +27,13 @@
                 <br />
                 <asp:TextBox ID="txtValorAplicar" runat="server" class="form-control" Width="40%" OnTextChanged="txtValorAplicar_TextChanged"></asp:TextBox>
                 <br />
+                <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsgError" runat="server" role="alert"></asp:TextBox>
                 <br />
                 <asp:Label ID="lblDataAplicacao" runat="server" Text="Data da Aplicação"></asp:Label>
                 <br />
                 <asp:Label ID="lblData" runat="server" Text="28/09/2018"></asp:Label>
                 <br />
-                <div class="alert ">
+                <div>
                     <asp:Label ID="lblAviso" runat="server"></asp:Label>
                 </div>
                 <div class="ajuste">

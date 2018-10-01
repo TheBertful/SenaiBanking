@@ -35,7 +35,6 @@ namespace SenaiBanking.Views
                 double valor = Math.Round(Convert.ToDouble(texto), 2);
                 if (valor > 0)
                 {
-                    conta.Transacoes = new List<Transacao>();
                     conta.Depositar(valor);
                     txtMsg.Visible = true;
                     txtMsg.Text = "O deposito foi realizado com sucesso no valor de R$" + Math.Round(valor, 2) + " | Seu saldo atual é de R$" + Math.Round(conta.Saldo, 2);

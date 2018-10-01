@@ -49,7 +49,6 @@ namespace SenaiBanking.Views
                             Valor = valor
                         };
                         conta.Transferir(valor, conta2);
-
                         txtMsg.Visible = true;
                         txtMsg.Text = "Transferencia realizada com sucesso... Valor: R$" + valor + " para a conta: " + conta2.Numero + " Proprietário: " + conta2.ClienteProp.Nome;
                     }
