@@ -31,8 +31,13 @@ namespace SenaiBanking.Views
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             if (Convert.ToDouble(txtValorAplicar.Text) > (conta.Saldo))
             {
-                lblAviso.Text = "Atenção!! Valor maior que o saldo da conta";
+                txtMsgError.Text = "Atenção!! Valor maior que o saldo da conta";
             }
+            else if (Convert.ToDouble(txtValorAplicar.Text) > 0)
+            {
+              //  conta.AplicarInvestimento();
+            }
+           
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
