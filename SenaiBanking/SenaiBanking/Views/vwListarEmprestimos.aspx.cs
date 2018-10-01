@@ -21,7 +21,8 @@ namespace SenaiBanking.Views
         }
         public void PopulateGridEmprestimos()
         {
-            List<Emprestimo> emprestimos = Session["emprestimos"] as List<Emprestimo>;
+            //List<Emprestimo> emprestimos = Session["emprestimos"] as List<Emprestimo>;
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             DataTable dt = new DataTable();
 
             dt.Columns.Add("Id", Type.GetType("System.String"));
@@ -30,9 +31,12 @@ namespace SenaiBanking.Views
             dt.Columns.Add("FormaPagamento", Type.GetType("System.String"));
             dt.Columns.Add("Data", Type.GetType("System.String"));
             dt.Columns.Add("Parcelas", Type.GetType("System.String"));
-            if(emprestimos != null)
+            //if(emprestimos != null)
+            //if (conta.BancoProp.ContaEmprestimo.Emprestimos != null)
+            List<Emprestimo> lista = conta.ListarEmprestimos();
+            if (lista != null)
             {
-                emprestimos.ForEach(item => {
+                conta.BancoProp.ContaEmprestimo.Emprestimos.ForEach(item => {
                     DataRow dr = dt.NewRow();
                     dr["Id"] = item.Id;
                     dr["Tipo"] = item.Tipo;
@@ -51,11 +55,14 @@ namespace SenaiBanking.Views
         {
             int id = Convert.ToInt32(e.CommandArgument);
 
-            List<Emprestimo> emprestimos = Session["emprestimos"] as List<Emprestimo>;
+            //List<Emprestimo> emprestimos = Session["emprestimos"] as List<Emprestimo>;
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            List<Emprestimo> lista = conta.ListarEmprestimos();
             List<Parcela> parcelas = new List<Parcela>();
 
             Emprestimo emprestimo = null;
-            emprestimos.ForEach(item => {
+            //emprestimos.ForEach(item => {
+            lista.ForEach(item => { 
                 if(item.Id == id)
                 {
                     emprestimo = item;

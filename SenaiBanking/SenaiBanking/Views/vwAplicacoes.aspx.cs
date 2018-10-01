@@ -26,8 +26,9 @@ namespace SenaiBanking.Views
         }
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
-        { try
-            {     
+        {
+            try
+            {
                 String texto = txtValorAplicar.Text;
                 texto = texto.Replace('.', ',');
                 double valor = Convert.ToDouble(texto);
@@ -40,23 +41,27 @@ namespace SenaiBanking.Views
                 }
                 else if (Math.Round(Convert.ToDouble(texto), 2) > 0)
                 {
-                    InvestimentoPoupanca investimentoPoupanca = new InvestimentoPoupanca();
-
-                    investimentoPoupanca.ValorInicial = (Math.Round(Convert.ToDouble(texto),2));
-                    investimentoPoupanca.Data = DateTime.Now;
+                    InvestimentoPoupanca investimentoPoupanca = new InvestimentoPoupanca()
+                    {
+                        ValorInicial = Convert.ToDouble(txtValorAplicar.Text),
+                        Data = DateTime.Now,
+                        Tipo = "Investimento",
+                        Descricao = "Poupança"
+                    };
 
                     conta.AplicarInvestimento(investimentoPoupanca);
 
                     lblSaldoAtual.Text = Convert.ToString(conta.Saldo);
                     txtMsgError.Visible = true;
-                    txtMsgError.Text = "Valor investido: R$ "+ texto;
+                    txtMsgError.Text = "Valor investido: R$ " + texto;
                 }
                 else
                 {
                     txtMsgError.Visible = true;
                     txtMsgError.Text = "O valor deve ser superior a zero(0.00)";
                 }
-            }catch
+            }
+            catch
             {
 
             }
