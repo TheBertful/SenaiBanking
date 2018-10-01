@@ -192,7 +192,7 @@ namespace SenaiBanking.Models
             List<Emprestimo> emprestimos = new List<Emprestimo>();
             foreach (Transacao t in Transacoes)
             {
-                if (t.Tipo.Equals("Empréstimo"))
+                if (t.Tipo.Equals("Pessoal"))
                 {
                     emprestimos.Add(t as Emprestimo);
                 }

@@ -69,6 +69,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\boleto.png" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Login.css" />
     <Content Include="css\Principal.css" />
@@ -84,6 +85,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Views\vwAplicacoes.aspx" />
+    <Content Include="Views\vwBoleto.aspx" />
     <Content Include="Views\vwDepositar.aspx" />
     <Content Include="Views\vwExtrato.aspx" />
     <Content Include="Views\vwInvestimentos.aspx" />
@@ -105,7 +107,7 @@
     </Compile>
     <Compile Include="Models\Banco.cs" />
     <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Models\IContaContabil.cs" />
+    <Compile Include="Models\ContaContabil.cs" />
     <Compile Include="Models\ContaContabilEmprestimo.cs" />
     <Compile Include="Models\ContaContabilInvestimento.cs" />
     <Compile Include="Models\ContaCorrente.cs" />
@@ -127,6 +129,13 @@
     </Compile>
     <Compile Include="Views\vwAplicacoes.aspx.designer.cs">
       <DependentUpon>vwAplicacoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\vwBoleto.aspx.cs">
+      <DependentUpon>vwBoleto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vwBoleto.aspx.designer.cs">
+      <DependentUpon>vwBoleto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\vwDepositar.aspx.cs">
       <DependentUpon>vwDepositar.aspx</DependentUpon>
