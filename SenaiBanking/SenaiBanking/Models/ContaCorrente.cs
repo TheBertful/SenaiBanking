@@ -63,7 +63,7 @@ namespace SenaiBanking.Models
                     Conta = this,
                     Data = data,
                     Tipo = "Transferência",
-                    Descricao = "Transferência realizada",
+                    Descricao = "Transferência realizada para a conta: "+favorecido.Numero+" Proprietário: "+favorecido.ClienteProp.Nome,
                     Favorecido = favorecido
                 };
                 Transacoes.Add(transferencia);
@@ -73,7 +73,7 @@ namespace SenaiBanking.Models
                     Conta = favorecido,
                     Data = data,
                     Tipo = "Transferência",
-                    Descricao = "Transferência recebida"
+                    Descricao = "Transferência recebida da conta:"+this.Numero+" Proprietário: "+this.ClienteProp.Nome
                 };
                 favorecido.Transacoes.Add(transferido);
 
