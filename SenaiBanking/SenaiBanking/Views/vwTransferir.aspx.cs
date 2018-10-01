@@ -16,6 +16,7 @@ namespace SenaiBanking.Views
             if (conta != null)
             {
                 //txtMsg.Visible = false;
+                txtNumeroConta.Text = conta.Numero.ToString();
             }
             else
             {
