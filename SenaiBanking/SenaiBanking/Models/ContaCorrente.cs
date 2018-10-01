@@ -16,6 +16,7 @@ namespace SenaiBanking.Models
         public List<Transacao> Transacoes { get; set; } // Acumulado de transações feitas pela conta
         public Banco BancoProp { get; set; } // Banco para vincular as contas contábeis nas aplicações, resgates, solicitações de empréstimo e etc
 
+        // Saque de valor se houver saldo suficiente
         public void Sacar(double valor)
         {
             if (SaldoSuficiente(valor))
@@ -32,12 +33,9 @@ namespace SenaiBanking.Models
                 // Guardar o saque na tabela de transacoes/saques no banco
                 Saldo -= valor;
             }
-            else
-            {
-                // Fazer tratamento de denial, talvez mude assinatura do método
-            }
         }
 
+        // Depósito na conta
         public void Depositar(double valor)
         {
             Deposito deposito = new Deposito()
@@ -53,6 +51,7 @@ namespace SenaiBanking.Models
             Saldo += valor;
         }
 
+        // Transferência para outra conta, também sujeito a checagem de saldo
         public void Transferir(double valor, ContaCorrente favorecido)
         {
             if (SaldoSuficiente(valor))
@@ -81,10 +80,6 @@ namespace SenaiBanking.Models
                 // Atualizar saldos
                 Saldo -= valor;
                 favorecido.Saldo += valor;
-            }
-            else
-            {
-                // Tratar caso não tenha saldo
             }
         }
 
@@ -158,7 +153,7 @@ namespace SenaiBanking.Models
             // Na tela de execução, instanciar o Emprestimo com valor, forma de pagamento lido das boxes, etc
             // Após confirmação e geração de Parcelas, adiciona-las à LIST parcelas do objeto empréstimo
             emprestimo.Conta = this;
-            
+            emprestimo.GerarParcelas();
         }
 
         // Retorna os investimentos vinculados à conta

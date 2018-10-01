@@ -9,9 +9,10 @@ namespace SenaiBanking.Models
     {
         // Valor é herdado de Transacao
         public int Id { get; set; }
-        public List<Parcela> Parcelas { get; set; }
-        public string FormaPagamento { get; set; }
-        public double Limite { get; set; }
+        public List<Parcela> Parcelas { get; set; } // Conjunto de parcelas com seus respectivos valores
+        public string FormaPagamento { get; set; } // Boleto ou Débito em conta
+        public double Limite { get; set; } // Limite de crédito
+        public double TaxaJuros { get; set; } // Taxa de juros em % que está submetido o empréstimo
         public ContaContabilEmprestimo ContaContabil { get; set; }
         public bool Pendente // Indica se há parcelas pendentes
         {
@@ -26,6 +27,12 @@ namespace SenaiBanking.Models
                 }
                 return false;
             }
+        }
+
+        // Gera parcelas com base no cálculo asdf
+        public void GerarParcelas()
+        {
+
         }
 
         // Quitar uma parcela específica deste empréstimo, adiciona nas transacoes
@@ -52,6 +59,7 @@ namespace SenaiBanking.Models
             }
         }
 
+        // Retorna o valor total pendente para pagamento
         public double ValorPendente()
         {
             double result = 0;

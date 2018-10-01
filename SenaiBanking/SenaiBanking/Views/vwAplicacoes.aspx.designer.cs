@@ -49,13 +49,13 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.WebControls.Label lblValorDisponivel;
         
         /// <summary>
-        /// Controle Label1.
+        /// Controle lblSaldoAtual.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblSaldoAtual;
         
         /// <summary>
         /// Controle lblValorAplicar.
@@ -92,6 +92,15 @@ namespace SenaiBanking.Views {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblData;
+        
+        /// <summary>
+        /// Controle lblAviso.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAviso;
         
         /// <summary>
         /// Controle btnVoltar.
