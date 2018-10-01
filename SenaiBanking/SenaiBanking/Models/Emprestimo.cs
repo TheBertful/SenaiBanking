@@ -29,10 +29,27 @@ namespace SenaiBanking.Models
             }
         }
 
-        // Gera parcelas com base no cálculo asdf
+        // Gera parcelas
         public void GerarParcelas()
         {
-
+            Parcelas = new List<Parcela>();
+            double acumulado = Valor;
+            for (int i = 0; i < NumParcelas; i++)
+            {
+                acumulado += (acumulado * (TaxaJuros / 100));
+            }
+            for (int i = 0; i < NumParcelas; i++)
+            {
+                Parcela p = new Parcela()
+                {
+                    EmprestimoProp = this,
+                    Vencimento = DateTime.Today.AddMonths(i + 1),
+                    Valor = acumulado / NumParcelas,
+                    Numero = (i + 1).ToString() + '/' + NumParcelas.ToString(),
+                    Status = "Pendente"
+                };
+                Parcelas.Add(p);
+            }
         }
 
         // Quitar uma parcela específica deste empréstimo, adiciona nas transacoes

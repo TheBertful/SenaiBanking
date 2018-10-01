@@ -151,9 +151,11 @@ namespace SenaiBanking.Models
             // Adicionar na lista da conta contábil e de transacoes da conta
             // Atualizar saldo
             // Na tela de execução, instanciar o Emprestimo com valor, forma de pagamento lido das boxes, etc
-            // Após confirmação e geração de Parcelas, adiciona-las à LIST parcelas do objeto empréstimo
             emprestimo.Conta = this;
             emprestimo.GerarParcelas();
+            Saldo += emprestimo.Valor;
+            Transacoes.Add(emprestimo);
+            BancoProp.ContaEmprestimo.Emprestimos.Add(emprestimo);
         }
 
         // Retorna os investimentos vinculados à conta
