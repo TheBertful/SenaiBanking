@@ -47,7 +47,7 @@ namespace SenaiBanking.Views
                 {
                     InvestimentoTesouroDireto investimentoTesouro = new InvestimentoTesouroDireto()
                     {
-                        ValorInicial = Convert.ToDouble(txtValorAplicar.Text),
+                        ValorInicial = Convert.ToDouble(texto),
                         Data = DateTime.Now,
                         Tipo = "Investimento",
                         Descricao = "Tesouro"

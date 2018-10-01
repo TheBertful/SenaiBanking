@@ -44,7 +44,7 @@ namespace SenaiBanking.Views
                 {
                     InvestimentoPoupanca investimentoPoupanca = new InvestimentoPoupanca()
                     {
-                        ValorInicial = Convert.ToDouble(txtValorAplicar.Text),
+                        ValorInicial = Convert.ToDouble(texto),
                         Data = DateTime.Now,
                         Tipo = "Investimento",
                         Descricao = "Poupança"

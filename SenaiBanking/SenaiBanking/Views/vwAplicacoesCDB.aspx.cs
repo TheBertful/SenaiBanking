@@ -47,7 +47,7 @@ namespace SenaiBanking.Views
                 {
                     InvestimentoCDB investimentoCDB = new InvestimentoCDB()
                     {
-                        ValorInicial = Convert.ToDouble(txtValorAplicar.Text),
+                        ValorInicial = Convert.ToDouble(texto),
                         Data = DateTime.Now,
                         Tipo = "Investimento",
                         Descricao = "CDB"
