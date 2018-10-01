@@ -84,6 +84,8 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Views\vwAplicacoes.aspx" />
+    <Content Include="Views\vwAplicacoesCDB.aspx" />
+    <Content Include="Views\vwAplicacoesTesouro.aspx" />
     <Content Include="Views\vwDepositar.aspx" />
     <Content Include="Views\vwExtrato.aspx" />
     <Content Include="Views\vwInvestimentos.aspx" />
@@ -127,6 +129,20 @@
     </Compile>
     <Compile Include="Views\vwAplicacoes.aspx.designer.cs">
       <DependentUpon>vwAplicacoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\vwAplicacoesCDB.aspx.cs">
+      <DependentUpon>vwAplicacoesCDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vwAplicacoesCDB.aspx.designer.cs">
+      <DependentUpon>vwAplicacoesCDB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\vwAplicacoesTesouro.aspx.cs">
+      <DependentUpon>vwAplicacoesTesouro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vwAplicacoesTesouro.aspx.designer.cs">
+      <DependentUpon>vwAplicacoesTesouro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\vwDepositar.aspx.cs">
       <DependentUpon>vwDepositar.aspx</DependentUpon>
