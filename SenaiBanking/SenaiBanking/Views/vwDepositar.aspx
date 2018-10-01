@@ -17,8 +17,8 @@
                 </div>
         <div class="container">
              <div>
-                <asp:TextBox class="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsg" runat="server" role="alert"></asp:TextBox>
-                <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsgError" runat="server" role="alert"></asp:TextBox>
+               <asp:Label ID="lblMsg" runat="server"  CssClass="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label><br />
+               <asp:Label ID="lblMsgError" runat="server"  CssClass="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label><br /> 
              </div>
              <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
                 <div class="ajuste col-lg-12 col-md-6 col-sm-12 col-xl-12">

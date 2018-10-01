@@ -16,8 +16,8 @@ namespace SenaiBanking.Views
             if(conta != null)
             {
                 txtNumeroConta.Text = conta.Numero.ToString();
-                txtMsgError.Visible = false;
-                txtMsg.Visible = false;
+                lblMsgError.Visible = false;
+                lblMsg.Visible = false;
 
                 if(!IsPostBack)
                 {
@@ -42,30 +42,30 @@ namespace SenaiBanking.Views
                     int result1 = DateTime.Compare(DataFim, DataIni);
                     if (((result < 0) && (result1 > 0)) || (result1 == 0))
                     {
-                        var resultado = conta.Transacoes.Where(x => x.Data >= DataIni.Date).Where(y => y.Data <= DataFim.Date);
+                        var resultado = conta.Transacoes.Where(x => x.Data.Date >= DataIni.Date).Where(y => y.Data.Date <= DataFim.Date);
                         gvdExtrato.DataSource = resultado;
                         gvdExtrato.DataBind();
 
-                        txtMsg.Visible = true;
-                        txtMsg.Text = "Deu bom";
+                        lblMsg.Visible = true;
+                        lblMsg.Text = "Movimentações da conta referente as dias "+DataIni.ToString()+ " até " +DataFim.ToString();
                     }
                     else
                     {
-                        txtMsgError.Visible = true;
-                        txtMsgError.Text = "Verifique se a data de Inicio é menor que a Data Final...";
+                        lblMsgError.Visible = true;
+                        lblMsgError.Text = "Verifique se a data de Inicio é menor que a Data Final...";
                     }
                 }
                 else
                 {
-                    txtMsgError.Visible = true;
-                    txtMsgError.Text = "Verifique se as datas estão corretas...";
+                    lblMsgError.Visible = true;
+                    lblMsgError.Text = "Verifique se as datas estão corretas...";
                 }  
             }
             catch(Exception error)
             {
                 Console.WriteLine(error);
-                txtMsgError.Visible = true;
-                txtMsgError.Text = "Verifique se todos os campos estão preenchidos...";
+                lblMsgError.Visible = true;
+                lblMsgError.Text = "Verifique se todos os campos estão preenchidos...";
             }     
         }
 
