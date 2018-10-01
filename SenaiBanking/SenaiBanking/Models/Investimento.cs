@@ -18,7 +18,7 @@ namespace SenaiBanking.Models
         public double Imposto { get; set; } // Imposto incidido, em porcentagem
         public string TipoInvestimento { get; set; } // Prefixado ou Posfixado
         public ContaContabilInvestimento ContaContabil { get; set; } // Conta contábil a que pertence o Investimento
-        public string Status { get; set; } // Indica se está Aplicado ou Resgatado
+        public string Status { get; set; } // Indica se está Aplicado ou Resgatado, ou disponível
 
         // Método que atualiza o valor aplicado de acordo com a porcentagem de Rendimento
         public virtual void Render()

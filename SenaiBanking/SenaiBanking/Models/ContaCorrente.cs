@@ -14,7 +14,7 @@ namespace SenaiBanking.Models
         public double Limite { get; set; } // Limite de crédito disponível
         public string Tipo { get; set; } // Tipo da conta, para eventual valor padrão na criação
         public List<Transacao> Transacoes { get; set; } // Acumulado de transações feitas pela conta
-        public Banco BancoProp { get; set; }
+        public Banco BancoProp { get; set; } // Banco para vincular as contas contábeis nas aplicações, resgates, solicitações de empréstimo e etc
 
         public void Sacar(double valor)
         {
@@ -94,7 +94,8 @@ namespace SenaiBanking.Models
             List<Transacao> extrato = new List<Transacao>();
             foreach (Transacao t in Transacoes)
             {
-                if ((t.Tipo.Equals("Saque") || t.Tipo.Equals("Depósito") || t.Tipo.Equals("Transferência")) && (t.Data <= fim && t.Data >= inicio))
+                // Mostrar tudo menos investimentos e empréstimos(pagamentos, resgates, etc sim)
+                if ((!t.Tipo.Equals("Empréstimo") || !t.Tipo.Equals("Investimento")) && (t.Data <= fim && t.Data >= inicio))
                 {
                     extrato.Add(t);
                 }
@@ -102,6 +103,7 @@ namespace SenaiBanking.Models
             return extrato;
         }
 
+        // Usuario escolhe o investimento com valor pré-estabelecido na lista
         public void AplicarInvestimento(Investimento investimento)
         {
             // Inserir na lista da contaContabil, e na lista de transações, e fazer as relações bilaterais
@@ -118,18 +120,32 @@ namespace SenaiBanking.Models
                 {
                     Tipo = "Aplicação",
                     Conta = this,
-                    Valor = -investimento.Valor,
+                    Valor = - investimento.Valor,
                     Data = DateTime.Today,
                     Descricao = "Aplicação feita no investimento '" + investimento.Descricao + "'"
                 };
-
+                Transacoes.Add(t);
             }
         }
 
         public void ResgatarInvestimento(Investimento investimento)
         {
             // Não precisa remover da lista da ContaContabil, status resgatado na lista Transacoes
-
+            // Ações de rendimento ficam na classe de Investimento em si
+            if (investimento.Status.Equals("Aplicado"))
+            {
+                investimento.Status = "Resgatado";
+                Transacao t = new Transacao()
+                {
+                    Tipo = "Resgate",
+                    Conta = this,
+                    Valor = investimento.Valor,
+                    Data = DateTime.Today,
+                    Descricao = "Resgate do investimento '" + investimento.Descricao + "'"
+                };
+                Transacoes.Add(t);
+                Saldo += investimento.Valor;
+            }
         }
 
         // Realiza a solicitação de um empréstimo
