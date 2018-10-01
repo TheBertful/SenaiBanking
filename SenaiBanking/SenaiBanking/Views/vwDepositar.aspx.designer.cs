@@ -40,22 +40,22 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.WebControls.TextBox txtNumeroConta;
         
         /// <summary>
-        /// Controle txtMsg.
+        /// Controle lblMsg.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMsg;
+        protected global::System.Web.UI.WebControls.Label lblMsg;
         
         /// <summary>
-        /// Controle txtMsgError.
+        /// Controle lblMsgError.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMsgError;
+        protected global::System.Web.UI.WebControls.Label lblMsgError;
         
         /// <summary>
         /// Controle lblDeposito.

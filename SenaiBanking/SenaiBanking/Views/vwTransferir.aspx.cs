@@ -15,8 +15,8 @@ namespace SenaiBanking.Views
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             if (conta != null)
             {
-                txtMsg.Visible = false;
-                txtMsgError.Visible = false;
+                lblMsg.Visible = false;
+                lblMsgError.Visible = false;
                 txtNumeroConta.Text = conta.Numero.ToString();
             }
             else
@@ -49,26 +49,26 @@ namespace SenaiBanking.Views
                             Valor = valor
                         };
                         conta.Transferir(valor, conta2);
-                        txtMsg.Visible = true;
-                        txtMsg.Text = "Transferencia realizada com sucesso... Valor: R$" + valor + " para a conta: " + conta2.Numero + " Proprietário: " + conta2.ClienteProp.Nome;
+                        lblMsg.Visible = true;
+                        lblMsg.Text = "Transferencia realizada com sucesso... Valor: R$" + valor + " para a conta: " + conta2.Numero + " Proprietário: " + conta2.ClienteProp.Nome;
                     }
                     else
                     {
-                        txtMsgError.Visible = true;
-                        txtMsgError.Text = "Valor informado é inválido...";
+                        lblMsgError.Visible = true;
+                        lblMsgError.Text = "Valor informado é inválido...";
                     }
                 }
                 else
                 {
-                    txtMsgError.Visible = true;
-                    txtMsgError.Text = "Valor informado excede o Saldo...";
+                    lblMsgError.Visible = true;
+                    lblMsgError.Text = "Valor informado excede o Saldo...";
                 }
             }
             catch(Exception error)
             {
                 Console.WriteLine(error);
-                txtMsgError.Visible = true;
-                txtMsgError.Text = "Informe um valor válido";
+                lblMsgError.Visible = true;
+                lblMsgError.Text = "Informe um valor válido";
             }
         }
 
