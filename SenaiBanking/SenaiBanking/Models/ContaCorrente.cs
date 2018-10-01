@@ -160,6 +160,12 @@ namespace SenaiBanking.Models
             BancoProp.ContaEmprestimo.Emprestimos.Add(emprestimo);
         }
 
+        // Confere saldo de acordo com a forma de pagamento do empréstimo
+        public void PagarParcela(Parcela p)
+        {
+
+        }
+
         // Retorna os investimentos vinculados à conta
         public List<Investimento> ListarInvestimentos()
         {
