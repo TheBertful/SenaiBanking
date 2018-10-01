@@ -71,7 +71,8 @@ namespace SenaiBanking.Views
                     Numero = "1",
                     Saldo = 1500.00,
                     Tipo = "Silver",
-                    Transacoes = new List<Transacao>()
+                    Transacoes = new List<Transacao>(),
+                    BancoProp = Session["Banco"] as Banco
                 };
 
                 Session["ContaCorrente2"] = new ContaCorrente()
@@ -82,7 +83,8 @@ namespace SenaiBanking.Views
                     Numero = "2",
                     Saldo = 8500.00,
                     Tipo = "Gold",
-                    Transacoes = new List<Transacao>()
+                    Transacoes = new List<Transacao>(),
+                    BancoProp = Session["Banco"] as Banco
                 };
 
                 Response.Redirect("~/Views/vwPrincipal.aspx");
