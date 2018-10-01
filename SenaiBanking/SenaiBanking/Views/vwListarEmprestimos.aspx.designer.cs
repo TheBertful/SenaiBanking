@@ -10,7 +10,7 @@
 namespace SenaiBanking.Views {
     
     
-    public partial class vwEmprestimo {
+    public partial class vwListarEmprestimos {
         
         /// <summary>
         /// Controle form1.
@@ -22,21 +22,21 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle btnSolicitar.
+        /// Controle gdvEmprestimos.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSolicitar;
+        protected global::System.Web.UI.WebControls.GridView gdvEmprestimos;
         
         /// <summary>
-        /// Controle btnListar.
+        /// Controle gdvParcelas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListar;
+        protected global::System.Web.UI.WebControls.GridView gdvParcelas;
     }
 }
