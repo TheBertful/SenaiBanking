@@ -120,6 +120,7 @@ namespace SenaiBanking.Models
                     Descricao = "Aplicação feita no investimento '" + investimento.Descricao + "'"
                 };
                 Transacoes.Add(t);
+                Saldo -= investimento.Valor;
             }
         }
 
