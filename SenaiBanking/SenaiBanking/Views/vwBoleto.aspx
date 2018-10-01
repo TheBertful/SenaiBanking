@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <img src="~/Content/img/boleto.png"/>
+            <img src="../Content/img/boleto.png"/ height="500" width="600" />>
         </div>
     </form>
 </body>
