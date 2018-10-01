@@ -119,7 +119,7 @@ namespace SenaiBanking.Models
 
         }
 
-        // Retorna os investimentos não-resgatados(?) vinculados à conta
+        // Retorna os investimentos vinculados à conta
         public List<Investimento> ListarInvestimentos()
         {
             List<Investimento> investimentos = new List<Investimento>();
@@ -133,7 +133,19 @@ namespace SenaiBanking.Models
             return investimentos;
         }
 
-        // Retorna os empréstimos pendentes(?) na conta
+        // Retorna os investimentos não-resgatados
+        public List<Investimento> ListarInvestimentosNaoResgatados()
+        {
+            List<Investimento> investimentos = ListarInvestimentos();
+            List<Investimento> aplicados = new List<Investimento>();
+            foreach (Investimento i in investimentos)
+            {
+                if (i.Status.Equals("Aplicado")) aplicados.Add(i);
+            }
+            return aplicados;
+        }
+
+        // Retorna os empréstimos da conta
         public List<Emprestimo> ListarEmprestimos()
         {
             List<Emprestimo> emprestimos = new List<Emprestimo>();
@@ -145,6 +157,18 @@ namespace SenaiBanking.Models
                 }
             }
             return emprestimos;
+        }
+
+        // Retorna os empréstimos pendentes
+        public List<Emprestimo> ListarEmprestimosPendentes()
+        {
+            List<Emprestimo> emprestimos = ListarEmprestimos();
+            List<Emprestimo> pendentes = new List<Emprestimo>();
+            foreach (Emprestimo e in emprestimos)
+            {
+                if (e.IsPendente()) pendentes.Add(e);
+            }
+            return pendentes;
         }
 
         private bool SaldoSuficiente(double valor)
