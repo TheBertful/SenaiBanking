@@ -16,14 +16,18 @@
                     <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
                 </div>
         <div class="container">
+            <div>
+                <asp:TextBox class="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsg" runat="server" role="alert"></asp:TextBox>
+                <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsgError" runat="server" role="alert"></asp:TextBox>
+            </div>
             <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
                 <div class="ajuste col-lg-4 col-md-4 col-sm-4 col-xl-12">
                     <asp:Label ID="lblDtaInicio" runat="server" Text="Data Ínicio"></asp:Label>
-                    <asp:TextBox ID="txtDtaInicio" runat="server" class="form-control" Width="30%"></asp:TextBox>
+                    <asp:Calendar ID="DtaInicio" runat="server"></asp:Calendar>
                 </div>
                 <div class="ajuste col-lg-4 col-md-4 col-sm-4 col-xl-12">
                     <asp:Label ID="lblDtaFim" runat="server" Text="Data Fim"></asp:Label>
-                    <asp:TextBox ID="txtDtaFim" runat="server" class="form-control" Width="30%"></asp:TextBox>
+                    <asp:Calendar ID="DtaFim" runat="server"></asp:Calendar>
                 </div>
                 <div class="botao col-lg-4 col-md-4 col-sm-4 col-xl-12">
                     <asp:Button class="btn btn-secondary" ID="btnVerificar" runat="server" Text="Verificar" OnClick="btnVerificar_Click" />

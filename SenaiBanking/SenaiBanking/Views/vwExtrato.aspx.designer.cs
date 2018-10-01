@@ -40,6 +40,24 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.WebControls.TextBox txtNumeroConta;
         
         /// <summary>
+        /// Controle txtMsg.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMsg;
+        
+        /// <summary>
+        /// Controle txtMsgError.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMsgError;
+        
+        /// <summary>
         /// Controle lblDtaInicio.
         /// </summary>
         /// <remarks>
@@ -49,13 +67,13 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.WebControls.Label lblDtaInicio;
         
         /// <summary>
-        /// Controle txtDtaInicio.
+        /// Controle DtaInicio.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDtaInicio;
+        protected global::System.Web.UI.WebControls.Calendar DtaInicio;
         
         /// <summary>
         /// Controle lblDtaFim.
@@ -67,13 +85,13 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.WebControls.Label lblDtaFim;
         
         /// <summary>
-        /// Controle txtDtaFim.
+        /// Controle DtaFim.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDtaFim;
+        protected global::System.Web.UI.WebControls.Calendar DtaFim;
         
         /// <summary>
         /// Controle btnVerificar.
