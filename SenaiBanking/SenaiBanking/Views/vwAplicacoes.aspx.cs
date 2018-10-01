@@ -14,21 +14,35 @@ namespace SenaiBanking.Views
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
 
-            if(conta != null)
+            if (conta != null)
             {
                 txtNumeroConta.Text = conta.Numero.ToString();
+                lblSaldoAtual.Text = Convert.ToString(conta.Saldo);
+              //  lblData.Text = DateTime.Now();
             }
-
+            else
+            {
+                Response.Redirect("~/Views/vwPrincipal.aspx");
+            }
         }
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            if (Convert.ToDouble(txtValorAplicar.Text) > (conta.Saldo))
+            {
+                lblAviso.Text = "Atenção!! Valor maior que o saldo da conta";
+            }
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/vwTiposInvestimento.aspx");
+        }
+
+        protected void txtValorAplicar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
