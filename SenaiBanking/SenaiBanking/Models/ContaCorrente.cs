@@ -9,7 +9,7 @@ namespace SenaiBanking.Models
     {
         public int Id { get; set; } // Banco de dados
         public Cliente ClienteProp { get; set; }
-        public string Numero { get; set; }        
+        public string Numero { get; set; }
         public double Saldo { get; set; }
         public double Limite { get; set; }
         public string Tipo { get; set; }
@@ -93,7 +93,7 @@ namespace SenaiBanking.Models
             List<Transacao> extrato = new List<Transacao>();
             foreach (Transacao t in Transacoes)
             {
-                if ((t.Tipo == "Saque" || t.Tipo == "Depósito" || t.Tipo == "Transferência") && (t.Data <= fim && t.Data >= inicio))
+                if ((t.Tipo.Equals("Saque") || t.Tipo.Equals("Depósito") || t.Tipo.Equals("Transferência")) && (t.Data <= fim && t.Data >= inicio))
                 {
                     extrato.Add(t);
                 }
@@ -105,11 +105,46 @@ namespace SenaiBanking.Models
         {
             // TODO: Inserir na lista da contaContabil, e na lista de transações, após instanciar
             // TODO: Atualizar saldo ou não* decidir isso
+
         }
 
         public void ResgatarInvestimento(Investimento investimento)
         {
             // TODO: Remover da lista da ContaContabil, status resgatado talvez
+        }
+
+        // Realiza a solicitação de um empréstimo
+        public void SolicitarEmprestimo(Emprestimo emprestimo)
+        {
+
+        }
+
+        // Retorna os investimentos não-resgatados(?) vinculados à conta
+        public List<Investimento> ListarInvestimentos()
+        {
+            List<Investimento> investimentos = new List<Investimento>();
+            foreach(Transacao t in Transacoes)
+            {
+                if(t.Tipo.Equals("Investimento"))
+                {
+                    investimentos.Add(t as Investimento);
+                }
+            }
+            return investimentos;
+        }
+
+        // Retorna os empréstimos pendentes(?) na conta
+        public List<Emprestimo> ListarEmprestimos()
+        {
+            List<Emprestimo> emprestimos = new List<Emprestimo>();
+            foreach (Transacao t in Transacoes)
+            {
+                if (t.Tipo.Equals("Empréstimo"))
+                {
+                    emprestimos.Add(t as Emprestimo);
+                }
+            }
+            return emprestimos;
         }
 
         private bool SaldoSuficiente(double valor)
