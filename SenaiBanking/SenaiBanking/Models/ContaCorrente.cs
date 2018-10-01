@@ -13,7 +13,6 @@ namespace SenaiBanking.Models
         public double Saldo { get; set; } // Saldo atual da conta
         public double Limite { get; set; } // Limite de crédito disponível
         public string Tipo { get; set; } // Tipo da conta, para eventual valor padrão na criação
-        public string Aviso { get; set; } // String de aviso para erros mostrarem na tela
         public List<Transacao> Transacoes { get; set; } // Acumulado de transações feitas pela conta
         public Banco BancoProp { get; set; } // Banco para vincular as contas contábeis nas aplicações, resgates, solicitações de empréstimo e etc
 
@@ -212,16 +211,7 @@ namespace SenaiBanking.Models
         // Verifica se o saldo é suficiente para o valor ser retirado para alguma operação
         private bool SaldoSuficiente(double valor)
         {
-            if (valor <= Saldo + Limite)
-            {
-                Aviso = "";
-                return true;
-            }
-            else
-            {
-                Aviso = "Saldo insuficiente";
-                return false;
-            }
+            return valor <= Saldo + Limite;
         }
 
     }
