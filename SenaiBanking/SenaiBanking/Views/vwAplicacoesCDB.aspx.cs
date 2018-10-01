@@ -1,22 +1,25 @@
 ﻿using SenaiBanking.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace SenaiBanking.Views
 {
-    public partial class Aplicacoes : System.Web.UI.Page
+    public partial class vwAplicacoesCDB : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             ContaContabilInvestimento containvestimento = Session["Investimentos"] as ContaContabilInvestimento;
             Banco banco = Session["Banco"] as Banco;
 
             if (conta != null)
             {
-       
                 txtNumeroConta.Text = conta.Numero.ToString();
-                lblSaldoAtual.Text = Convert.ToString("R$ "+conta.Saldo);
+                lblSaldoAtual.Text = Convert.ToString("R$ " + conta.Saldo);
                 txtMsgError.Visible = false;
                 lblData.Text = Convert.ToString(DateTime.Now);
             }
@@ -35,26 +38,26 @@ namespace SenaiBanking.Views
                 double valor = Convert.ToDouble(texto);
                 ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
 
-                if (Math.Round(Convert.ToDouble(valor), 2) > (conta.Saldo))
+                if (Math.Round(Convert.ToDouble(texto), 2) > (conta.Saldo))
                 {
                     txtMsgError.Visible = true;
                     txtMsgError.Text = "Atenção!! Valor maior que o saldo da conta";
                 }
-                else if (Math.Round(Convert.ToDouble(valor), 2) > 0)
+                else if (Math.Round(Convert.ToDouble(texto), 2) > 0)
                 {
-                    InvestimentoPoupanca investimentoPoupanca = new InvestimentoPoupanca()
+                    InvestimentoCDB investimentoCDB = new InvestimentoCDB()
                     {
                         ValorInicial = Convert.ToDouble(txtValorAplicar.Text),
                         Data = DateTime.Now,
                         Tipo = "Investimento",
-                        Descricao = "Poupança"
+                        Descricao = "CDB"
                     };
 
-                    conta.AplicarInvestimento(investimentoPoupanca);
+                    conta.AplicarInvestimento(investimentoCDB);
 
                     lblSaldoAtual.Text = Convert.ToString(conta.Saldo);
                     txtMsgError.Visible = true;
-                    txtMsgError.Text = "Valor investido: R$ " + valor;
+                    txtMsgError.Text = "Valor investido: R$ " + texto;
                 }
                 else
                 {
@@ -78,7 +81,7 @@ namespace SenaiBanking.Views
 
         protected void txtValorAplicar_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

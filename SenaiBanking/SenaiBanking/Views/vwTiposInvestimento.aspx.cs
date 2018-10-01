@@ -27,12 +27,14 @@ namespace SenaiBanking.Views
 
         protected void btnTesouro_Click(object sender, EventArgs e)
         {
-           
+            Response.Redirect("~/Views/vwAplicacoesTesouro.aspx");
+
         }
 
         protected void btnCDB_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("~/Views/vwAplicacoesCDB.aspx");
+
         }
 
         protected void btnCdb_Click(object sender, EventArgs e)
