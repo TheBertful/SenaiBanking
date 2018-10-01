@@ -110,6 +110,7 @@ namespace SenaiBanking.Models
                 Transacoes.Add(investimento);
                 investimento.ContaContabil = BancoProp.ContaInvestimento;
                 investimento.ContaContabil.Investimentos.Add(investimento);
+                investimento.Valor = investimento.ValorInicial;
                 
                 Transacao t = new Transacao()
                 {
@@ -120,7 +121,7 @@ namespace SenaiBanking.Models
                     Descricao = "Aplicação feita no investimento '" + investimento.Descricao + "'"
                 };
                 Transacoes.Add(t);
-                Saldo -= investimento.Valor;
+                Saldo -= investimento.ValorInicial;
             }
         }
 
