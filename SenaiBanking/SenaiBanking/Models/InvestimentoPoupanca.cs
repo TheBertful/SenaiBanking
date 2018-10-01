@@ -28,6 +28,7 @@ namespace SenaiBanking.Models
 
             // Liquidez é diária/instantânea
             Liquidez = "Diária";
+            Imposto = 0;
         }
 
         public override void Render()
@@ -35,5 +36,6 @@ namespace SenaiBanking.Models
             double aumento = Valor * Rendimento / 12; // divide no mês
             Valor += aumento;
         }
+
     }
 }
