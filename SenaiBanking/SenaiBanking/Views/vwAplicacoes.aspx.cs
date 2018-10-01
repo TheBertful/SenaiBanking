@@ -12,7 +12,10 @@ namespace SenaiBanking.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            ContaContabilInvestimento containvestimento = Session["Investimentos"]as ContaContabilInvestimento;
+            Banco banco = Session["Banco"] as Banco;
 
             if (conta != null)
             {
@@ -35,15 +38,17 @@ namespace SenaiBanking.Views
             }
             else if (Convert.ToDouble(txtValorAplicar.Text) > 0)
             {
-                ContaCorrente contac = new ContaCorrente();
                 InvestimentoPoupanca investimentoPoupanca = new InvestimentoPoupanca();
 
                 investimentoPoupanca.ValorInicial = Convert.ToDouble(txtValorAplicar.Text);
                 investimentoPoupanca.Data = DateTime.Now;
 
-                contac.Saldo = Convert.ToDouble(txtValorAplicar.Text) - contac.Saldo;
+                conta.AplicarInvestimento(investimentoPoupanca);
 
-                lblAviso.Text = Convert.ToString(contac.Saldo);
+
+                lblAviso.Text = Convert.ToString(conta.Saldo);
+
+
          //       Response.Redirect("~Views/vwAplicacoes.aspx");
 
 
