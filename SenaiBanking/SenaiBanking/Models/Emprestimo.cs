@@ -36,6 +36,7 @@ namespace SenaiBanking.Models
                 Conta = this.Conta,
                 Descricao = "Pagamento parcela: " + p.Numero + "/" + Parcelas.Count
             };
+            this.Conta.Transacoes.Add(t);
         }
 
         // Quitar todas as parcelas

@@ -8,12 +8,12 @@ namespace SenaiBanking.Models
     public class ContaCorrente
     {
         public int Id { get; set; } // Banco de dados
-        public Cliente ClienteProp { get; set; }
-        public string Numero { get; set; }
-        public double Saldo { get; set; }
-        public double Limite { get; set; }
-        public string Tipo { get; set; }
-        public List<Transacao> Transacoes { get; set; }
+        public Cliente ClienteProp { get; set; } // Referência ao cliente, para login
+        public string Numero { get; set; } // Número da conta
+        public double Saldo { get; set; } // Saldo atual da conta
+        public double Limite { get; set; } // Limite de crédito disponível
+        public string Tipo { get; set; } // Tipo da conta, para eventual valor padrão na criação
+        public List<Transacao> Transacoes { get; set; } // Acumulado de transações feitas pela conta
 
         public void Sacar(double valor)
         {
@@ -110,7 +110,7 @@ namespace SenaiBanking.Models
 
         public void ResgatarInvestimento(Investimento investimento)
         {
-            // Remover da lista da ContaContabil, status resgatado na lista Transacoes
+            // Não precisa remover da lista da ContaContabil, status resgatado na lista Transacoes
 
         }
 
@@ -119,20 +119,21 @@ namespace SenaiBanking.Models
         {
             // Adicionar na lista da conta contábil e de transacoes da conta
             // Atualizar saldo
+
         }
 
         // Paga parcela de empréstimo
         public void PagarParcela(Parcela p)
         {
-            // Atualizar conta contábil
+            // Atualizar conta contábil não é necessário, apenas criar transação de pagamento de parcelas
+
         }
 
         // Paga empréstimo todo
         public void PagarEmprestimo(Emprestimo e)
         {
-
+            // Atualizar conta contábil não é necessário, pelo cálculo
         }
-
 
         // Retorna os investimentos vinculados à conta
         public List<Investimento> ListarInvestimentos()
