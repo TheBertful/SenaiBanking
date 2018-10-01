@@ -15,7 +15,9 @@ namespace SenaiBanking.Views
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             if (conta != null)
             {
-                //txtMsg.Visible = false;
+                txtMsg.Visible = false;
+                txtMsgError.Visible = false;
+                txtNumeroConta.Text = conta.Numero.ToString();
             }
             else
             {
@@ -25,28 +27,52 @@ namespace SenaiBanking.Views
 
         protected void btnTransferir_Click(object sender, EventArgs e)
         {
-            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
-            ContaCorrente conta2 = Session["ContaCorrente2"] as ContaCorrente;
-
-            Transferencia transferir = new Transferencia()
+            try
             {
-               Conta = conta,
-               Data = DateTime.Now,
-               Descricao = "Transferencia da Conta de numero: "+conta.Numero+" Proprietário: "+conta.ClienteProp.Nome+"  para a Conta de numero: "+
-               conta2.Numero+" Proprietário: "+conta2.ClienteProp.Nome+" no valor de: R$"+ txtValor.Text + " na data referente: "+DateTime.Now,
-               Favorecido = conta2,
-               Tipo = "transferencia",
-               Valor = Convert.ToDouble(txtValor.Text)
-            };
+                ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+                ContaCorrente conta2 = Session["ContaCorrente2"] as ContaCorrente;
+                String texto = txtValor.Text;
+                texto = texto.Replace('.', ',');
+                Double valor = Math.Round(Convert.ToDouble(texto), 2);
+                if (valor <= conta.Saldo)
+                {
+                    if(valor > 0)
+                    {
+                        Transferencia transferir = new Transferencia()
+                        {
+                            Conta = conta,
+                            Data = DateTime.Now,
+                            Descricao = "Transferencia da Conta de numero: " + conta.Numero + " Proprietário: " + conta.ClienteProp.Nome + "  para a Conta de numero: " +
+                           conta2.Numero + " Proprietário: " + conta2.ClienteProp.Nome + " no valor de: R$" + valor + " na data referente: " + DateTime.Now,
+                            Favorecido = conta2,
+                            Tipo = "transferencia",
+                            Valor = valor
+                        };
+                        conta.Transacoes = new List<Transacao>();
+                        conta2.Transacoes = new List<Transacao>();
+                        conta.Transferir(valor, conta2);
 
-            conta.Sacar(Convert.ToDouble(txtValor.Text));
-            conta2.Depositar(Convert.ToDouble(txtValor.Text));
-
-            List<Transferencia> classe = Session["Transferir"] as List<Transferencia>;
-            classe.Add(transferir);
-
-            // txtMsg.Visible = true;
-            // txtMsg.Text = "Transferencia realizada com sucesso... Valor: R$"+txtValor.Text+" para a conta: "+conta2.Numero+" Proprietário: "conta2.conta2.ClienteProp.Nome";
+                        txtMsg.Visible = true;
+                        txtMsg.Text = "Transferencia realizada com sucesso... Valor: R$" + valor + " para a conta: " + conta2.Numero + " Proprietário: " + conta2.ClienteProp.Nome;
+                    }
+                    else
+                    {
+                        txtMsgError.Visible = true;
+                        txtMsgError.Text = "Valor informado é inválido...";
+                    }
+                }
+                else
+                {
+                    txtMsgError.Visible = true;
+                    txtMsgError.Text = "Valor informado excede o Saldo...";
+                }
+            }
+            catch(Exception error)
+            {
+                Console.WriteLine(error);
+                txtMsgError.Visible = true;
+                txtMsgError.Text = "Informe um valor válido";
+            }
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)

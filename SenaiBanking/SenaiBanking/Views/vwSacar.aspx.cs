@@ -17,6 +17,7 @@ namespace SenaiBanking.Views
             {
                 txtMsg.Visible = false;
                 txtMsgError.Visible = false;
+                txtNumeroConta.Text = conta.Numero.ToString();
             }
             else
             {
@@ -29,14 +30,23 @@ namespace SenaiBanking.Views
             try
             {
                 ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
-
-                double valor = Convert.ToDouble(txtSacar.Text);
+                String texto = txtSacar.Text;
+                texto = texto.Replace('.', ',');
+                double valor = Math.Round(Convert.ToDouble(texto), 2);
                 if(conta.Saldo >= valor)
                 {
-                    conta.Transacoes = new List<Transacao>();
-                    conta.Sacar(valor);
-                    txtMsg.Visible = true;
-                    txtMsg.Text = "O saque foi realizado com sucesso, R$" + Math.Round(valor, 2) + " | Seu saldo atual é de R$" + Math.Round(conta.Saldo,2);
+                    if(valor > 0)
+                    {
+                        conta.Transacoes = new List<Transacao>();
+                        conta.Sacar(valor);
+                        txtMsg.Visible = true;
+                        txtMsg.Text = "O saque foi realizado com sucesso, R$" + Math.Round(valor, 2) + " | Seu saldo atual é de R$" + Math.Round(conta.Saldo, 2);
+                    }
+                    else
+                    {
+                        txtMsgError.Visible = true;
+                        txtMsgError.Text = "Verifique o valor informado";
+                    }
                 }
                 else
                 {

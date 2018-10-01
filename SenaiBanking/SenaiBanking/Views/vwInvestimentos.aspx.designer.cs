@@ -13,6 +13,24 @@ namespace SenaiBanking.Views {
     public partial class Investimentos {
         
         /// <summary>
+        /// Controle lblNumeroConta.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumeroConta;
+        
+        /// <summary>
+        /// Controle txtNumeroConta.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroConta;
+        
+        /// <summary>
         /// Controle form1.
         /// </summary>
         /// <remarks>

@@ -13,13 +13,18 @@ namespace SenaiBanking.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             lblLimite.Text = "Você possui R$ 900,00 de limite para o empréstimo.";
             if (!IsPostBack)
             {
                 txtValor.Text = "0";
             }
-            if((Session["ContaCorrente"] as ContaCorrente) == null)
+            if ((Session["ContaCorrente"] as ContaCorrente) != null)
             {
+                txtNumeroConta.Text = conta.Numero.ToString();
+            }
+            else
+            { 
                 Response.Redirect("~/Views/vwLogin.aspx");
             }
         }
