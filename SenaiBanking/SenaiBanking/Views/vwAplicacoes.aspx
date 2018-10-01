@@ -31,7 +31,7 @@
                 <br />
                 <asp:Label ID="lblDataAplicacao" runat="server" Text="Data da Aplicação"></asp:Label>
                 <br />
-                <asp:Label ID="lblData" runat="server" Text="28/09/2018"></asp:Label>
+                <asp:Label ID="lblData" runat="server"></asp:Label>
                 <br />
                 <div>
                     <asp:Label ID="lblAviso" runat="server"></asp:Label>

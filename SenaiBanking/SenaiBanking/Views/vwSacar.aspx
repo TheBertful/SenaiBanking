@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
                 <asp:Label ID="lblMsg" runat="server"  CssClass="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label><br />
-                <asp:Label ID="lblMsgError" runat="server"  CssClass="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label><br /> 
+                <asp:Label ID="lblMsgError" runat="server"  CssClass="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label><br /> 
                 <div class="ajuste col-lg-12 col-md-6 col-sm-12 col-xl-12">
                     <asp:Label ID="lblSacar" runat="server" Text="Valor "></asp:Label>
                     <asp:TextBox ID="txtSacar" runat="server" class="form-control" Width="20%"></asp:TextBox>
