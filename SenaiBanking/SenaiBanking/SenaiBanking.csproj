@@ -87,10 +87,12 @@
     <Content Include="Views\vwDepositar.aspx" />
     <Content Include="Views\vwExtrato.aspx" />
     <Content Include="Views\vwInvestimentos.aspx" />
+    <Content Include="Views\vwListarEmprestimos.aspx" />
     <Content Include="Views\vwLogin.aspx" />
     <Content Include="Views\vwPrincipal.aspx" />
     <Content Include="Views\vwSacar.aspx" />
     <Content Include="Views\vwSaldo.aspx" />
+    <Content Include="Views\vwSolicitarEmprestimo.aspx" />
     <Content Include="Views\vwTiposInvestimento.aspx" />
     <Content Include="Views\vwTransferir.aspx" />
     <Content Include="Views\vwEmprestimo.aspx" />
@@ -103,7 +105,7 @@
     </Compile>
     <Compile Include="Models\Banco.cs" />
     <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Models\ContaContabil.cs" />
+    <Compile Include="Models\IContaContabil.cs" />
     <Compile Include="Models\ContaContabilEmprestimo.cs" />
     <Compile Include="Models\ContaContabilInvestimento.cs" />
     <Compile Include="Models\ContaCorrente.cs" />
@@ -147,6 +149,13 @@
     <Compile Include="Views\vwInvestimentos.aspx.designer.cs">
       <DependentUpon>vwInvestimentos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\vwListarEmprestimos.aspx.cs">
+      <DependentUpon>vwListarEmprestimos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vwListarEmprestimos.aspx.designer.cs">
+      <DependentUpon>vwListarEmprestimos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\vwLogin.aspx.cs">
       <DependentUpon>vwLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -174,6 +183,13 @@
     </Compile>
     <Compile Include="Views\vwSaldo.aspx.designer.cs">
       <DependentUpon>vwSaldo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\vwSolicitarEmprestimo.aspx.cs">
+      <DependentUpon>vwSolicitarEmprestimo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vwSolicitarEmprestimo.aspx.designer.cs">
+      <DependentUpon>vwSolicitarEmprestimo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\vwTiposInvestimento.aspx.cs">
       <DependentUpon>vwTiposInvestimento.aspx</DependentUpon>

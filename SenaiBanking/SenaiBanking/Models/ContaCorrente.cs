@@ -14,8 +14,9 @@ namespace SenaiBanking.Models
         public double Limite { get; set; } // Limite de crédito disponível
         public string Tipo { get; set; } // Tipo da conta, para eventual valor padrão na criação
         public List<Transacao> Transacoes { get; set; } // Acumulado de transações feitas pela conta
-        public Banco BancoProp { get; set; }
+        public Banco BancoProp { get; set; } // Banco para vincular as contas contábeis nas aplicações, resgates, solicitações de empréstimo e etc
 
+        // Saque de valor se houver saldo suficiente
         public void Sacar(double valor)
         {
             if (SaldoSuficiente(valor))
@@ -32,12 +33,9 @@ namespace SenaiBanking.Models
                 // Guardar o saque na tabela de transacoes/saques no banco
                 Saldo -= valor;
             }
-            else
-            {
-                // Fazer tratamento de denial, talvez mude assinatura do método
-            }
         }
 
+        // Depósito na conta
         public void Depositar(double valor)
         {
             Deposito deposito = new Deposito()
@@ -53,6 +51,7 @@ namespace SenaiBanking.Models
             Saldo += valor;
         }
 
+        // Transferência para outra conta, também sujeito a checagem de saldo
         public void Transferir(double valor, ContaCorrente favorecido)
         {
             if (SaldoSuficiente(valor))
@@ -82,10 +81,6 @@ namespace SenaiBanking.Models
                 Saldo -= valor;
                 favorecido.Saldo += valor;
             }
-            else
-            {
-                // Tratar caso não tenha saldo
-            }
         }
 
         // Retorna lista de Transacoes do tipo Saque, Depósito e Transferência
@@ -94,7 +89,8 @@ namespace SenaiBanking.Models
             List<Transacao> extrato = new List<Transacao>();
             foreach (Transacao t in Transacoes)
             {
-                if ((t.Tipo.Equals("Saque") || t.Tipo.Equals("Depósito") || t.Tipo.Equals("Transferência")) && (t.Data <= fim && t.Data >= inicio))
+                // Mostrar tudo menos investimentos e empréstimos(pagamentos, resgates, etc sim)
+                if ((!t.Tipo.Equals("Empréstimo") || !t.Tipo.Equals("Investimento")) && (t.Data <= fim && t.Data >= inicio))
                 {
                     extrato.Add(t);
                 }
@@ -102,11 +98,12 @@ namespace SenaiBanking.Models
             return extrato;
         }
 
+        // Usuario escolhe o investimento com valor pré-estabelecido na lista
         public void AplicarInvestimento(Investimento investimento)
         {
             // Inserir na lista da contaContabil, e na lista de transações, e fazer as relações bilaterais
             // Se saldo for suficiente, instanciar uma Transação de aplicação(p/ extrato) e incluir na lista de transações o investimento em si
-            if(SaldoSuficiente(investimento.Valor))
+            if(SaldoSuficiente(investimento.ValorInicial))
             {
                 investimento.Status = "Aplicado";
                 investimento.Conta = this;
@@ -118,18 +115,34 @@ namespace SenaiBanking.Models
                 {
                     Tipo = "Aplicação",
                     Conta = this,
-                    Valor = -investimento.Valor,
+                    Valor = - investimento.ValorInicial,
                     Data = DateTime.Today,
                     Descricao = "Aplicação feita no investimento '" + investimento.Descricao + "'"
                 };
-
+                Transacoes.Add(t);
             }
         }
 
+        // Resgata o valor integral do investimento
         public void ResgatarInvestimento(Investimento investimento)
         {
             // Não precisa remover da lista da ContaContabil, status resgatado na lista Transacoes
-
+            // Ações de rendimento ficam na classe de Investimento em si
+            if (investimento.Status.Equals("Aplicado"))
+            {
+                investimento.Status = "Resgatado";
+                investimento.Valor = investimento.CalcularRendimentoFinal();
+                Transacao t = new Transacao()
+                {
+                    Tipo = "Resgate",
+                    Conta = this,
+                    Valor = investimento.Valor,
+                    Data = DateTime.Today,
+                    Descricao = "Resgate do investimento '" + investimento.Descricao + "'"
+                };
+                Transacoes.Add(t);
+                Saldo += investimento.Valor;
+            }
         }
 
         // Realiza a solicitação de um empréstimo
@@ -137,20 +150,12 @@ namespace SenaiBanking.Models
         {
             // Adicionar na lista da conta contábil e de transacoes da conta
             // Atualizar saldo
-
-        }
-
-        // Paga parcela de empréstimo
-        public void PagarParcela(Parcela p)
-        {
-            // Atualizar conta contábil não é necessário, apenas criar transação de pagamento de parcelas
-
-        }
-
-        // Paga empréstimo todo
-        public void PagarEmprestimo(Emprestimo e)
-        {
-            // Atualizar conta contábil não é necessário, pelo cálculo
+            // Na tela de execução, instanciar o Emprestimo com valor, forma de pagamento lido das boxes, etc
+            emprestimo.Conta = this;
+            emprestimo.GerarParcelas();
+            Saldo += emprestimo.Valor;
+            Transacoes.Add(emprestimo);
+            BancoProp.ContaEmprestimo.Emprestimos.Add(emprestimo);
         }
 
         // Retorna os investimentos vinculados à conta
@@ -200,11 +205,12 @@ namespace SenaiBanking.Models
             List<Emprestimo> pendentes = new List<Emprestimo>();
             foreach (Emprestimo e in emprestimos)
             {
-                if (e.IsPendente()) pendentes.Add(e);
+                if (e.Pendente) pendentes.Add(e);
             }
             return pendentes;
         }
 
+        // Verifica se o saldo é suficiente para o valor ser retirado para alguma operação
         private bool SaldoSuficiente(double valor)
         {
             return valor <= Saldo + Limite;

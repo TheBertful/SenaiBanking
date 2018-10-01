@@ -18,6 +18,10 @@ namespace SenaiBanking.Views
             {
                 txtNumeroConta.Text = conta.Numero.ToString();
             }
+            else
+            {
+                Response.Redirect("~/Views/vwPrincipal.aspx"); 
+            }
 
         }
 
@@ -38,6 +42,7 @@ namespace SenaiBanking.Views
 
         protected void btnPoupanca_Click(object sender, EventArgs e)
         {
+
             Response.Redirect("~/Views/vwAplicacoes.aspx");
         }
 

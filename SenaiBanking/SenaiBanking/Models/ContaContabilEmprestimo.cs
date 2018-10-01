@@ -8,7 +8,9 @@ namespace SenaiBanking.Models
     public class ContaContabilEmprestimo : IContaContabil
     {
         public List<Emprestimo> Emprestimos { get; set; }
+        public Banco BancoProp { get; set; }
 
+        // Retorna o valor de todas as pendencias de empréstimo de cada conta corrente do banco
         public double CalcularSaldo()
         {
             double saldo = 0;
