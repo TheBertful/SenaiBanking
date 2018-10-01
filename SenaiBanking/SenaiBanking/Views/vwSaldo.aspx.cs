@@ -16,6 +16,7 @@ namespace SenaiBanking.Views
             if (conta != null)
             {
                 lblMostrarSaldo.Text = Convert.ToString(conta.Saldo);
+                txtNumeroConta.Text = conta.Numero.ToString();
             }
             else
             {

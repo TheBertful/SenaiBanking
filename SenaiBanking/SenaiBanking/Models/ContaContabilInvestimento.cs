@@ -8,13 +8,14 @@ namespace SenaiBanking.Models
     public class ContaContabilInvestimento : IContaContabil
     {
         public List<Investimento> Investimentos { get; set; }
+        public Banco BancoProp { get; set; }
 
         public double CalcularSaldo()
         {
             double saldo = 0;
             foreach (Investimento investimento in Investimentos)
             {
-                saldo += investimento.Valor;
+                if(investimento.Status.Equals("Resgatado"))saldo += investimento.Valor;
             }
             return saldo;
         }

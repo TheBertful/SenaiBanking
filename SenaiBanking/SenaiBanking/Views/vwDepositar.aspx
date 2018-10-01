@@ -13,8 +13,13 @@
     <form id="form1" runat="server">
                 <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
                     <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
+                    <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
                 </div>
         <div class="container">
+             <div>
+                <asp:TextBox class="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsg" runat="server" role="alert"></asp:TextBox>
+                <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsgError" runat="server" role="alert"></asp:TextBox>
+             </div>
              <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
                 <div class="ajuste col-lg-12 col-md-6 col-sm-12 col-xl-12">
                     <asp:Label ID="lblDeposito" runat="server" Text="Valor "></asp:Label>
@@ -23,9 +28,6 @@
                 <div class="ajuste col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <asp:Button class="btn btn-secondary" ID="btnDepositar" runat="server" Text="Depositar" OnClick="btnDepositar_Click" />
                     <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
-                </div>
-                <div>
-                  <asp:TextBox ID="txtAviso" runat="server"></asp:TextBox>
                 </div>
             </div>
         </div>

@@ -16,6 +16,8 @@ namespace SenaiBanking.Views
             if (conta != null)
             {
                 txtMsg.Visible = false;
+                txtMsgError.Visible = false;
+                txtNumeroConta.Text = conta.Numero.ToString();
             }
             else
             {
@@ -28,17 +30,36 @@ namespace SenaiBanking.Views
             try
             {
                 ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
-
-                double valor = Convert.ToDouble(txtSacar.Text);
-                conta.Transacoes = new List<Transacao>();
-                conta.Sacar(valor);
-                txtMsg.Visible = true;
-                txtMsg.Text = "O saque foi realizado com sucesso, R$" + valor + " | Seu saldo atual é de R$" + conta.Saldo;
+                String texto = txtSacar.Text;
+                texto = texto.Replace('.', ',');
+                double valor = Math.Round(Convert.ToDouble(texto), 2);
+                if(conta.Saldo >= valor)
+                {
+                    if(valor > 0)
+                    {
+                        conta.Transacoes = new List<Transacao>();
+                        conta.Sacar(valor);
+                        txtMsg.Visible = true;
+                        txtMsg.Text = "O saque foi realizado com sucesso, R$" + Math.Round(valor, 2) + " | Seu saldo atual é de R$" + Math.Round(conta.Saldo, 2);
+                    }
+                    else
+                    {
+                        txtMsgError.Visible = true;
+                        txtMsgError.Text = "Verifique o valor informado";
+                    }
+                }
+                else
+                {
+                    txtMsgError.Visible = true;
+                    double total = conta.Saldo - valor;
+                    txtMsgError.Text = "O valor do saque excede o valor em conta em: -R$" + Math.Abs(total);
+                }
             }
             catch (Exception erro)
             {
-                txtMsg.Visible = true;
-                txtMsg.Text = "Valor informado não é valido, Verifique o campo Valor";
+                Console.WriteLine(erro);
+                txtMsgError.Visible = true;
+                txtMsgError.Text = "Valor informado não é valido, Verifique o campo Valor";
             }
         }
 

@@ -12,6 +12,11 @@
     <div class="container">
     <h1 class="h1">Listar Emprestimos</h1>
         <form id="form1" runat="server">
+            <br />
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+            </div>
+            <br />
             <div>
             <asp:GridView ID="gdvEmprestimos" runat="server" CssClass="table-light text-center col-6" AutoGenerateColumns="False" OnRowCommand="gdvEmprestimos_RowCommand">
                 <Columns>
