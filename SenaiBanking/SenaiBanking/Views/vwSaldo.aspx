@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
                     <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
-                    <asp:TextBox ID="txtNumeroConta" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
                 </div>
         <div class="container">
             <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
