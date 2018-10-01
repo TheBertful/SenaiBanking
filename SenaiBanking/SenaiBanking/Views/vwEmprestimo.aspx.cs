@@ -13,7 +13,7 @@ namespace SenaiBanking.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ContaCorrente conta = Session["Contacorrente"] as ContaCorrente;
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             lblLimite.Text = "Você possui R$ 900,00 de limite para o empréstimo.";
             if (!IsPostBack)
             {
