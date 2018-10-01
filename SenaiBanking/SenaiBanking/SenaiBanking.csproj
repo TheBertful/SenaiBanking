@@ -103,7 +103,7 @@
     </Compile>
     <Compile Include="Models\Banco.cs" />
     <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Models\ContaContabil.cs" />
+    <Compile Include="Models\IContaContabil.cs" />
     <Compile Include="Models\ContaContabilEmprestimo.cs" />
     <Compile Include="Models\ContaContabilInvestimento.cs" />
     <Compile Include="Models\ContaCorrente.cs" />
