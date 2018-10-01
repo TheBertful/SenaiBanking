@@ -16,8 +16,8 @@ namespace SenaiBanking.Views
             if(conta != null)
             {
                 txtNumeroConta.Text = conta.Numero.ToString();
-                txtMsgError.Visible = false;
-                txtMsg.Visible = false;
+                lblMsgError.Visible = false;
+                lblMsg.Visible = false;
 
                 if(!IsPostBack)
                 {
@@ -46,26 +46,26 @@ namespace SenaiBanking.Views
                         gvdExtrato.DataSource = resultado;
                         gvdExtrato.DataBind();
 
-                        txtMsg.Visible = true;
-                        txtMsg.Text = "Movimentações da conta referente as dias "+DataIni.ToString()+ " até " +DataFim.ToString();
+                        lblMsg.Visible = true;
+                        lblMsg.Text = "Movimentações da conta referente as dias "+DataIni.ToString()+ " até " +DataFim.ToString();
                     }
                     else
                     {
-                        txtMsgError.Visible = true;
-                        txtMsgError.Text = "Verifique se a data de Inicio é menor que a Data Final...";
+                        lblMsgError.Visible = true;
+                        lblMsgError.Text = "Verifique se a data de Inicio é menor que a Data Final...";
                     }
                 }
                 else
                 {
-                    txtMsgError.Visible = true;
-                    txtMsgError.Text = "Verifique se as datas estão corretas...";
+                    lblMsgError.Visible = true;
+                    lblMsgError.Text = "Verifique se as datas estão corretas...";
                 }  
             }
             catch(Exception error)
             {
                 Console.WriteLine(error);
-                txtMsgError.Visible = true;
-                txtMsgError.Text = "Verifique se todos os campos estão preenchidos...";
+                lblMsgError.Visible = true;
+                lblMsgError.Text = "Verifique se todos os campos estão preenchidos...";
             }     
         }
 

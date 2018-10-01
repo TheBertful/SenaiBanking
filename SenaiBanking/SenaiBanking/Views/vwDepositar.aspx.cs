@@ -15,8 +15,8 @@ namespace SenaiBanking.Views
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             if (conta != null)
             {
-                txtMsg.Visible = false;
-                txtMsgError.Visible = false;
+                lblMsg.Visible = false;
+                lblMsgError.Visible = false;
                 txtNumeroConta.Text = conta.Numero.ToString();
             }
             else
@@ -36,19 +36,19 @@ namespace SenaiBanking.Views
                 if (valor > 0)
                 {
                     conta.Depositar(valor);
-                    txtMsg.Visible = true;
-                    txtMsg.Text = "O deposito foi realizado com sucesso no valor de R$" + Math.Round(valor, 2) + " | Seu saldo atual é de R$" + Math.Round(conta.Saldo, 2);
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "O deposito foi realizado com sucesso no valor de R$" + Math.Round(valor, 2) + " | Seu saldo atual é de R$" + Math.Round(conta.Saldo, 2);
                 }
                 else
                 {
-                    txtMsgError.Visible = true;
-                    txtMsgError.Text = "Não foi possível realizar o seu deposito, digite um Valor válido";
+                    lblMsgError.Visible = true;
+                    lblMsgError.Text = "Não foi possível realizar o seu deposito, digite um Valor válido";
                 }
             }
             catch(Exception erro)
             {
-                txtMsgError.Visible = true;
-                txtMsgError.Text = "Não foi possível realizar o seu deposito, verifique o campo Valor";
+                lblMsgError.Visible = true;
+                lblMsgError.Text = "Não foi possível realizar o seu deposito, verifique o campo Valor";
             }
 
         }
