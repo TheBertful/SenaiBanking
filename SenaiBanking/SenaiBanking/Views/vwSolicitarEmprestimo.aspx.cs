@@ -107,12 +107,12 @@ namespace SenaiBanking.Views
             double valor = Convert.ToDouble(txtValor.Text);
             List<Parcela> parcelas = new List<Parcela>();
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
-            List<Emprestimo> emprestimos = Session["Emprestimos"] as List<Emprestimo>;
+            //List<Emprestimo> emprestimos = Session["Emprestimos"] as List<Emprestimo>;
             conta.Saldo = conta.Saldo + Convert.ToDouble(txtValor.Text);
 
             //Criação do objeto emprestimo
             Emprestimo emp = new Emprestimo();
-            emp.Id = emprestimos != null ? emprestimos.Count() + 1 : 1;
+            emp.Id = conta.ListarEmprestimos() != null ? conta.ListarEmprestimos().Count() + 1 : 1;
             emp.Valor = Convert.ToDouble(txtValor.Text);
                 //Usa a conta que esta na Session logada para o emprestimo
                 emp.Conta = conta;

@@ -88,15 +88,19 @@ namespace SenaiBanking.Views
             }
             if (emprestimo != null)
             {
-                if(emprestimo.FormaPagamento.Equals("Boleto Bancario"))
+                if(emprestimo.FormaPagamento.Equals("Boleto"))
                 {
+                    gdvParcelasDebitoEmConta.DataSource = null;
                     gdvParcelasBoleto.DataSource = dt;
                     gdvParcelasBoleto.DataBind();
+                    gdvParcelasDebitoEmConta.DataBind();
                     PopulateGridEmprestimos();
                 } else
                 {
+                    gdvParcelasBoleto.DataSource = null;
                     gdvParcelasDebitoEmConta.DataSource = dt;
                     gdvParcelasDebitoEmConta.DataBind();
+                    gdvParcelasBoleto.DataBind();
                     PopulateGridEmprestimos();
                 }
                 

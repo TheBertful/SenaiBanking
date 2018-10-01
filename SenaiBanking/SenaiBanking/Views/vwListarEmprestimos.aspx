@@ -18,7 +18,8 @@
             </div>
             <br />
             <div>
-            <asp:GridView ID="gdvEmprestimos" runat="server" CssClass="table-light text-center col-6" AutoGenerateColumns="False" OnRowCommand="gdvEmprestimos_RowCommand">
+            <asp:GridView ID="gdvEmprestimos" runat="server" CssClass="table-light text-center col-6"
+                AutoGenerateColumns="False" OnRowCommand="gdvEmprestimos_RowCommand">
                 <Columns>
                     <asp:TemplateField HeaderText="Numero">
                         <EditItemTemplate>
@@ -119,15 +120,49 @@
                     </Columns>
                 </asp:GridView>
             </div>
-            <asp:GridView ID="gdvParcelasDebitoEmConta" runat="server" AutoGenerateColumns="False">
+            <div>
+            <asp:GridView ID="gdvParcelasDebitoEmConta" runat="server" AutoGenerateColumns="False" CssClass="table-light text-center col-6" >
                 <Columns>
-                    <asp:BoundField DataField="Numero" HeaderText="Numero" />
-                    <asp:BoundField DataField="Status" HeaderText="Status" />
-                    <asp:BoundField DataField="Valor" HeaderText="Valor" />
-                    <asp:BoundField DataField="Data" HeaderText="Vencimento" />
-                    <asp:ButtonField HeaderText="Operações" Text="Pagar antecipado" />
+                    <asp:TemplateField HeaderText="Numero">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtNumeroDC" runat="server" Text='<%# Bind("Numero") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblNumeroDC" runat="server" Text='<%# Bind("Numero") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Status">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtStatusDC" runat="server" Text='<%# Bind("Status") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblStatusDC" runat="server" Text='<%# Bind("Status") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Valor">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtValotDC" runat="server" Text='<%# Bind("Valor") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblValorDC" runat="server" Text='<%# Bind("Valor") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Vencimento">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtDataDC" runat="server" Text='<%# Bind("Vencimento") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblDataDC" runat="server" Text='<%# Bind("Vencimento") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Operações" ShowHeader="False">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="btnPagar" runat="server" CausesValidation="false" CommandName="" Text="Pagar antecipado"></asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
+                </div>
         </form>
     </div>
 </body>
