@@ -16,12 +16,12 @@ namespace SenaiBanking.Views
 
         protected void btnTesouro_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/vwAplicacoes.aspx");
+           
         }
 
         protected void btnCDB_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/vwAplicacoes.aspx");
+            
         }
 
         protected void btnCdb_Click(object sender, EventArgs e)
@@ -31,12 +31,12 @@ namespace SenaiBanking.Views
 
         protected void btnPoupanca_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/vwAplicacoes.aspx");
+            Response.Redirect("~/Views/Aplicacoes.aspx");
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/vwInvestimentos.aspx");
+            Response.Redirect("~/Views/Investimentos.aspx");
         }
     }
 }
