@@ -10,22 +10,25 @@ namespace SenaiBanking.Models
         // Valor é herdado de Transacao
         public List<Parcela> Parcelas { get; set; }
         public string FormaPagamento { get; set; }
-        
-        // Verifica as parcelas do empréstimo, se pelo menos uma estiver pendente, ele está pendente
-        public bool IsPendente()
+        public double Limite { get; set; }
+        public ContaContabilEmprestimo ContaContabil { get; set; }
+        public bool Pendente // Indica se há parcelas pendentes
         {
-            foreach (Parcela parcela in Parcelas)
+            get
             {
-                if (parcela.Status.Equals("Pendente"))
+                foreach (Parcela parcela in Parcelas)
                 {
-                    return true;
+                    if (parcela.Status.Equals("Pendente"))
+                    {
+                        return true;
+                    }
                 }
+                return false;
             }
-            return false;
         }
 
         // Quitar uma parcela específica deste empréstimo, adiciona nas transacoes
-        public void QuitarParcela(Parcela p)
+        public void PagarParcela(Parcela p)
         {
             p.Status = "Pago";
             Transacao t = new Transacao()
@@ -40,12 +43,12 @@ namespace SenaiBanking.Models
         }
 
         // Quitar todas as parcelas
-        public void QuitarTudo()
+        public void PagarTotal()
         {
             foreach (Parcela p in Parcelas)
             {
-                QuitarParcela(p);
-            } 
+                PagarParcela(p);
+            }
         }
 
         public double ValorPendente()

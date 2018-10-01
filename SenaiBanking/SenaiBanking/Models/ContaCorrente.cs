@@ -108,7 +108,7 @@ namespace SenaiBanking.Models
         {
             // Inserir na lista da contaContabil, e na lista de transações, e fazer as relações bilaterais
             // Se saldo for suficiente, instanciar uma Transação de aplicação(p/ extrato) e incluir na lista de transações o investimento em si
-            if(SaldoSuficiente(investimento.Valor))
+            if(SaldoSuficiente(investimento.ValorInicial))
             {
                 investimento.Status = "Aplicado";
                 investimento.Conta = this;
@@ -120,7 +120,7 @@ namespace SenaiBanking.Models
                 {
                     Tipo = "Aplicação",
                     Conta = this,
-                    Valor = - investimento.Valor,
+                    Valor = - investimento.ValorInicial,
                     Data = DateTime.Today,
                     Descricao = "Aplicação feita no investimento '" + investimento.Descricao + "'"
                 };
@@ -128,6 +128,7 @@ namespace SenaiBanking.Models
             }
         }
 
+        // Resgata o valor integral do investimento
         public void ResgatarInvestimento(Investimento investimento)
         {
             // Não precisa remover da lista da ContaContabil, status resgatado na lista Transacoes
@@ -135,6 +136,7 @@ namespace SenaiBanking.Models
             if (investimento.Status.Equals("Aplicado"))
             {
                 investimento.Status = "Resgatado";
+                investimento.Valor = investimento.CalcularRendimentoFinal();
                 Transacao t = new Transacao()
                 {
                     Tipo = "Resgate",
@@ -153,20 +155,10 @@ namespace SenaiBanking.Models
         {
             // Adicionar na lista da conta contábil e de transacoes da conta
             // Atualizar saldo
-
-        }
-
-        // Paga parcela de empréstimo
-        public void PagarParcela(Parcela p)
-        {
-            // Atualizar conta contábil não é necessário, apenas criar transação de pagamento de parcelas
-
-        }
-
-        // Paga empréstimo todo
-        public void PagarEmprestimo(Emprestimo e)
-        {
-            // Atualizar conta contábil não é necessário, pelo cálculo
+            // Na tela de execução, instanciar o Emprestimo com valor, forma de pagamento lido das boxes, etc
+            // Após confirmação e geração de Parcelas, adiciona-las à LIST parcelas do objeto empréstimo
+            emprestimo.Conta = this;
+            
         }
 
         // Retorna os investimentos vinculados à conta
@@ -216,11 +208,12 @@ namespace SenaiBanking.Models
             List<Emprestimo> pendentes = new List<Emprestimo>();
             foreach (Emprestimo e in emprestimos)
             {
-                if (e.IsPendente()) pendentes.Add(e);
+                if (e.Pendente) pendentes.Add(e);
             }
             return pendentes;
         }
 
+        // Verifica se o saldo é suficiente para o valor ser retirado para alguma operação
         private bool SaldoSuficiente(double valor)
         {
             return valor <= Saldo + Limite;
