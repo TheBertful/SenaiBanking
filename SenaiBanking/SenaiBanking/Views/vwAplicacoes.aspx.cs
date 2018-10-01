@@ -38,16 +38,18 @@ namespace SenaiBanking.Views
             }
             else if (Convert.ToDouble(txtValorAplicar.Text) > 0)
             {
-                InvestimentoPoupanca investimentoPoupanca = new InvestimentoPoupanca();
+                InvestimentoPoupanca investimentoPoupanca = new InvestimentoPoupanca()
+                {
+                    ValorInicial = Convert.ToDouble(txtValorAplicar.Text),
+                    Data = DateTime.Now,
+                    Tipo = "Investimento",
 
-                investimentoPoupanca.ValorInicial = Convert.ToDouble(txtValorAplicar.Text);
-                investimentoPoupanca.Data = DateTime.Now;
+
+                };
 
                 conta.AplicarInvestimento(investimentoPoupanca);
-
-
                 lblAviso.Text = Convert.ToString(conta.Saldo);
-
+                Session["ContaCorrente"] = conta;
 
          //       Response.Redirect("~Views/vwAplicacoes.aspx");
 
