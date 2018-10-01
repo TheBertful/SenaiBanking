@@ -18,7 +18,7 @@ namespace SenaiBanking.Views
             {
                 txtNumeroConta.Text = conta.Numero.ToString();
                 lblSaldoAtual.Text = Convert.ToString(conta.Saldo);
-              //  lblData.Text = DateTime.Now();
+                lblData.Text = Convert.ToString(DateTime.Now);
             }
             else
             {
@@ -35,9 +35,20 @@ namespace SenaiBanking.Views
             }
             else if (Convert.ToDouble(txtValorAplicar.Text) > 0)
             {
-              //  conta.AplicarInvestimento();
+                ContaCorrente contac = new ContaCorrente();
+                InvestimentoPoupanca investimentoPoupanca = new InvestimentoPoupanca();
+
+                investimentoPoupanca.ValorInicial = Convert.ToDouble(txtValorAplicar.Text);
+                investimentoPoupanca.Data = DateTime.Now;
+
+                contac.Saldo = Convert.ToDouble(txtValorAplicar.Text) - contac.Saldo;
+
+                lblAviso.Text = lblSaldoAtual.Text;
+         //       Response.Redirect("~Views/vwAplicacoes.aspx");
+
+
             }
-           
+
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
