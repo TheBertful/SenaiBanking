@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SenaiBanking.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,12 @@ namespace SenaiBanking.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+
+            if(conta != null)
+            {
+                txtNumeroConta.Text = conta.Numero.ToString();
+            }
 
         }
 
@@ -31,12 +38,12 @@ namespace SenaiBanking.Views
 
         protected void btnPoupanca_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Aplicacoes.aspx");
+            Response.Redirect("~/Views/vwAplicacoes.aspx");
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Investimentos.aspx");
+            Response.Redirect("~/Views/vwInvestimentos.aspx");
         }
     }
 }

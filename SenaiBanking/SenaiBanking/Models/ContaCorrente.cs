@@ -8,12 +8,13 @@ namespace SenaiBanking.Models
     public class ContaCorrente
     {
         public int Id { get; set; } // Banco de dados
-        public Cliente ClienteProp { get; set; }
-        public string Numero { get; set; }
-        public double Saldo { get; set; }
-        public double Limite { get; set; }
-        public string Tipo { get; set; }
-        public List<Transacao> Transacoes { get; set; }
+        public Cliente ClienteProp { get; set; } // Referência ao cliente, para login
+        public string Numero { get; set; } // Número da conta
+        public double Saldo { get; set; } // Saldo atual da conta
+        public double Limite { get; set; } // Limite de crédito disponível
+        public string Tipo { get; set; } // Tipo da conta, para eventual valor padrão na criação
+        public List<Transacao> Transacoes { get; set; } // Acumulado de transações feitas pela conta
+        public Banco BancoProp { get; set; }
 
         public void Sacar(double valor)
         {
@@ -103,20 +104,53 @@ namespace SenaiBanking.Models
 
         public void AplicarInvestimento(Investimento investimento)
         {
-            // TODO: Inserir na lista da contaContabil, e na lista de transações, após instanciar
-            // TODO: Atualizar saldo ou não* decidir isso
+            // Inserir na lista da contaContabil, e na lista de transações, e fazer as relações bilaterais
+            // Se saldo for suficiente, instanciar uma Transação de aplicação(p/ extrato) e incluir na lista de transações o investimento em si
+            if(SaldoSuficiente(investimento.Valor))
+            {
+                investimento.Status = "Aplicado";
+                investimento.Conta = this;
+                Transacoes.Add(investimento);
+                investimento.ContaContabil = BancoProp.ContaInvestimento;
+                investimento.ContaContabil.Investimentos.Add(investimento);
+                
+                Transacao t = new Transacao()
+                {
+                    Tipo = "Aplicação",
+                    Conta = this,
+                    Valor = -investimento.Valor,
+                    Data = DateTime.Today,
+                    Descricao = "Aplicação feita no investimento '" + investimento.Descricao + "'"
+                };
 
+            }
         }
 
         public void ResgatarInvestimento(Investimento investimento)
         {
-            // TODO: Remover da lista da ContaContabil, status resgatado talvez
+            // Não precisa remover da lista da ContaContabil, status resgatado na lista Transacoes
+
         }
 
         // Realiza a solicitação de um empréstimo
         public void SolicitarEmprestimo(Emprestimo emprestimo)
         {
+            // Adicionar na lista da conta contábil e de transacoes da conta
+            // Atualizar saldo
 
+        }
+
+        // Paga parcela de empréstimo
+        public void PagarParcela(Parcela p)
+        {
+            // Atualizar conta contábil não é necessário, apenas criar transação de pagamento de parcelas
+
+        }
+
+        // Paga empréstimo todo
+        public void PagarEmprestimo(Emprestimo e)
+        {
+            // Atualizar conta contábil não é necessário, pelo cálculo
         }
 
         // Retorna os investimentos vinculados à conta
