@@ -32,9 +32,18 @@ namespace SenaiBanking.Views
                 Senha = "123"
             };
             Session["Cliente2"] = cliente2;
+            ContaContabilEmprestimo cce = new ContaContabilEmprestimo()
+            {
+                Emprestimos = new List<Emprestimo>()
+            };
+            ContaContabilInvestimento cci = new ContaContabilInvestimento()
+            {
+                Investimentos = new List<Investimento>()
+            };
 
-            Session["Emprestimos"] = new List<Emprestimo>();
-            Session["Transacao"] = new List<Transferencia>();
+            Session["Emprestimos"] = cce;
+            Session["Investimentos"] = cci;
+
         }
 
         protected void btnEntrar_Click(object sender, EventArgs e)

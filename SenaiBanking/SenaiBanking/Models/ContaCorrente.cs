@@ -25,7 +25,7 @@ namespace SenaiBanking.Models
                 {
                     Valor = -valor,
                     Conta = this,
-                    Data = DateTime.Today,
+                    Data = DateTime.Now,
                     Tipo = "Saque",
                     Descricao = "Saque realizado"
                 };
@@ -42,7 +42,7 @@ namespace SenaiBanking.Models
             {
                 Valor = valor,
                 Conta = this,
-                Data = DateTime.Today,
+                Data = DateTime.Now,
                 Tipo = "Depósito",
                 Descricao = "Depósito realizado"
             };
@@ -56,7 +56,7 @@ namespace SenaiBanking.Models
         {
             if (SaldoSuficiente(valor))
             {
-                DateTime data = DateTime.Today;
+                DateTime data = DateTime.Now;
                 Transferencia transferencia = new Transferencia()
                 {
                     Valor = -valor,

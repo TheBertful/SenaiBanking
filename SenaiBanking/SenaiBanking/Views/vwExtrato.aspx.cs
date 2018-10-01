@@ -42,12 +42,12 @@ namespace SenaiBanking.Views
                     int result1 = DateTime.Compare(DataFim, DataIni);
                     if (((result < 0) && (result1 > 0)) || (result1 == 0))
                     {
-                        var resultado = conta.Transacoes.Where(x => x.Data >= DataIni.Date).Where(y => y.Data <= DataFim.Date);
+                        var resultado = conta.Transacoes.Where(x => x.Data.Date >= DataIni.Date).Where(y => y.Data.Date <= DataFim.Date);
                         gvdExtrato.DataSource = resultado;
                         gvdExtrato.DataBind();
 
                         txtMsg.Visible = true;
-                        txtMsg.Text = "Deu bom";
+                        txtMsg.Text = "Movimentações da conta referente as dias "+DataIni.ToString()+ " até " +DataFim.ToString();
                     }
                     else
                     {
