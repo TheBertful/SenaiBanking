@@ -33,8 +33,28 @@ namespace SenaiBanking.Views
             };
             Session["Cliente2"] = cliente2;
 
-            Session["Emprestimos"] = new List<Emprestimo>();
-            Session["Transacao"] = new List<Transferencia>();
+            // Instanciação de Banco e Contas contábeis
+            Banco banco = new Banco()
+            {
+                Nome = "Banco Exemplo"
+            };
+            ContaContabilEmprestimo cce = new ContaContabilEmprestimo()
+            {
+                Emprestimos = new List<Emprestimo>(),
+                BancoProp = banco
+            };
+            ContaContabilInvestimento cci = new ContaContabilInvestimento()
+            {
+                Investimentos = new List<Investimento>(),
+                BancoProp = banco
+            };
+            banco.ContaEmprestimo = cce;
+            banco.ContaInvestimento = cci;
+
+            Session["Emprestimos"] = cce;
+            Session["Investimentos"] = cci;
+            Session["Banco"] = banco;
+
         }
 
         protected void btnEntrar_Click(object sender, EventArgs e)

@@ -121,7 +121,10 @@ namespace SenaiBanking.Views
                 Descricao = txtDescricao.Text,
                 Tipo = ddlTipoEmprestimo.SelectedValue,
                 FormaPagamento = ddlFormaPagamento.SelectedValue,
-                Parcelas = new List<Parcela>()
+                Parcelas = new List<Parcela>(),
+                Limite = 900,
+                NumParcelas = 0,
+                TaxaJuros = 5
             };
 
             if (valor != 0)
@@ -142,9 +145,10 @@ namespace SenaiBanking.Views
                     p.Valor = Math.Round(parcela, 2);
                     p.Status = "Pendente";
                     p.Vencimento = dataAtual.AddMonths(i + 1);
-                    p.Numero = (i + 1).ToString() + " / " + parcelas.ToString();
+                    p.Numero = String.Concat((i + 1).ToString(), " / ", quantasParcelas.ToString());
                     emp.Parcelas.Add(p);
                 }
+                emp.NumParcelas = emp.Parcelas.Count();
             }
             else
             {
@@ -156,7 +160,7 @@ namespace SenaiBanking.Views
             Session["Emprestimos"] = emprestimos;
             Session["ContaCorrente"] = conta;
             lblAviso.Text = "Emprestimo realizado com sucesso! Seu novo saldo é de: R$ " + conta.Saldo.ToString();
-
+            conta.SolicitarEmprestimo(emp);
 
             //Deixa apenas o campo voltar e o texto informando que o emprestimo foi realizado
             gdvParcelas.Visible = false;
