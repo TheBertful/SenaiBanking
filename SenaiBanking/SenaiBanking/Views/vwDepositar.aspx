@@ -15,10 +15,11 @@
                     <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
                 </div>
         <div class="container">
+             <div>
+                <asp:TextBox class="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsg" runat="server" role="alert"></asp:TextBox>
+                <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsgError" runat="server" role="alert"></asp:TextBox>
+             </div>
              <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
-                 <div>
-                     <asp:TextBox class="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsg" runat="server" role="alert"></asp:TextBox>
-                 </div>
                 <div class="ajuste col-lg-12 col-md-6 col-sm-12 col-xl-12">
                     <asp:Label ID="lblDeposito" runat="server" Text="Valor "></asp:Label>
                     <asp:TextBox ID="txtDeposito" runat="server" class="form-control" Width="20%"></asp:TextBox>

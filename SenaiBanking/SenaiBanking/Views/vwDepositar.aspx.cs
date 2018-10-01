@@ -16,6 +16,7 @@ namespace SenaiBanking.Views
             if (conta != null)
             {
                 txtMsg.Visible = false;
+                txtMsgError.Visible = false;
             }
             else
             {
@@ -32,13 +33,12 @@ namespace SenaiBanking.Views
                 conta.Transacoes = new List<Transacao>();
                 conta.Depositar(valor);
                 txtMsg.Visible = true;
-                txtMsg.Text = "O deposito foi realizado com sucesso, R$" + valor + " | Seu saldo atual é de R$" + conta.Saldo;
+                txtMsg.Text = "O deposito foi realizado com sucesso no valor de R$" + Math.Round(valor,2) + " | Seu saldo atual é de R$" + Math.Round(conta.Saldo,2);
             }
             catch(Exception erro)
             {
-                Console.WriteLine(erro);
-                txtMsg.Visible = true;
-                txtMsg.Text = "Não foi possível realizar o seu deposito";
+                txtMsgError.Visible = true;
+                txtMsgError.Text = "Não foi possível realizar o seu deposito";
             }
 
         }
