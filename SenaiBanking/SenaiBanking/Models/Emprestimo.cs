@@ -24,5 +24,27 @@ namespace SenaiBanking.Models
             return false;
         }
 
+        // Quitar uma parcela específica deste empréstimo, adiciona nas transacoes
+        public void QuitarParcela(Parcela p)
+        {
+            p.Status = "Pago";
+            Transacao t = new Transacao()
+            {
+                Tipo = "Pagamento",
+                Valor = -p.Valor,
+                Data = DateTime.Today,
+                Conta = this.Conta,
+                Descricao = "Pagamento parcela: " + p.Numero + "/" + Parcelas.Count
+            };
+        }
+
+        // Quitar todas as parcelas
+        public void QuitarTudo()
+        {
+            foreach (Parcela p in Parcelas)
+            {
+                QuitarParcela(p);
+            } 
+        }
     }
 }
