@@ -18,8 +18,12 @@ namespace SenaiBanking.Views
                 txtNumeroConta.Text = conta.Numero.ToString();
                 txtMsgError.Visible = false;
                 txtMsg.Visible = false;
-            }
 
+                if(!IsPostBack)
+                {
+
+                }
+            }
         }
 
         protected void btnVerificar_Click(object sender, EventArgs e)
@@ -30,17 +34,39 @@ namespace SenaiBanking.Views
                 DateTime DataIni = Convert.ToDateTime(DtaInicio.SelectedDate.ToShortDateString());
                 DateTime DataFim = Convert.ToDateTime(DtaFim.SelectedDate.ToShortDateString());
 
-                gvdExtrato.DataSource = conta.Transacoes;
-                gvdExtrato.DataBind();
+                DateTime DataCompara = Convert.ToDateTime("01/01/0001");
+                int result = DateTime.Compare(DataIni, DataCompara);
+                if (result != 0)
+                {
+                    result = DateTime.Compare(DataIni, DataFim);
+                    int result1 = DateTime.Compare(DataFim, DataIni);
+                    if (((result < 0) && (result1 > 0)) || (result1 == 0))
+                    {
+                        var resultado = conta.Transacoes.Where(x => x.Data >= DataIni.Date).Where(y => y.Data <= DataFim.Date);
+                        gvdExtrato.DataSource = resultado;
+                        gvdExtrato.DataBind();
+
+                        txtMsg.Visible = true;
+                        txtMsg.Text = "Deu bom";
+                    }
+                    else
+                    {
+                        txtMsgError.Visible = true;
+                        txtMsgError.Text = "Verifique se a data de Inicio é menor que a Data Final...";
+                    }
+                }
+                else
+                {
+                    txtMsgError.Visible = true;
+                    txtMsgError.Text = "Verifique se as datas estão corretas...";
+                }  
             }
             catch(Exception error)
             {
                 Console.WriteLine(error);
+                txtMsgError.Visible = true;
                 txtMsgError.Text = "Verifique se todos os campos estão preenchidos...";
-            }
-           
-
-            
+            }     
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)

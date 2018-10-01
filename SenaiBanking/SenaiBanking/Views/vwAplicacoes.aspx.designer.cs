@@ -76,6 +76,15 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.WebControls.TextBox txtValorAplicar;
         
         /// <summary>
+        /// Controle txtMsgError.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMsgError;
+        
+        /// <summary>
         /// Controle lblDataAplicacao.
         /// </summary>
         /// <remarks>
