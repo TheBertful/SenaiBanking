@@ -8,7 +8,6 @@ namespace SenaiBanking.Models
     public class Emprestimo : Transacao
     {
         // Valor é herdado de Transacao
-        public int Id { get; set; }
         public List<Parcela> Parcelas { get; set; } // Conjunto de parcelas com seus respectivos valores
         public int NumParcelas { get; set; }
         public string FormaPagamento { get; set; } // Boleto ou Débito em conta

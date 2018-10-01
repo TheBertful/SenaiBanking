@@ -7,6 +7,7 @@ namespace SenaiBanking.Models
 {
     public class Transacao
     {
+        public int Id { get; set; }
         public string Tipo { get; set; }
         public double Valor { get; set; }
         public DateTime Data { get; set; }
