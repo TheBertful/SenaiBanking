@@ -29,12 +29,13 @@ namespace SenaiBanking.Views
         {
             try
             {
+                int numeroConta = Convert.ToInt32(txtConta.Text);
                 ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
                 ContaCorrente conta2 = Session["ContaCorrente2"] as ContaCorrente;
                 String texto = txtValor.Text;
                 texto = texto.Replace('.', ',');
                 Double valor = Math.Round(Convert.ToDouble(texto), 2);
-                if (valor <= conta.Saldo)
+                if ((valor <= conta.Saldo) && (Convert.ToUInt32(conta2.Numero) == numeroConta))
                 {
                     if(valor > 0)
                     {
@@ -61,7 +62,7 @@ namespace SenaiBanking.Views
                 else
                 {
                     lblMsgError.Visible = true;
-                    lblMsgError.Text = "Valor informado excede o Saldo...";
+                    lblMsgError.Text = "Valor informado excede o Saldo, ou numero da conta é inválido...";
                 }
             }
             catch(Exception error)

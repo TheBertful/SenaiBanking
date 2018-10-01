@@ -43,7 +43,7 @@ namespace SenaiBanking.Views
 
                 contac.Saldo = Convert.ToDouble(txtValorAplicar.Text) - contac.Saldo;
 
-                lblAviso.Text = lblSaldoAtual.Text;
+                lblAviso.Text = Convert.ToString(contac.Saldo);
          //       Response.Redirect("~Views/vwAplicacoes.aspx");
 
 
