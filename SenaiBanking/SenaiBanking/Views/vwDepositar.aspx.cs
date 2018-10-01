@@ -28,17 +28,27 @@ namespace SenaiBanking.Views
         {
             try
             {
+                String texto = txtDeposito.Text;
+                texto = texto.Replace('.', ',');
                 ContaCorrente conta = Session["contacorrente"] as ContaCorrente;
-                double valor = Convert.ToDouble(txtDeposito.Text);
-                conta.Transacoes = new List<Transacao>();
-                conta.Depositar(valor);
-                txtMsg.Visible = true;
-                txtMsg.Text = "O deposito foi realizado com sucesso no valor de R$" + Math.Round(valor,2) + " | Seu saldo atual é de R$" + Math.Round(conta.Saldo,2);
+                double valor = Math.Round(Convert.ToDouble(texto), 2);
+                if (valor > 0)
+                {
+                    conta.Transacoes = new List<Transacao>();
+                    conta.Depositar(valor);
+                    txtMsg.Visible = true;
+                    txtMsg.Text = "O deposito foi realizado com sucesso no valor de R$" + Math.Round(valor, 2) + " | Seu saldo atual é de R$" + Math.Round(conta.Saldo, 2);
+                }
+                else
+                {
+                    txtMsgError.Visible = true;
+                    txtMsgError.Text = "Não foi possível realizar o seu deposito, digite um Valor válido";
+                }
             }
             catch(Exception erro)
             {
                 txtMsgError.Visible = true;
-                txtMsgError.Text = "Não foi possível realizar o seu deposito";
+                txtMsgError.Text = "Não foi possível realizar o seu deposito, verifique o campo Valor";
             }
 
         }
