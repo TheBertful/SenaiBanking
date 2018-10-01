@@ -61,13 +61,16 @@ namespace SenaiBanking.Views
                     txtMsgError.Text = "O valor deve ser superior a zero(0.00)";
                 }
             }
-            catch
-            {
 
+            catch (Exception erro)
+            {
+                txtMsgError.Visible = true;
+                txtMsgError.Text = "Não foi possível realizar sua aplicação, verifique o campo Valor";
             }
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
+
         {
             Response.Redirect("~/Views/vwTiposInvestimento.aspx");
         }
