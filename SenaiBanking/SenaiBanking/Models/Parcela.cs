@@ -11,5 +11,6 @@ namespace SenaiBanking.Models
         public double Valor { get; set; } // Valor a ser pago
         public string Numero { get; set; } // Numero ordenado da Parcela
         public string Status { get; set; } // Pode ser "Pendente" ou "Pago", representa se a parcela foi paga
+        public Emprestimo EmprestimoProp { get; set; }
     }
 }
