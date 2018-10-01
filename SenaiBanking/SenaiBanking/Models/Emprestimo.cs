@@ -46,5 +46,15 @@ namespace SenaiBanking.Models
                 QuitarParcela(p);
             } 
         }
+
+        public double ValorPendente()
+        {
+            double result = 0;
+            foreach (Parcela p in Parcelas)
+            {
+                if (p.Status.Equals("Pendente")) result += p.Valor;
+            }
+            return result;
+        }
     }
 }

@@ -103,21 +103,36 @@ namespace SenaiBanking.Models
 
         public void AplicarInvestimento(Investimento investimento)
         {
-            // TODO: Inserir na lista da contaContabil, e na lista de transações, após instanciar
-            // TODO: Atualizar saldo ou não* decidir isso
+            // Inserir na lista da contaContabil, e na lista de transações, após instanciar
+            // Atualizar saldo ou não* decidir isso
 
         }
 
         public void ResgatarInvestimento(Investimento investimento)
         {
-            // TODO: Remover da lista da ContaContabil, status resgatado talvez
+            // Remover da lista da ContaContabil, status resgatado na lista Transacoes
+
         }
 
         // Realiza a solicitação de um empréstimo
         public void SolicitarEmprestimo(Emprestimo emprestimo)
         {
+            // Adicionar na lista da conta contábil e de transacoes da conta
+            // Atualizar saldo
+        }
+
+        // Paga parcela de empréstimo
+        public void PagarParcela(Parcela p)
+        {
+            // Atualizar conta contábil
+        }
+
+        // Paga empréstimo todo
+        public void PagarEmprestimo(Emprestimo e)
+        {
 
         }
+
 
         // Retorna os investimentos vinculados à conta
         public List<Investimento> ListarInvestimentos()
