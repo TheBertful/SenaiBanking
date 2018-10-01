@@ -11,6 +11,10 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
+             <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
+                    <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
+                    <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
+                </div>
             <br />
             <div class="col-lg-12 col-sm-12 col-md-12">
                 <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
