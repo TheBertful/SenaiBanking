@@ -32,7 +32,7 @@ namespace SenaiBanking.Views
             {
                 ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
                 DateTime DataIni = Convert.ToDateTime(DtaInicio.SelectedDate.ToShortDateString());
-                DateTime DataFim = Convert.ToDateTime(DtaFim.SelectedDate.ToShortDateString());
+                DateTime DataFim = Convert.ToDateTime(DtaFim.SelectedDate.AddHours(23).AddMinutes(59).AddSeconds(59));
 
                 DateTime DataCompara = Convert.ToDateTime("01/01/0001");
                 int result = DateTime.Compare(DataIni, DataCompara);
