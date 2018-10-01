@@ -16,7 +16,7 @@ namespace SenaiBanking.Views
             {
        
                 txtNumeroConta.Text = conta.Numero.ToString();
-                lblSaldoAtual.Text = Convert.ToString(conta.Saldo);
+                lblSaldoAtual.Text = Convert.ToString("R$ "+conta.Saldo);
                 txtMsgError.Visible = false;
                 lblData.Text = Convert.ToString(DateTime.Now);
             }
@@ -35,12 +35,12 @@ namespace SenaiBanking.Views
                 double valor = Convert.ToDouble(texto);
                 ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
 
-                if (Math.Round(Convert.ToDouble(texto), 2) > (conta.Saldo))
+                if (Math.Round(Convert.ToDouble(valor), 2) > (conta.Saldo))
                 {
                     txtMsgError.Visible = true;
                     txtMsgError.Text = "Atenção!! Valor maior que o saldo da conta";
                 }
-                else if (Math.Round(Convert.ToDouble(texto), 2) > 0)
+                else if (Math.Round(Convert.ToDouble(valor), 2) > 0)
                 {
                     InvestimentoPoupanca investimentoPoupanca = new InvestimentoPoupanca()
                     {
@@ -54,7 +54,7 @@ namespace SenaiBanking.Views
 
                     lblSaldoAtual.Text = Convert.ToString(conta.Saldo);
                     txtMsgError.Visible = true;
-                    txtMsgError.Text = "Valor investido: R$ " + texto;
+                    txtMsgError.Text = "Valor investido: R$ " + valor;
                 }
                 else
                 {

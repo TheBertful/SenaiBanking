@@ -19,7 +19,7 @@ namespace SenaiBanking.Views
             if (conta != null)
             {
                 txtNumeroConta.Text = conta.Numero.ToString();
-                lblSaldoAtual.Text = Convert.ToString(conta.Saldo);
+                lblSaldoAtual.Text = Convert.ToString("R$ " + conta.Saldo);
                 txtMsgError.Visible = false;
                 lblData.Text = Convert.ToString(DateTime.Now);
             }
