@@ -36,7 +36,7 @@ namespace SenaiBanking.Views
             List<Emprestimo> lista = conta.ListarEmprestimos();
             if (lista != null)
             {
-                conta.BancoProp.ContaEmprestimo.Emprestimos.ForEach(item => {
+                conta.ListarEmprestimos().ForEach(item => {
                     DataRow dr = dt.NewRow();
                     dr["Id"] = item.Id;
                     dr["Tipo"] = item.Tipo;
@@ -86,9 +86,21 @@ namespace SenaiBanking.Views
                     dt.Rows.Add(dr);
                 });
             }
-            gdvParcelas.DataSource = dt;
-            gdvParcelas.DataBind();
-            PopulateGridEmprestimos();
+            if (emprestimo != null)
+            {
+                if(emprestimo.FormaPagamento.Equals("Boleto Bancario"))
+                {
+                    gdvParcelasBoleto.DataSource = dt;
+                    gdvParcelasBoleto.DataBind();
+                    PopulateGridEmprestimos();
+                } else
+                {
+                    gdvParcelasDebitoEmConta.DataSource = dt;
+                    gdvParcelasDebitoEmConta.DataBind();
+                    PopulateGridEmprestimos();
+                }
+                
+            }
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)

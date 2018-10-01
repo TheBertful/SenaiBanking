@@ -40,12 +40,21 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.WebControls.GridView gdvEmprestimos;
         
         /// <summary>
-        /// Controle gdvParcelas.
+        /// Controle gdvParcelasBoleto.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gdvParcelas;
+        protected global::System.Web.UI.WebControls.GridView gdvParcelasBoleto;
+        
+        /// <summary>
+        /// Controle gdvParcelasDebitoEmConta.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gdvParcelasDebitoEmConta;
     }
 }

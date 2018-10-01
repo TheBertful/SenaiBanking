@@ -77,7 +77,7 @@
             </asp:GridView>
                 </div><br /><br />
             <div>
-                <asp:GridView ID="gdvParcelas" runat="server" CssClass="table-light text-center col-6" AutoGenerateColumns="False">
+                <asp:GridView ID="gdvParcelasBoleto" runat="server" CssClass="table-light text-center col-6" AutoGenerateColumns="False">
                     <Columns>
                         <asp:TemplateField HeaderText="Numero">
                             <EditItemTemplate>
@@ -119,6 +119,7 @@
                     </Columns>
                 </asp:GridView>
             </div>
+            <asp:GridView ID="gdvParcelasDebitoEmConta" runat="server"></asp:GridView>
         </form>
     </div>
 </body>
