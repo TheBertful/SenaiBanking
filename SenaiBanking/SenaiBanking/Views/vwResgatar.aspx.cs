@@ -38,12 +38,12 @@ namespace SenaiBanking.Views
             dt.Columns.Add("ValorTotal", Type.GetType("System.String"));
 
 
-            List<Investimento> lista = conta.ListarInvestimentos();
+            List<Investimento> lista = conta.ListarInvestimentosNaoResgatados();
             if (lista != null)
             {
 
                 int i = 0;
-                conta.ListarInvestimentos().ForEach(item =>
+                lista.ForEach(item =>
                 {
                     DataRow dr = dt.NewRow();
                     dr["Id"] = i;
@@ -90,7 +90,29 @@ namespace SenaiBanking.Views
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+               Investimento investimento = Session["investimento"]as Investimento;
+
+             
+                ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+
+                conta.ResgatarInvestimento(investimento);
+  
+                txtMsgError.Visible = true;
+                txtMsgError.Text = "Valor Resgatado: R$ " + investimento.Valor;
+
+                PopulateGridListarInvestimento();
+
+            }
+
+            catch (Exception)
+            {
+                txtMsgError.Visible = true;
+                txtMsgError.Text = "Não foi possível realizar sua aplicação, verifique o campo Valor";
+            }
         }
+    
 
         protected void gdvResgatarInvestimento_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
@@ -100,13 +122,14 @@ namespace SenaiBanking.Views
         protected void gdvResgatarInvestimento_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
-
-            Investimento investimento = conta.ListarInvestimentos()[Convert.ToInt32(e.CommandArgument)];
+            Investimento investimento = conta.ListarInvestimentosNaoResgatados()[Convert.ToInt32(e.CommandArgument)];
+            investimento.Render();
+            Session["investimento"] = investimento;
 
             txtDescricao.Text = investimento.Descricao;
             txtRendimento.Text = Convert.ToString(investimento.Rendimento);
             txtValorTotal.Text = Convert.ToString(investimento.Valor);
-           
+
         }
     }
 }

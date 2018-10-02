@@ -71,12 +71,16 @@
                     <div>
                         <asp:Label ID="lblAviso" runat="server"></asp:Label>
                     </div>
-                    <div>
-                        <asp:Label ID="lblCCE" runat="server" Text="Saldo atual da Conta Contábil de Empréstimo: "></asp:Label>
-                        <asp:Label ID="lblContaContabilEmprestimo" runat="server"></asp:Label>
+                    <div class="contaContabil">
+                        <div class="form-control">
+                            <asp:Label ID="lblCCE" runat="server" Text="Saldo atual da Conta Contábil de Empréstimo: "></asp:Label>
+                            <asp:Label ID="lblContaContabilEmprestimo" runat="server"></asp:Label>
+                         </div>
                         <br />
-                        <asp:Label ID="lblCCI" runat="server" Text="Saldo atual da Conta Contábil de Investimento: "></asp:Label>
-                        <asp:Label ID="lblContaContabilInvestimento" runat="server"></asp:Label>
+                        <div class="form-control">
+                            <asp:Label ID="lblCCI" runat="server" Text="Saldo atual da Conta Contábil de Investimento: "></asp:Label>
+                            <asp:Label ID="lblContaContabilInvestimento" runat="server"></asp:Label>
+                        </div>
                     </div>
                     
                 </div>
