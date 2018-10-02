@@ -148,32 +148,32 @@ namespace SenaiBanking.Views
                     emp.Parcelas.Add(p);
                 }
                 emp.NumParcelas = emp.Parcelas.Count();
+
+                //Adiciona o emprestimo novo a lista de emprestimos e devolve as informações atualizadas a Session respectiva
+                //Session["Emprestimos"] = emp.ContaContabil;
+                Session["ContaCorrente"] = conta;
+                lblAviso.Text = "Emprestimo realizado com sucesso! Seu novo saldo é de: R$ " + conta.Saldo.ToString();
+                conta.SolicitarEmprestimo(emp);
+
+                //Deixa apenas o campo voltar e o texto informando que o emprestimo foi realizado
+                gdvParcelas.Visible = false;
+                lblLimite.Visible = false;
+                lblQuantidadeParcelas.Visible = false;
+                lblValor.Visible = false;
+                txtValor.Visible = false;
+                btnConcluir.Visible = false;
+                ddlQuantidadeParcelas.Visible = false;
+                lblTipoEmprestimo.Visible = false;
+                ddlTipoEmprestimo.Visible = false;
+                lblDescricao.Visible = false;
+                txtDescricao.Visible = false;
+                lblFormaPagamento.Visible = false;
+                ddlFormaPagamento.Visible = false;
             }
             else
             {
                 lblAviso.Text = "Não é possível fazer emprestimo sem valor!";
             }
-
-            //Adiciona o emprestimo novo a lista de emprestimos e devolve as informações atualizadas a Session respectiva
-            //Session["Emprestimos"] = emp.ContaContabil;
-            Session["ContaCorrente"] = conta;
-            lblAviso.Text = "Emprestimo realizado com sucesso! Seu novo saldo é de: R$ " + conta.Saldo.ToString();
-            conta.SolicitarEmprestimo(emp);
-
-            //Deixa apenas o campo voltar e o texto informando que o emprestimo foi realizado
-            gdvParcelas.Visible = false;
-            lblLimite.Visible = false;
-            lblQuantidadeParcelas.Visible = false;
-            lblValor.Visible = false;
-            txtValor.Visible = false;
-            btnConcluir.Visible = false;
-            ddlQuantidadeParcelas.Visible = false;
-            lblTipoEmprestimo.Visible = false;
-            ddlTipoEmprestimo.Visible = false;
-            lblDescricao.Visible = false;
-            txtDescricao.Visible = false;
-            lblFormaPagamento.Visible = false;
-            ddlFormaPagamento.Visible = false;
         }
 
 

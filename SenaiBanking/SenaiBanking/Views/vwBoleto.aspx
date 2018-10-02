@@ -19,6 +19,10 @@
                 margin-top: 15px;
             }
         }
+        .msg
+        {
+            margin-top:10px;
+        }
     </style>
 </head>
 <body>
@@ -26,6 +30,10 @@
         <div class="container">
             <div class="col-md-12">
                 <img src="../Content/img/boleto.png"/ class="img-fluid" />
+            </div>
+            <div class="col-md-12 text-center msg">
+                <asp:Label ID="lblMsg" runat="server"  CssClass="alert alert-primary col-md-12"></asp:Label><br />
+                <asp:Label ID="lblMsgError" runat="server"  CssClass="alert alert-danger col-md-12"></asp:Label><br /> 
             </div>
             <div class="col-md-12 text-center botoes">
                 <asp:Button ID="btnVoltar" CssClass="btn btn-secondary col-md-4 separador" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
