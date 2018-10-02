@@ -176,7 +176,6 @@ namespace SenaiBanking.Views
             });
             Session["parcela"] = p;
 
-            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             emp.PagarParcela(p);
             Session["ContaCorrente"] = conta;
             PopulateGridParcelas(emp.Id);
