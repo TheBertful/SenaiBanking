@@ -17,7 +17,7 @@ namespace SenaiBanking.Models
             Random r = new Random();
             Vencimento = DateTime.Now.AddYears(r.Next(5,11));
             Indexador = r.NextDouble() * (6.5 - 6) + 6; // Selic atual pra exemplo
-            Taxa = 0.3 + r.NextDouble() * 2;
+            Taxa = 0.3 + r.Next(0, 5) * 0.5;
             Rendimento = Math.Round(Indexador * (Porcentagem / 100), 2);
         }
 

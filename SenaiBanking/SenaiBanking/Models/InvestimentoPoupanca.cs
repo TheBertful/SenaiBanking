@@ -16,6 +16,8 @@ namespace SenaiBanking.Models
             Vencimento = DateTime.Now.AddYears(20);
             Indexador = 6.5; // Selic Atual
             Porcentagem = 70;
+            Taxa = 0;
+            Aniversario = DateTime.Today.AddMonths(1);
             TaxaReferencial = 0.6; // Dados de 2017
             if (Indexador > 8.5)
             {
@@ -38,6 +40,7 @@ namespace SenaiBanking.Models
         {
             double aumento = Math.Round(Valor * ((Rendimento / 12) / 100), 2); // divide no mês
             Valor += aumento;
+            Aniversario = Aniversario.AddMonths(1);
         }
 
     }
