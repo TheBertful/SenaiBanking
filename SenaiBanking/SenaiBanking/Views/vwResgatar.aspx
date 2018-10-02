@@ -14,7 +14,7 @@
         <form id="form1" runat="server">
             <br />
             <div>
-                <asp:GridView ID="gdvResgatarInvestimento" CssClass="table-light text-center col-6" runat="server" AutoGenerateColumns="False"  OnRowCommand="gdvResgatarInvestimento_RowCommand">
+                <asp:GridView ID="gdvResgatarInvestimento" CssClass="table-light text-center col-6" runat="server" AutoGenerateColumns="False" OnRowCommand="gdvResgatarInvestimento_RowCommand">
                     <Columns>
 
                         <asp:TemplateField HeaderText="Descrição">
@@ -57,8 +57,8 @@
                                 <asp:Label ID="lblValorTotal" runat="server" Text='<%# Bind("Valortotal") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                       <asp:TemplateField HeaderText="Operações" ShowHeader="False">
-                           <EditItemTemplate>
+                        <asp:TemplateField HeaderText="Operações" ShowHeader="False">
+                            <EditItemTemplate>
                                 <asp:LinkButton ID="txtSelecionar" runat="server" CausesValidation="false" CommandName="" Text="Render"></asp:LinkButton>
                             </EditItemTemplate>
                             <ItemTemplate>
@@ -81,8 +81,10 @@
                 <br />
                 <asp:TextBox ID="txtValorTotal" runat="server" class="form-control" Width="40%" OnTextChanged="txtValortotal_TextChanged"></asp:TextBox>
                 <br />
+                <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsgError" runat="server" role="alert"></asp:TextBox>
+                <br />
                 <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
-                <asp:Button class="btn btn-secondary" ID="btnConfirmar" runat="server" Text="Confirmar" OnClick="btnConfirmar_Click" />
+                <asp:Button class="btn btn-secondary" ID="btnConfirmar" runat="server" Text="Confirmar Resgate" OnClick="btnConfirmar_Click" />
             </div>
             <br />
         </form>
