@@ -90,7 +90,7 @@ namespace SenaiBanking.Models
             foreach (Transacao t in Transacoes)
             {
                 // Mostrar tudo menos investimentos e empréstimos(pagamentos, resgates, etc sim)
-                if ((!t.Tipo.Equals("Empréstimo") || !t.Tipo.Equals("Investimento")) && (t.Data <= fim && t.Data >= inicio))
+                if ((!t.Tipo.Equals("Empréstimo") || !t.Tipo.Equals("Investimento")) && (t.Data.Date <= fim.Date && t.Data.Date >= inicio.Date))
                 {
                     extrato.Add(t);
                 }
