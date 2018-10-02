@@ -86,12 +86,15 @@ namespace SenaiBanking.Views
             {
                 emprestimo.Parcelas.ForEach(item =>//Adicionar dados respectivos das parcelas as colunas respectivas do datatable
                 {
-                    DataRow dr = dt.NewRow();
-                    dr["Numero"] = item.Numero.ToString();
-                    dr["Status"] = item.Status;
-                    dr["Vencimento"] = item.Vencimento.ToShortDateString();
-                    dr["Valor"] = converteParaMoeda(item.Valor);
-                    dt.Rows.Add(dr);
+                    if (item.Status == "Pendente")
+                    {
+                        DataRow dr = dt.NewRow();
+                        dr["Numero"] = item.Numero.ToString();
+                        dr["Status"] = item.Status;
+                        dr["Vencimento"] = item.Vencimento.ToShortDateString();
+                        dr["Valor"] = converteParaMoeda(item.Valor);
+                        dt.Rows.Add(dr);
+                    }
                 });
     
                 if (emprestimo.FormaPagamento.Equals("Boleto"))//Se emprestimo for pagamento por boleto, os dados do datatabel
