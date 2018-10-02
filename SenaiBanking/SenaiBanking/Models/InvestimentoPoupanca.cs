@@ -36,7 +36,7 @@ namespace SenaiBanking.Models
         // Divisão da Renda gerada por mês
         public override void Render()
         {
-            double aumento = Valor * Rendimento / 12; // divide no mês
+            double aumento = Math.Round(Valor * ((Rendimento / 12) / 100), 2); // divide no mês
             Valor += aumento;
         }
 
