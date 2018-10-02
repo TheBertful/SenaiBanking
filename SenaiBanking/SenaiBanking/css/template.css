@@ -98,6 +98,10 @@
             background-color: #717171 !important;
         }
 
+        .distancia{
+            margin:15px;
+        }
+
         /*DropDown >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
         ul {
             list-style-type: none;
@@ -152,4 +156,5 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
         /* DropDown >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
