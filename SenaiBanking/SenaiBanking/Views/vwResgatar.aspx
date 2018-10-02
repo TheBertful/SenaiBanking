@@ -14,7 +14,7 @@
         <form id="form1" runat="server">
             <br />
             <div>
-                <asp:GridView ID="gdvResgatarInvestimento" CssClass="table-light text-center col-6" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gdvResgatar_SelectedIndexChanged">
+                <asp:GridView ID="gdvResgatarInvestimento" CssClass="table-light text-center col-6" runat="server" AutoGenerateColumns="False"  OnRowCommand="gdvResgatarInvestimento_RowCommand">
                     <Columns>
 
                         <asp:TemplateField HeaderText="Descrição">
@@ -58,8 +58,11 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                        <asp:TemplateField HeaderText="Operações" ShowHeader="False">
+                           <EditItemTemplate>
+                                <asp:LinkButton ID="txtSelecionar" runat="server" CausesValidation="false" CommandName="" Text="Render"></asp:LinkButton>
+                            </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:LinkButton ID="btnSelecionar" runat="server" CausesValidation="false" CommandName="" Text="Selecionar" CommandArgument='<%# Bind("Descricao") %>'></asp:LinkButton>
+                                <asp:LinkButton ID="btnSelecionar" runat="server" CausesValidation="false" CommandName="RowCommand" Text="Render" CommandArgument='<%# Bind("Id") %>'></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

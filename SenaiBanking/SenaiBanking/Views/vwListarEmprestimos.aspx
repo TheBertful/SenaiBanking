@@ -11,6 +11,10 @@
 </head>
 <body>
     <div class="head">
+        <div class="exibirConta">
+            <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
+            <asp:Label ID="txtNumeroConta" runat="server"  class="form-control tamanhoConta"></asp:Label>
+        </div>
         <div class="logo"></div>
         <div class="menu">
             <ul>
