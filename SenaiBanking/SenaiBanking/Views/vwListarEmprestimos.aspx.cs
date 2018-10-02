@@ -31,7 +31,7 @@ namespace SenaiBanking.Views
             dt.Columns.Add("Data", Type.GetType("System.String"));
             dt.Columns.Add("Parcelas", Type.GetType("System.String"));
             //if(emprestimos != null)
-            List<Emprestimo> lista = conta.ListarEmprestimos();
+            List<Emprestimo> lista = conta.ListarEmprestimosPendentes();
             if (lista != null)
             {
                 conta.ListarEmprestimos().ForEach(item =>
