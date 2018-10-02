@@ -28,8 +28,8 @@ namespace SenaiBanking.Views
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             Parcela parcela = Session["parcela"] as Parcela;
-            Emprestimo emprestimo = Session["emprestimo"] as Emprestimo;
-
+ 
+            Emprestimo emprestimo = parcela.EmprestimoProp;
             emprestimo.PagarParcela(parcela);
 
             lblMsg.Visible = true;
