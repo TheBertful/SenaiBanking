@@ -16,6 +16,7 @@
             <div>
             <asp:GridView ID="gdvListarInvestimentos"  CssClass="table-light text-center col-6" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gdvListarInvestimentos_SelectedIndexChanged">
                 <Columns>
+                  
                     <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
                     <asp:BoundField DataField="DataSolicitacao" HeaderText="Data Solicitação" />
                     <asp:BoundField DataField="Rendimento" HeaderText="Rendimento" />
