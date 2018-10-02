@@ -121,7 +121,7 @@
                 </asp:GridView>
             </div>
             <div>
-            <asp:GridView ID="gdvParcelasDebitoEmConta" runat="server" AutoGenerateColumns="False" CssClass="table-light text-center col-6" >
+            <asp:GridView ID="gdvParcelasDebitoEmConta" runat="server" AutoGenerateColumns="False" CssClass="table-light text-center col-6" OnRowCommand="gdvParcelasDebitoEmConta_RowCommand" >
                 <Columns>
                     <asp:TemplateField HeaderText="Numero">
                         <EditItemTemplate>
@@ -157,7 +157,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Operações" ShowHeader="False">
                         <ItemTemplate>
-                            <asp:LinkButton ID="btnPagar" runat="server" CausesValidation="false" CommandName="" Text="Pagar antecipado"></asp:LinkButton>
+                            <asp:LinkButton ID="btnPagar" runat="server" CausesValidation="false" CommandName="" Text="Pagar antecipado" CommandArgument='<%# Bind("Numero") %>'></asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
