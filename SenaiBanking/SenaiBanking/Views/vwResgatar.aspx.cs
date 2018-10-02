@@ -9,22 +9,23 @@ using System.Web.UI.WebControls;
 
 namespace SenaiBanking.Views
 {
-    public partial class vwListarInvestimentos : System.Web.UI.Page
+    public partial class vwResgatar : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
 
             if (conta == null)
             {
                 Response.Redirect("~/Views/vwLogin.aspx");
             }
-          
-            PopulateGridInvestimento();
+
+            PopulateGridResgatarInvestimento();
 
         }
 
-        public void PopulateGridInvestimento()
+        public void PopulateGridResgatarInvestimento()
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             DataTable dt = new DataTable();
@@ -50,22 +51,13 @@ namespace SenaiBanking.Views
                     dt.Rows.Add(dr);
                 });
             }
-            gdvListarInvestimentos.DataSource = dt;
-            gdvListarInvestimentos.DataBind();
-        }
-
-        protected void txtValorResgatar_TextChanged(object sender, EventArgs e)
-        {
-
+            gdvResgatarInvestimento.DataSource = dt;
+            gdvResgatarInvestimento.DataBind();
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/vwInvestimentos.aspx");
-        }
-
-        protected void gdvListarInvestimentos_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }

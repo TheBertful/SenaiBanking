@@ -78,7 +78,7 @@ namespace SenaiBanking.Views
                     dr["Numero"] = item.Numero.ToString();
                     dr["Status"] = item.Status;
                     dr["Vencimento"] = item.Vencimento.ToShortDateString();
-                    dr["Valor"] = item.Valor.ToString();
+                    dr["Valor"] = converteParaMoeda(item.Valor);
                     dt.Rows.Add(dr);
                 });
             }
@@ -113,7 +113,7 @@ namespace SenaiBanking.Views
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/vwPrincipal.aspx");
+            Response.Redirect("~/Views/vwEmprestimo.aspx");
         }
 
         protected void gdvParcelasBoleto_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -183,6 +183,21 @@ namespace SenaiBanking.Views
                 lblAviso.Text = "Saldo insuficiente.";
             }
             
+        }
+
+        public string converteParaMoeda(double valor)
+        {
+            String v = Math.Round(valor, 2).ToString();
+            int posicao = v.IndexOf(",");
+            if(posicao < 0)
+            {
+                v = v + ",00";
+            }
+            if (posicao > v.Length - 3)
+            {
+                v = v + "0";
+            }
+            return v;
         }
     }
 }
