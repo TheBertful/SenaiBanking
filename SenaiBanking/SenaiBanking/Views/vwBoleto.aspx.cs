@@ -15,7 +15,8 @@ namespace SenaiBanking.Views
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             if (conta != null)
             {
-
+                lblMsg.Visible = false;
+                lblMsgError.Visible = false;
             }
             else
             {
@@ -25,7 +26,14 @@ namespace SenaiBanking.Views
 
         protected void btnDeclarar_Click(object sender, EventArgs e)
         {
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            Parcela parcela = Session["parcela"] as Parcela;
+            conta.PagarParcela(parcela);
 
+            lblMsg.Visible = true;
+            lblMsg.Text = "OK parcela paga";
+
+            Session["parcela"] = null;
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
