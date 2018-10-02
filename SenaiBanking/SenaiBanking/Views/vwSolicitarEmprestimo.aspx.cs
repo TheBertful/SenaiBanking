@@ -181,7 +181,7 @@ namespace SenaiBanking.Views
         //Volta para pagina principal
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/vwPrincipal.aspx");
+            Response.Redirect("~/Views/vwEmprestimo.aspx");
         }
     }
 }

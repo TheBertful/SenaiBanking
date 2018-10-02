@@ -113,7 +113,7 @@ namespace SenaiBanking.Views
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/vwPrincipal.aspx");
+            Response.Redirect("~/Views/vwEmprestimo.aspx");
         }
 
         protected void gdvParcelasBoleto_RowCommand(object sender, GridViewCommandEventArgs e)

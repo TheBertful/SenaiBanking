@@ -11,10 +11,12 @@ namespace SenaiBanking.Models
         {
             TipoInvestimento = "CDB";
             Indexador = 6.5;
-            Porcentagem = 110;
+            
             Random r = new Random();
+            Vencimento = DateTime.Now.AddYears(r.Next(2, 6));
+            Porcentagem = r.NextDouble() * (120 - 90) + 90;
             Taxa = 0.3 + r.NextDouble() * 2;
-            Rendimento = Indexador * (Porcentagem / 100);
+            Rendimento = Math.Round(Indexador * (Porcentagem / 100), 2);
         }
 
         // Colocar informações específicas padrão
