@@ -44,7 +44,7 @@ namespace SenaiBanking.Models
                 {
                     EmprestimoProp = this,
                     Vencimento = DateTime.Today.AddMonths(i + 1),
-                    Valor = acumulado / NumParcelas,
+                    Valor = Math.Round(acumulado / NumParcelas, 2),
                     Numero = (i + 1).ToString() + '/' + NumParcelas.ToString(),
                     Status = "Pendente"
                 };

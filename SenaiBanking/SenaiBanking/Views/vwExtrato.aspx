@@ -6,7 +6,6 @@
 <head runat="server">
     <link href="../css/template.css" rel="stylesheet" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../css/Sacar.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style>
@@ -70,8 +69,8 @@
                 <li class="dropdown">
                     <a href="vwEmprestimo.aspx" class="dropbtn">Empréstimo</a>
                     <div class="dropdown-content">
-                        <a href="vwListarEmprestimos">Listar empréstimos</a>
-                        <a href="vwSolicitarEmprestimos">Solicitar Empréstimos</a>
+                        <a href="vwListarEmprestimos.aspx">Listar empréstimos</a>
+                        <a href="vwSolicitarEmprestimos.aspx">Solicitar Empréstimos</a>
                     </div>
                 </li>
             </ul>
@@ -79,9 +78,9 @@
     </div>
     <div class="containerA">
     <form id="form1" runat="server">
-        <div class="row saudacao col-md-12">
+        <div class="exibirConta">
             <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
-            <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
+            <asp:Label ID="txtNumeroConta" runat="server"  class="form-control tamanhoConta"></asp:Label>
         </div>
         <div class="container">
             <div>
