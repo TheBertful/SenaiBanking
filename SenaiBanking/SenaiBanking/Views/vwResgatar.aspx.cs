@@ -30,6 +30,7 @@ namespace SenaiBanking.Views
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             DataTable dt = new DataTable();
 
+            dt.Columns.Add("Id", Type.GetType("System.String"));
             dt.Columns.Add("Descricao", Type.GetType("System.String"));
             dt.Columns.Add("DataSolicitacao", Type.GetType("System.String"));
             dt.Columns.Add("Rendimento", Type.GetType("System.String"));
@@ -40,15 +41,19 @@ namespace SenaiBanking.Views
             List<Investimento> lista = conta.ListarInvestimentos();
             if (lista != null)
             {
+
+                int i = 0;
                 conta.ListarInvestimentos().ForEach(item =>
                 {
                     DataRow dr = dt.NewRow();
+                    dr["Id"] = i;
                     dr["Descricao"] = item.Descricao;
                     dr["DataSolicitacao"] = item.Data.ToShortDateString();
                     dr["Rendimento"] = item.Rendimento.ToString();
                     dr["Vencimento"] = item.Vencimento.ToShortDateString();
                     dr["ValorTotal"] = item.Valor.ToString();
                     dt.Rows.Add(dr);
+                    i++;
                 });
             }
             gdvResgatarInvestimento.DataSource = dt;
@@ -65,13 +70,6 @@ namespace SenaiBanking.Views
         {
             Response.Redirect("~/Views/vwInvestimentos.aspx");
 
-        }
-
-        protected void gdvResgatar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtDescricao.Text = gdvResgatarInvestimento.SelectedRow.Cells[1].Text;
-            txtRendimento.Text = gdvResgatarInvestimento.SelectedRow.Cells[3].Text;
-            txtValorTotal.Text = gdvResgatarInvestimento.SelectedRow.Cells[5].Text;
         }
 
         protected void txtDescricao_TextChanged(object sender, EventArgs e)
@@ -92,6 +90,23 @@ namespace SenaiBanking.Views
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void gdvResgatarInvestimento_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+
+        }
+
+        protected void gdvResgatarInvestimento_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+
+            Investimento investimento = conta.ListarInvestimentos()[Convert.ToInt32(e.CommandArgument)];
+
+            txtDescricao.Text = investimento.Descricao;
+            txtRendimento.Text = Convert.ToString(investimento.Rendimento);
+            txtValorTotal.Text = Convert.ToString(investimento.Valor);
+           
         }
     }
 }
