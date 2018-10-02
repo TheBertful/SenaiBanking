@@ -13,8 +13,13 @@ namespace SenaiBanking.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Se não estiver logado, retorna para tela inicial de login
-            if ((Session["ContaCorrente"] as ContaCorrente) == null)
+            //Verifica se tem conta logada e aparece no canto da tela qual, senao vai pra tela de login
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            if (conta != null)
+            {
+                txtNumeroConta.Text = conta.Numero.ToString();
+            }
+            else
             {
                 Response.Redirect("~/Views/vwLogin.aspx");
             }
@@ -186,6 +191,7 @@ namespace SenaiBanking.Views
                     gdvParcelasDebitoEmConta.DataSource = null;
                     gdvParcelasDebitoEmConta.DataBind();
                 }
+                PopulateGridEmprestimos();
             } else//Se não tem saldo na conta, informa o usuario de saldo insuficiente
             {
                 lblAviso.Text = "Saldo insuficiente.";
