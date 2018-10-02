@@ -15,6 +15,7 @@ namespace SenaiBanking.Models
             Porcentagem = 100;
             Random r = new Random();
             Taxa = 0.3 + r.NextDouble() * 2;
+            Rendimento = Indexador * (Porcentagem / 100);
         }
 
         // Imposto de Renda

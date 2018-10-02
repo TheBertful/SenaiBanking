@@ -14,6 +14,7 @@ namespace SenaiBanking.Models
             Porcentagem = 110;
             Random r = new Random();
             Taxa = 0.3 + r.NextDouble() * 2;
+            Rendimento = Indexador * (Porcentagem / 100);
         }
 
         // Colocar informações específicas padrão
