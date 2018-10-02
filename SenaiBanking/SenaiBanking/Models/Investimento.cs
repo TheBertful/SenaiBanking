@@ -37,7 +37,7 @@ namespace SenaiBanking.Models
         // Calcula o valor em dinheiro descontado de acordo com as taxas de cobrança
         public virtual double CalcularTaxa()
         {
-            return 0;
+            return Math.Round(ValorInicial * (Taxa / 100), 2);
         }
 
         // Calcula o rendimento líquido, após incidência de taxas e impostos

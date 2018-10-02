@@ -89,8 +89,8 @@ namespace SenaiBanking.Models
             List<Transacao> extrato = new List<Transacao>();
             foreach (Transacao t in Transacoes)
             {
-                // Mostrar tudo menos investimentos e empréstimos(pagamentos, resgates, etc sim)
-                if ((!t.Tipo.Equals("Empréstimo") || !t.Tipo.Equals("Investimento")) && (t.Data.Date <= fim.Date && t.Data.Date >= inicio.Date))
+                // Mostrar tudo menos investimentos e empréstimos(pagamentos, resgates, aplicações, etc sim)
+                if ((!t.Tipo.Equals("Empréstimo") && !t.Tipo.Equals("Investimento")) && (t.Data.Date <= fim.Date && t.Data.Date >= inicio.Date))
                 {
                     extrato.Add(t);
                 }
@@ -133,7 +133,7 @@ namespace SenaiBanking.Models
             if (investimento.Status.Equals("Aplicado"))
             {
                 investimento.Status = "Resgatado";
-                investimento.Valor = investimento.CalcularRendimentoFinal();
+                investimento.Valor = Math.Round(investimento.ValorInicial + investimento.CalcularRendimentoFinal(), 2);
                 Transacao t = new Transacao()
                 {
                     Tipo = "Resgate",
