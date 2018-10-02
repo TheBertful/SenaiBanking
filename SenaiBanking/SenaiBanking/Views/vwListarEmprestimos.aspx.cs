@@ -105,11 +105,38 @@ namespace SenaiBanking.Views
                 }
                 
             }
+            Session["emprestimo"] = emprestimo;
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/vwPrincipal.aspx");
+        }
+
+        protected void gdvParcelasBoleto_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int id = 0;
+            string numero = e.CommandArgument.ToString();
+            if(numero.Length > 5)
+            {
+                id = Convert.ToInt32(numero.Substring(0, 2));
+            }
+            else
+            {
+                id = Convert.ToInt32(numero.Substring(0, 1));
+            }
+
+            Emprestimo emp = Session["emprestimo"] as Emprestimo;
+            Parcela p = new Parcela();
+            int count = 1;
+            emp.Parcelas.ForEach(item => {
+                if (count == id)
+                    p = item;
+                count++;
+            });
+            Session["parcela"] = p;
+
+            Response.Redirect("~/Views/vwBoleto.aspx");
         }
     }
 }
