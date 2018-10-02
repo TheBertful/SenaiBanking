@@ -6,17 +6,30 @@
     margin-top:250px;
     padding-left:390px;
 }
-
+.corBody {
+    background-color: aqua;
+}
 .ajuste {
     margin-bottom: 15px;
-    text-align:left;
+    text-align: left;
 }
 
 .btn{
-    margin-left:180px;
+    margin-top:20px;
     width:40%;
 }
 
 .form-control{
     text-align:center;
+}
+
+.caixaLogin {
+    background-color:white;
+    height:350px;
+    width:350px;
+}
+
+.alinhar {
+    top: 40px;
+    position: relative;
 }
