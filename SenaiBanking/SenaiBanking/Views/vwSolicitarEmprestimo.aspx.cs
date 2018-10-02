@@ -21,8 +21,14 @@ namespace SenaiBanking.Views
                 txtValor.Text = "0";
                 lblAviso.Text = "O empréstimo tem juros de 5% ao mês.";
             }
-            //Se não estiver logado, retorna para tela de login
-            if ((Session["ContaCorrente"] as ContaCorrente) == null)
+
+            //Verifica se tem conta logada e aparece no canto da tela qual, senao vai pra tela de login
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            if (conta != null)
+            {
+                txtNumeroConta.Text = conta.Numero.ToString();
+            }
+            else
             {
                 Response.Redirect("~/Views/vwLogin.aspx");
             }
