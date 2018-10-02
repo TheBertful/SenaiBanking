@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="h1">Listar Investimentos</h1>
+        <h1 class="h1">Listar Investimentos / Resgate</h1>
         <form id="form1" runat="server">
             <div>
                 <asp:GridView ID="gdvResgatarInvestimento" runat="server" AutoGenerateColumns="False">

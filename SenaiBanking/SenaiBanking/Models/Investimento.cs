@@ -23,7 +23,7 @@ namespace SenaiBanking.Models
         // Método que atualiza o valor aplicado de acordo com a porcentagem de Rendimento
         public virtual void Render()
         {
-            double aumento = Valor * Rendimento;
+            double aumento = Math.Round(Valor * (Rendimento / 100), 2);
             Valor += aumento;
             // Enviar atualização para Conta Contábil de Investimentos
         }
