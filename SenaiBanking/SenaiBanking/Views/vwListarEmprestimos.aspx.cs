@@ -21,7 +21,6 @@ namespace SenaiBanking.Views
         }
         public void PopulateGridEmprestimos()
         {
-            //List<Emprestimo> emprestimos = Session["emprestimos"] as List<Emprestimo>;
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             DataTable dt = new DataTable();
 
@@ -31,8 +30,6 @@ namespace SenaiBanking.Views
             dt.Columns.Add("FormaPagamento", Type.GetType("System.String"));
             dt.Columns.Add("Data", Type.GetType("System.String"));
             dt.Columns.Add("Parcelas", Type.GetType("System.String"));
-            //if(emprestimos != null)
-            //if (conta.BancoProp.ContaEmprestimo.Emprestimos != null)
             List<Emprestimo> lista = conta.ListarEmprestimos();
             if (lista != null)
             {
@@ -150,36 +147,32 @@ namespace SenaiBanking.Views
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             Emprestimo emp = Session["emprestimo"] as Emprestimo;
             Parcela p = new Parcela();
+            int id = 0;
+            string numero = e.CommandArgument.ToString();
+
+            lblAviso.Text = "";
 
             if (conta.Saldo >= emp.Parcelas[0].Valor)
             {
+                id = numero.Length > 3 ? Convert.ToInt32(numero.Substring(0, 2)) : Convert.ToInt32(numero.Substring(0, 1));
 
-            }
-            int id = 0;
-            string numero = e.CommandArgument.ToString();
-            if(numero.Length > 3)
-            {
-                id = Convert.ToInt32(numero.Substring(0, 2));
-            }
-            else
-            {
-                id = Convert.ToInt32(numero.Substring(0, 1));
-            }
+                int count = 1;
+                emp.Parcelas.ForEach(item =>
+                {
+                    if (count == id)
+                        p = item;
+                    count++;
+                });
+                Session["parcela"] = p;
 
+                emp.PagarParcela(p);
+                Session["ContaCorrente"] = conta;
+                PopulateGridParcelas(emp.Id);
+            } else
+            {
+                lblAviso.Text = "Saldo insuficiente.";
+            }
             
-            int count = 1;
-            emp.Parcelas.ForEach(item =>
-            {
-                if (count == id)
-                    p = item;
-                count++;
-            });
-            Session["parcela"] = p;
-
-            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
-            emp.PagarParcela(p);
-            Session["ContaCorrente"] = conta;
-            PopulateGridParcelas(emp.Id);
         }
     }
 }

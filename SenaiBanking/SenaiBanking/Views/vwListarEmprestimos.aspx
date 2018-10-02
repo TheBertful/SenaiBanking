@@ -17,6 +17,8 @@
                 <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
             </div>
             <br />
+            <asp:Label ID="lblAviso" runat="server" />
+            <br />
             <div>
             <asp:GridView ID="gdvEmprestimos" runat="server" CssClass="table-light text-center col-6"
                 AutoGenerateColumns="False" OnRowCommand="gdvEmprestimos_RowCommand">

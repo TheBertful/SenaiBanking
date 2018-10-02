@@ -15,9 +15,11 @@ namespace SenaiBanking.Views
         {
             //Limite preestabelecido de 900 reais
             lblLimite.Text = "Você possui R$ 900,00 de limite para o empréstimo.";
+            
             if (!IsPostBack)
             {
                 txtValor.Text = "0";
+                lblAviso.Text = "O empréstimo tem juros de 5% ao mês.";
             }
             //Se não estiver logado, retorna para tela de login
             if ((Session["ContaCorrente"] as ContaCorrente) == null)
@@ -107,8 +109,8 @@ namespace SenaiBanking.Views
             double valor = Convert.ToDouble(txtValor.Text);
             List<Parcela> parcelas = new List<Parcela>();
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
-            //List<Emprestimo> emprestimos = Session["Emprestimos"] as List<Emprestimo>;
             conta.Saldo = conta.Saldo + Convert.ToDouble(txtValor.Text);
+            lblAviso.Text = "O empréstimo tem juros de 5% ao mês.";
 
             //Criação do objeto emprestimo
             Emprestimo emp = new Emprestimo();
@@ -150,7 +152,6 @@ namespace SenaiBanking.Views
                 emp.NumParcelas = emp.Parcelas.Count();
 
                 //Adiciona o emprestimo novo a lista de emprestimos e devolve as informações atualizadas a Session respectiva
-                //Session["Emprestimos"] = emp.ContaContabil;
                 Session["ContaCorrente"] = conta;
                 lblAviso.Text = "Emprestimo realizado com sucesso! Seu novo saldo é de: R$ " + conta.Saldo.ToString();
                 conta.SolicitarEmprestimo(emp);
