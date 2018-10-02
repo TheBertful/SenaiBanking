@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Globalization;
 
 namespace SenaiBanking.Models
 {
@@ -17,7 +18,7 @@ namespace SenaiBanking.Models
             Vencimento = DateTime.Now.AddYears(r.Next(5,11));
             Indexador = r.NextDouble() * (6.5 - 6) + 6; // Selic atual pra exemplo
             Taxa = 0.3 + r.NextDouble() * 2;
-            Rendimento = Indexador * (Porcentagem / 100);
+            Rendimento = Math.Round(Indexador * (Porcentagem / 100), 2);
         }
 
         // Imposto de Renda
