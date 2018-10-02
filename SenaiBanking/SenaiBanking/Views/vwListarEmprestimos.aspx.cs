@@ -34,7 +34,7 @@ namespace SenaiBanking.Views
             List<Emprestimo> lista = conta.ListarEmprestimosPendentes();
             if (lista != null)
             {
-                conta.ListarEmprestimos().ForEach(item =>
+                lista.ForEach(item =>
                 {
                     DataRow dr = dt.NewRow();
                     dr["Id"] = item.Id;
@@ -139,7 +139,11 @@ namespace SenaiBanking.Views
                 count++;
             });
             Session["parcela"] = p;
-
+            if (!emp.Pendente)
+            {
+                gdvParcelasBoleto.DataSource = null;
+                gdvParcelasBoleto.DataBind();
+            }
             Response.Redirect("~/Views/vwBoleto.aspx");
         }
 
@@ -169,6 +173,11 @@ namespace SenaiBanking.Views
                 emp.PagarParcela(p);
                 Session["ContaCorrente"] = conta;
                 PopulateGridParcelas(emp.Id);
+                if (!emp.Pendente)
+                {
+                    gdvParcelasDebitoEmConta.DataSource = null;
+                    gdvParcelasDebitoEmConta.DataBind();
+                }
             } else
             {
                 lblAviso.Text = "Saldo insuficiente.";
