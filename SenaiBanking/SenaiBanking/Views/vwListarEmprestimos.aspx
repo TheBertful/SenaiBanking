@@ -17,9 +17,12 @@
                 <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
             </div>
             <br />
+            <!-- Onde serão exibidos avisos -->
             <asp:Label ID="lblAviso" runat="server" />
             <br />
             <div>
+
+            <!-- Tabela de emprestimos pendentes realizados -->
             <asp:GridView ID="gdvEmprestimos" runat="server" CssClass="table-light text-center col-6"
                 AutoGenerateColumns="False" OnRowCommand="gdvEmprestimos_RowCommand">
                 <Columns>
@@ -80,6 +83,7 @@
             </asp:GridView>
                 </div><br /><br />
             <div>
+                <!-- Tabela de parcelas do emprestimo que clicou em visualizar se o mesmo for pagamento tipo boleto -->
                 <asp:GridView ID="gdvParcelasBoleto" runat="server" CssClass="table-light text-center col-6" AutoGenerateColumns="False" OnRowCommand="gdvParcelasBoleto_RowCommand">
                     <Columns>
                         <asp:TemplateField HeaderText="Numero">
@@ -123,6 +127,7 @@
                 </asp:GridView>
             </div>
             <div>
+                <!-- Tabela de parcelas do emprestimo que clicou em visualizar se o mesmo for pagamento tipo debito em conta -->
             <asp:GridView ID="gdvParcelasDebitoEmConta" runat="server" AutoGenerateColumns="False" CssClass="table-light text-center col-6" OnRowCommand="gdvParcelasDebitoEmConta_RowCommand" >
                 <Columns>
                     <asp:TemplateField HeaderText="Numero">
