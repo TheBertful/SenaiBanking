@@ -53,16 +53,16 @@ namespace SenaiBanking.Models
         }
 
         // Quitar uma parcela específica deste empréstimo, adiciona nas transacoes
-        public void PagarParcela(Parcela p)
+        public void PagarParcela(Parcela parcela)
         {
-            p.Status = "Pago";
+            parcela.Status = "Pago";
             Transacao t = new Transacao()
             {
                 Tipo = "Pagamento",
-                Valor = -p.Valor,
+                Valor = -parcela.Valor,
                 Data = DateTime.Today,
                 Conta = this.Conta,
-                Descricao = "Pagamento parcela: " + p.Numero + "/" + Parcelas.Count
+                Descricao = "Pagamento parcela: " + parcela.Numero + " do empréstimo " + Descricao
             };
             this.Conta.Transacoes.Add(t);
         }

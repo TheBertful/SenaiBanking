@@ -45,7 +45,7 @@ namespace SenaiBanking.Views
                     lblMsgError.Text = "Não foi possível realizar o seu deposito, digite um Valor válido";
                 }
             }
-            catch(Exception erro)
+            catch(Exception)
             {
                 lblMsgError.Visible = true;
                 lblMsgError.Text = "Não foi possível realizar o seu deposito, verifique o campo Valor";

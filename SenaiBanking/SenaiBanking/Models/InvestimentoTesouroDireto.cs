@@ -10,12 +10,14 @@ namespace SenaiBanking.Models
         // Taxa cobrada costuma ser serviço(da corretora ou banco, de 0 a 2%) + taxa de custódia da B3
         public InvestimentoTesouroDireto() : base()
         {
+            TipoInvestimento = "Tesouro Direto";
             Indexador = 6.5; // Selic atual pra exemplo
             Porcentagem = 100;
             Random r = new Random();
             Taxa = 0.3 + r.NextDouble() * 2;
         }
 
+        // Imposto de Renda
         public override double CalcularImposto()
         {
             double dias = DateTime.Now.Subtract(Data).TotalDays;

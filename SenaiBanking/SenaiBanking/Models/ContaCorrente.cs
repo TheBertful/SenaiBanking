@@ -90,7 +90,7 @@ namespace SenaiBanking.Models
             foreach (Transacao t in Transacoes)
             {
                 // Mostrar tudo menos investimentos e empréstimos(pagamentos, resgates, etc sim)
-                if ((!t.Tipo.Equals("Empréstimo") || !t.Tipo.Equals("Investimento")) && (t.Data <= fim && t.Data >= inicio))
+                if ((!t.Tipo.Equals("Empréstimo") || !t.Tipo.Equals("Investimento")) && (t.Data.Date <= fim.Date && t.Data.Date >= inicio.Date))
                 {
                     extrato.Add(t);
                 }
@@ -158,12 +158,6 @@ namespace SenaiBanking.Models
             Saldo += emprestimo.Valor;
             Transacoes.Add(emprestimo);
             BancoProp.ContaEmprestimo.Emprestimos.Add(emprestimo);
-        }
-
-        // Confere saldo de acordo com a forma de pagamento do empréstimo
-        public void PagarParcela(Parcela p)
-        {
-
         }
 
         // Retorna os investimentos vinculados à conta

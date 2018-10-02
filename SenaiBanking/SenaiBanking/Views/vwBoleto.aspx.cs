@@ -12,19 +12,30 @@ namespace SenaiBanking.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             if (conta != null)
             {
+                lblMsg.Visible = false;
+                lblMsgError.Visible = false;
             }
             else
             {
                 Response.Redirect("~/Views/vwLogin.aspx");
-            }*/
+            }
         }
 
         protected void btnDeclarar_Click(object sender, EventArgs e)
         {
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            Parcela parcela = Session["parcela"] as Parcela;
+ 
+            Emprestimo emprestimo = parcela.EmprestimoProp;
+            emprestimo.PagarParcela(parcela);
 
+            lblMsg.Visible = true;
+            lblMsg.Text = "OK parcela paga";
+
+            Session["parcela"] = null;
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)

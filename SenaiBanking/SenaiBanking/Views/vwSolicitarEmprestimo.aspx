@@ -19,7 +19,7 @@
             </div>
             <br />
             <div class="col-lg-12 col-sm-12 col-md-12">
-                <asp:Label ID="lblAviso" runat="server" Text="O empréstimo tem juros de 5% ao mês." CssClass="alert-primary form-control col-6"></asp:Label><br />
+                <asp:Label ID="lblAviso" runat="server" CssClass="alert-primary form-control col-6"></asp:Label><br />
                 <asp:Label ID="lblLimite" runat="server" CssClass="alert-primary form-control col-6"></asp:Label>
             </div>
             <br />
