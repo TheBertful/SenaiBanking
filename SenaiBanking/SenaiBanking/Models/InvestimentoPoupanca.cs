@@ -13,6 +13,7 @@ namespace SenaiBanking.Models
             // 70% da Selic se ela estiver igual ou abaixo de 8,5%, caso contrário 0.5% ao mês
             // Adicionar a Taxa Referencial, independentemente de qual dos dois casos acima
             TipoInvestimento = "Poupança";
+            Vencimento = DateTime.Now.AddYears(20);
             Indexador = 6.5; // Selic Atual
             Porcentagem = 70;
             TaxaReferencial = 0.6; // Dados de 2017

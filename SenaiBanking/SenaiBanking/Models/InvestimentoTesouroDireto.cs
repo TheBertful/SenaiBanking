@@ -11,9 +11,11 @@ namespace SenaiBanking.Models
         public InvestimentoTesouroDireto() : base()
         {
             TipoInvestimento = "Tesouro Direto";
-            Indexador = 6.5; // Selic atual pra exemplo
+            
             Porcentagem = 100;
             Random r = new Random();
+            Vencimento = DateTime.Now.AddYears(r.Next(5,11));
+            Indexador = r.NextDouble() * (6.5 - 6) + 6; // Selic atual pra exemplo
             Taxa = 0.3 + r.NextDouble() * 2;
             Rendimento = Indexador * (Porcentagem / 100);
         }
