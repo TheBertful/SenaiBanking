@@ -173,6 +173,21 @@ namespace SenaiBanking.Views
                 lblAviso.Text = "Saldo insuficiente.";
             }
             
+<<<<<<< HEAD
+=======
+            int count = 1;
+            emp.Parcelas.ForEach(item =>
+            {
+                if (count == id)
+                    p = item;
+                count++;
+            });
+            Session["parcela"] = p;
+
+            emp.PagarParcela(p);
+            Session["ContaCorrente"] = conta;
+            PopulateGridParcelas(emp.Id);
+>>>>>>> 2206090e3def2f6c1b574d91c8d342d4db0b0c07
         }
     }
 }
