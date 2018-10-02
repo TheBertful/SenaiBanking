@@ -13,7 +13,7 @@ namespace SenaiBanking.Models
         // Padrão é o investimento ter o Indexador como base
         public InvestimentoIndexado() : base()
         {
-            this.Rendimento = this.Indexador * (this.Porcentagem / 100);
+            Rendimento = Indexador * (Porcentagem / 100);
         }
     }
 }
