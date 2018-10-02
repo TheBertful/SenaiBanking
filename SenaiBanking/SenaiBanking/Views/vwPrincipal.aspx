@@ -4,19 +4,42 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="../css/template.css" rel="stylesheet" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/Principal.css" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style>
+        .Barra{
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                height: 52px;
+        }
+        .liCor{
+                color: white;
+                bottom: 0;
+                position: absolute;
+        }
+    </style>
 </head>
 <body>
+    <div class="head">
+        <div class="logo"></div>
+        <div class="menu">
+            <ul class="Barra" >
+                <li class="liCor">
+                    <asp:Label ID="lbl" runat="server" Text="Seja Bem-Vindo(a), "></asp:Label>
+                    <asp:Label ID="lblSaudacao" runat="server"></asp:Label>
+                </li>
+            </ul>
+        </div>
+    </div>
     <form id="form1" runat="server">
         <div>
             <div class="container">
-                <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
-                    <asp:Label ID="lbl" runat="server" Text="Seja Bem-Vindo(a), "></asp:Label>
-                    <asp:Label ID="lblSaudacao" runat="server"></asp:Label>
-                </div>
                 <div class="row col-lg-12 col-sm-12 col-xl-12 col-md-12">
                     <asp:Label ID="lblNumeroConta" runat="server" Text=""></asp:Label>
                 </div>
@@ -60,5 +83,7 @@
             </div>
         </div>
     </form>
+    <div class="footer"></div>
+    <div class="footer1 text-center CorLetras">Direitos.</div>
 </body>
 </html>
