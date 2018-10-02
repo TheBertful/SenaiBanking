@@ -19,7 +19,9 @@ namespace SenaiBanking.Views
                 lblMsgError.Visible = false;
                 lblMsg.Visible = false;
 
-                if(!IsPostBack)
+                btnVerificar.Focus();
+
+                if (!IsPostBack)
                 {
 
                 }

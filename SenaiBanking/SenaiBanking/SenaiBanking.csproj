@@ -70,10 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\img\boleto.png" />
+    <Content Include="Content\img\logo.png" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Login.css" />
     <Content Include="css\Principal.css" />
     <Content Include="css\Sacar.css" />
+    <Content Include="css\template.css" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -145,7 +147,7 @@
     </Compile>
     <Compile Include="Views\vwAplicacoesTesouro.aspx.designer.cs">
       <DependentUpon>vwAplicacoesTesouro.aspx</DependentUpon>
-      </Compile>    
+    </Compile>
     <Compile Include="Views\vwBoleto.aspx.cs">
       <DependentUpon>vwBoleto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
