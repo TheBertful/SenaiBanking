@@ -70,8 +70,8 @@
                 <li class="dropdown">
                     <a href="vwEmprestimo.aspx" class="dropbtn">Empréstimo</a>
                     <div class="dropdown-content">
-                        <a href="vwListarEmprestimos">Listar empréstimos</a>
-                        <a href="vwSolicitarEmprestimos">Solicitar Empréstimos</a>
+                        <a href="vwListarEmprestimos.aspx">Listar empréstimos</a>
+                        <a href="vwSolicitarEmprestimos.aspx">Solicitar Empréstimos</a>
                     </div>
                 </li>
             </ul>

@@ -42,9 +42,20 @@
                     <div class="ajuste col-lg-12 col-sm-12 col-md-12 col-xl-12">
                         <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnExtrato" runat="server" Text="Extrato" OnClick="btnExtrato_Click" />
                     </div>
+                    <div class="ajuste col-lg-12 col-sm-12 col-md-12 col-xl-12">
+                        <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
+                    </div>
                     <div>
                         <asp:Label ID="lblAviso" runat="server"></asp:Label>
                     </div>
+                    <div>
+                        <asp:Label ID="lblCCE" runat="server" Text="Saldo atual da Conta Contábil de Empréstimo: "></asp:Label>
+                        <asp:Label ID="lblContaContabilEmprestimo" runat="server"></asp:Label>
+                        <br />
+                        <asp:Label ID="lblCCI" runat="server" Text="Saldo atual da Conta Contábil de Investimento: "></asp:Label>
+                        <asp:Label ID="lblContaContabilInvestimento" runat="server"></asp:Label>
+                    </div>
+                    
                 </div>
             </div>
         </div>
