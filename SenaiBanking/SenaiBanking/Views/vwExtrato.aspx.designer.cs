@@ -37,7 +37,7 @@ namespace SenaiBanking.Views {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumeroConta;
+        protected global::System.Web.UI.WebControls.Label txtNumeroConta;
         
         /// <summary>
         /// Controle lblMsg.
