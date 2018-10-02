@@ -10,6 +10,7 @@ namespace SenaiBanking.Models
         public double Indexador { get; set; } // Indexador que define o cálculo real do Rendimento
         public double Porcentagem { get; set; } // Porcentagem do indexador
 
+        // Padrão é o investimento ter o Indexador como base
         public InvestimentoIndexado() : base()
         {
             this.Rendimento = this.Indexador * (this.Porcentagem / 100);

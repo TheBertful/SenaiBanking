@@ -17,6 +17,7 @@ namespace SenaiBanking.Models
             Taxa = 0.3 + r.NextDouble() * 2;
         }
 
+        // Imposto de Renda
         public override double CalcularImposto()
         {
             double dias = DateTime.Now.Subtract(Data).TotalDays;

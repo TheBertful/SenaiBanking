@@ -32,6 +32,7 @@ namespace SenaiBanking.Models
             Imposto = 0;
         }
 
+        // Divisão da Renda gerada por mês
         public override void Render()
         {
             double aumento = Valor * Rendimento / 12; // divide no mês
