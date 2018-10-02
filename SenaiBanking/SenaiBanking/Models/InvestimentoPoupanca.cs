@@ -12,8 +12,12 @@ namespace SenaiBanking.Models
             // Tratar valor do rendimento da poupança de acordo com a Selic atual
             // 70% da Selic se ela estiver igual ou abaixo de 8,5%, caso contrário 0.5% ao mês
             // Adicionar a Taxa Referencial, independentemente de qual dos dois casos acima
+            TipoInvestimento = "Poupança";
+            Vencimento = DateTime.Now.AddYears(20);
             Indexador = 6.5; // Selic Atual
             Porcentagem = 70;
+            Taxa = 0;
+            Aniversario = DateTime.Today.AddMonths(1);
             TaxaReferencial = 0.6; // Dados de 2017
             if (Indexador > 8.5)
             {
@@ -31,10 +35,12 @@ namespace SenaiBanking.Models
             Imposto = 0;
         }
 
+        // Divisão da Renda gerada por mês
         public override void Render()
         {
-            double aumento = Valor * Rendimento / 12; // divide no mês
+            double aumento = Math.Round(Valor * ((Rendimento / 12) / 100), 2); // divide no mês
             Valor += aumento;
+            Aniversario = Aniversario.AddMonths(1);
         }
 
     }

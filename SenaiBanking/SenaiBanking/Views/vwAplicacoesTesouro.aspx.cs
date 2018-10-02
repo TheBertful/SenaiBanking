@@ -66,7 +66,7 @@ namespace SenaiBanking.Views
                 }
             }
 
-            catch (Exception erro)
+            catch (Exception)
             {
                 txtMsgError.Visible = true;
                 txtMsgError.Text = "Não foi possível realizar sua aplicação, verifique o campo Valor";

@@ -60,7 +60,7 @@ namespace SenaiBanking.Views
 
                     DataRow dr = dt.NewRow();
                     dr["Parcela"] = p.Numero;
-                    dr["Valor"] = "R$ " + p.Valor.ToString();
+                    dr["Valor"] = "R$ " + converteParaMoeda(p.Valor);
                     dr["Vencimento"] = p.Vencimento.ToShortDateString();
                     dt.Rows.Add(dr);
                     gdvParcelas.DataSource = dt;
@@ -82,6 +82,7 @@ namespace SenaiBanking.Views
             //Verifica se é numero, senão o else seta valor padrão de 0 no campo valor
             if (double.TryParse(txtValor.Text, out numero))
             {
+                txtValor.Text = Convert.ToDouble(txtValor.Text).ToString();
                 //Se o valor inserido, foi maior que 900 que é o limite, ele seta o valor maximo no campo de 900 pra fazer a previsão das parcelas
                 if (numero > 900)
                 {
@@ -181,7 +182,22 @@ namespace SenaiBanking.Views
         //Volta para pagina principal
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/vwPrincipal.aspx");
+            Response.Redirect("~/Views/vwEmprestimo.aspx");
+        }
+
+        public string converteParaMoeda(double valor)
+        {
+            String v = Math.Round(valor, 2).ToString();
+            int posicao = v.IndexOf(",");
+            if (posicao < 0)
+            {
+                v = v + ",00";
+            }
+            if (posicao > v.Length - 3)
+            {
+                v = v + "0";
+            }
+            return v;
         }
     }
 }

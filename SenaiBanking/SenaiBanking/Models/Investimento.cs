@@ -23,7 +23,7 @@ namespace SenaiBanking.Models
         // Método que atualiza o valor aplicado de acordo com a porcentagem de Rendimento
         public virtual void Render()
         {
-            double aumento = Valor * Rendimento;
+            double aumento = Math.Round(Valor * (Rendimento / 100), 2);
             Valor += aumento;
             // Enviar atualização para Conta Contábil de Investimentos
         }
@@ -37,7 +37,7 @@ namespace SenaiBanking.Models
         // Calcula o valor em dinheiro descontado de acordo com as taxas de cobrança
         public virtual double CalcularTaxa()
         {
-            return 0;
+            return Math.Round(ValorInicial * (Taxa / 100), 2);
         }
 
         // Calcula o rendimento líquido, após incidência de taxas e impostos

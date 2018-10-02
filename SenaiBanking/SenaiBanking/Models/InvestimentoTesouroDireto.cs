@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Globalization;
 
 namespace SenaiBanking.Models
 {
@@ -10,12 +11,17 @@ namespace SenaiBanking.Models
         // Taxa cobrada costuma ser serviço(da corretora ou banco, de 0 a 2%) + taxa de custódia da B3
         public InvestimentoTesouroDireto() : base()
         {
-            Indexador = 6.5; // Selic atual pra exemplo
+            TipoInvestimento = "Tesouro Direto";
+            
             Porcentagem = 100;
             Random r = new Random();
-            Taxa = 0.3 + r.NextDouble() * 2;
+            Vencimento = DateTime.Now.AddYears(r.Next(5,11));
+            Indexador = r.NextDouble() * (6.5 - 6) + 6; // Selic atual pra exemplo
+            Taxa = 0.3 + r.Next(0, 5) * 0.5;
+            Rendimento = Math.Round(Indexador * (Porcentagem / 100), 2);
         }
 
+        // Imposto de Renda
         public override double CalcularImposto()
         {
             double dias = DateTime.Now.Subtract(Data).TotalDays;
