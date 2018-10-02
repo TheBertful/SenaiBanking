@@ -62,7 +62,7 @@ namespace SenaiBanking.Models
                 Valor = -parcela.Valor,
                 Data = DateTime.Today,
                 Conta = this.Conta,
-                Descricao = "Pagamento parcela: " + parcela.Numero + "/" + Parcelas.Count
+                Descricao = "Pagamento parcela: " + parcela.Numero + " do empréstimo " + Descricao
             };
             this.Conta.Transacoes.Add(t);
         }
