@@ -70,7 +70,7 @@
                         </Columns>
                     </asp:GridView>
                 </div>
-                <div class="ajuste col-lg-4 col-sm-4 col-md-4 col-xl-12">
+                <div class="ajuste col-lg-4 col-sm-4 col-md-4 col-xl-12 ">
                     <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
                 </div>
             </div>
