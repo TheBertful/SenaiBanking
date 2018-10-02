@@ -42,6 +42,7 @@ namespace SenaiBanking.Views
                 lista.ForEach(item =>
                 {
                     DataRow dr = dt.NewRow();
+                  
                     dr["Descricao"] = item.Descricao;
                     dr["DataSolicitacao"] = item.Data.ToShortDateString();
                     dr["Rendimento"] = item.Rendimento.ToString();

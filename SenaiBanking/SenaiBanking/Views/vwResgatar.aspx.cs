@@ -21,11 +21,11 @@ namespace SenaiBanking.Views
                 Response.Redirect("~/Views/vwLogin.aspx");
             }
 
-            PopulateGridResgatarInvestimento();
+            PopulateGridListarInvestimento();
 
         }
 
-        public void PopulateGridResgatarInvestimento()
+        public void PopulateGridListarInvestimento()
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             DataTable dt = new DataTable();
@@ -55,9 +55,42 @@ namespace SenaiBanking.Views
             gdvResgatarInvestimento.DataBind();
         }
 
+        public void PopulateGridResgatarInvestimento()
+        {
+            ContaCorrente contaCorrente = new ContaCorrente();
+
+        }
+
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/vwInvestimentos.aspx");
+
+        }
+
+        protected void gdvResgatar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtDescricao.Text = gdvResgatarInvestimento.SelectedRow.Cells[1].Text;
+            txtRendimento.Text = gdvResgatarInvestimento.SelectedRow.Cells[3].Text;
+            txtValorTotal.Text = gdvResgatarInvestimento.SelectedRow.Cells[5].Text;
+        }
+
+        protected void txtDescricao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtRendimento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtValortotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
 
         }
     }

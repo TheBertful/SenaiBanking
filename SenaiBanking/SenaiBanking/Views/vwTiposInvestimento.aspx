@@ -39,9 +39,7 @@
                     <asp:Button class="btn btn-secondary btn-lg" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
                 </div>
             </div>
-        </div>
-        </div>
+        </div>    
     </form>
-    </div>
 </body>
 </html>

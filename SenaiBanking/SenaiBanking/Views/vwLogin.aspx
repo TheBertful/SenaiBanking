@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="container">
+            <div class="container align-content-center">
                 <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsg" runat="server" role="alert"></asp:TextBox>
                 <div class="row col-lg-12 col-sm-12">
                     <div class="ajuste col-lg-12 col-sm-12">
