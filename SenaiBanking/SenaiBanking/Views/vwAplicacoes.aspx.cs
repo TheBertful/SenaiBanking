@@ -43,7 +43,7 @@ namespace SenaiBanking.Views
                 else if (Math.Round(Convert.ToDouble(valor), 2) > 0)
                 {
                     InvestimentoPoupanca investimentoPoupanca = new InvestimentoPoupanca()
-                    {
+                    { 
                         ValorInicial = Convert.ToDouble(texto),
                         Data = DateTime.Now,
                         Tipo = "Investimento",

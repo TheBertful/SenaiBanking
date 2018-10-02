@@ -4,35 +4,110 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="../css/template.css" rel="stylesheet" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/Sacar.css" rel="stylesheet" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <style>
+        @media only screen and (max-width: 767px) {
+            .separador {
+                margin-top: 15px;
+            }
+
+            .centralizarTabelas {
+                margin-left: 24%;
+            }
+
+            .grid {
+                margin-top: 25px;
+            }
+
+            .separadorBtn {
+                margin-left: 15%;
+            }
+        }
+
+        @media only screen and (min-width: 767px) {
+            .separadorBtn {
+                margin-top: 15px;
+                margin-left: 10%;
+            }
+        }
+
+        .grid {
+            margin-top: 30px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+    </style>
 </head>
 <body>
+    <div class="head">
+        <div class="logo"></div>
+        <div class="menu">
+            <ul>
+                <li><a href="vwPrincipal.aspx">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn">Conta Corrente</a>
+                    <div class="dropdown-content">
+                        <a href="vwDepositar.aspx">Depósito</a>
+                        <a href="vwExtrato.aspx">Extrato</a>
+                        <a href="vwSaldo.aspx">Saldo</a>
+                        <a href="vwSacar.aspx">Saque</a>
+                        <a href="vwTransferir.aspx">Transferência</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="vwInvestimentos.aspx" class="dropbtn">Investimento</a>
+                    <div class="dropdown-content">
+                        <a href="vwAplicacoes.aspx">Apliacação</a>
+                        <a href="#">Meus investimentos</a>
+                        <a href="#">Resgate</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="vwEmprestimo.aspx" class="dropbtn">Empréstimo</a>
+                    <div class="dropdown-content">
+                        <a href="vwListarEmprestimos.aspx">Listar empréstimos</a>
+                        <a href="vwSolicitarEmprestimos.aspx">Solicitar Empréstimos</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="containerA">
     <form id="form1" runat="server">
-        <div class="row saudacao col-lg-12 col-sm-12 col-xl-12 col-md-12">
-                    <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
-                    <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
-                </div>
+        <div class="row saudacao col-md-12">
+            <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
+            <asp:TextBox ID="txtNumeroConta" runat="server" class="form-control" Width="4%"></asp:TextBox>
+        </div>
         <div class="container">
             <div>
-                <asp:Label ID="lblMsg" runat="server"  CssClass="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label><br />
-                <asp:Label ID="lblMsgError" runat="server"  CssClass="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label><br /> 
+                <asp:Label ID="lblMsg" runat="server" CssClass="alert alert-primary col-md-12"></asp:Label><br />
+                <asp:Label ID="lblMsgError" runat="server" CssClass="alert alert-danger col-md-12"></asp:Label><br />
             </div>
-            <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
-                <div class="ajuste col-lg-4 col-md-4 col-sm-4 col-xl-12">
+            <div class="row col-md-12 text-left">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
                     <asp:Label ID="lblDtaInicio" runat="server" Text="Data Ínicio"></asp:Label>
-                    <asp:Calendar ID="DtaInicio" runat="server"></asp:Calendar>
+                    <asp:Calendar class="centralizarTabelas " ID="DtaInicio" runat="server"></asp:Calendar>
                 </div>
-                <div class="ajuste col-lg-4 col-md-4 col-sm-4 col-xl-12">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
                     <asp:Label ID="lblDtaFim" runat="server" Text="Data Fim"></asp:Label>
-                    <asp:Calendar ID="DtaFim" runat="server"></asp:Calendar>
+                    <asp:Calendar ID="DtaFim" class="centralizarTabelas" runat="server"></asp:Calendar>
                 </div>
-                <div class="botao col-lg-4 col-md-4 col-sm-4 col-xl-12">
-                    <asp:Button class="btn btn-secondary" ID="btnVerificar" runat="server" Text="Verificar" OnClick="btnVerificar_Click" />
-                </div>
-                <div>
+            </div>
+            <div class="row col-md-12 text-center">
+                <asp:Button class="btn btn-secondary separador separadorBtn Corbtn col-md-4" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+                <div class="col-md-1"></div>
+                <asp:Button class="btn btn-secondary separador separadorBtn Corbtn col-md-4" ID="btnVerificar" runat="server" Text="Verificar" OnClick="btnVerificar_Click" />
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-6 grid">
                     <asp:GridView ID="gvdExtrato" runat="server" AutoGenerateColumns="False">
                         <Columns>
                             <asp:TemplateField HeaderText="Data">
@@ -70,11 +145,11 @@
                         </Columns>
                     </asp:GridView>
                 </div>
-                <div class="ajuste col-lg-4 col-sm-4 col-md-4 col-xl-12 ">
-                    <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
-                </div>
             </div>
         </div>
     </form>
+    </div>
+    <div class="footer"></div>
+    <div class="footer1 text-center CorLetras">Direitos.</div>
 </body>
 </html>
