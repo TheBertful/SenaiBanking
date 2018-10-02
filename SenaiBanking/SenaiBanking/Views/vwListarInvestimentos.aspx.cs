@@ -39,7 +39,7 @@ namespace SenaiBanking.Views
             List<Investimento> lista = conta.ListarInvestimentos();
             if (lista != null)
             {
-                conta.ListarInvestimentos().ForEach(item =>
+                lista.ForEach(item =>
                 {
                     DataRow dr = dt.NewRow();
                     dr["Descricao"] = item.Descricao;
