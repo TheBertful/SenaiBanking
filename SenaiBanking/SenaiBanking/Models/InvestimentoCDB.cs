@@ -7,6 +7,11 @@ namespace SenaiBanking.Models
 {
     public class InvestimentoCDB : InvestimentoIndexado
     {
+        public InvestimentoCDB() : base()
+        {
+            TipoInvestimento = "CDB";
+        }
+
         // Colocar informações específicas padrão
         public override double CalcularImposto()
         {
