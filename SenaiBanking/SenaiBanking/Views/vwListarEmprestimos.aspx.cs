@@ -36,7 +36,8 @@ namespace SenaiBanking.Views
             List<Emprestimo> lista = conta.ListarEmprestimos();
             if (lista != null)
             {
-                conta.ListarEmprestimos().ForEach(item => {
+                conta.ListarEmprestimos().ForEach(item =>
+                {
                     DataRow dr = dt.NewRow();
                     dr["Id"] = item.Id;
                     dr["Tipo"] = item.Tipo;
@@ -51,19 +52,15 @@ namespace SenaiBanking.Views
             gdvEmprestimos.DataBind();
         }
 
-        protected void gdvEmprestimos_RowCommand(object sender, GridViewCommandEventArgs e)
+        public void PopulateGridParcelas(int id)
         {
-            int id = Convert.ToInt32(e.CommandArgument);
-
-            //List<Emprestimo> emprestimos = Session["emprestimos"] as List<Emprestimo>;
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             List<Emprestimo> lista = conta.ListarEmprestimos();
-            List<Parcela> parcelas = new List<Parcela>();
 
             Emprestimo emprestimo = null;
-            //emprestimos.ForEach(item => {
-            lista.ForEach(item => { 
-                if(item.Id == id)
+            lista.ForEach(item =>
+            {
+                if (item.Id == id)
                 {
                     emprestimo = item;
                 }
@@ -77,7 +74,8 @@ namespace SenaiBanking.Views
             dt.Columns.Add("Valor", Type.GetType("System.String"));
             if (emprestimo != null)
             {
-                emprestimo.Parcelas.ForEach(item => {
+                emprestimo.Parcelas.ForEach(item =>
+                {
                     DataRow dr = dt.NewRow();
                     dr["Numero"] = item.Numero.ToString();
                     dr["Status"] = item.Status;
@@ -88,14 +86,15 @@ namespace SenaiBanking.Views
             }
             if (emprestimo != null)
             {
-                if(emprestimo.FormaPagamento.Equals("Boleto"))
+                if (emprestimo.FormaPagamento.Equals("Boleto"))
                 {
                     gdvParcelasDebitoEmConta.DataSource = null;
                     gdvParcelasBoleto.DataSource = dt;
                     gdvParcelasBoleto.DataBind();
                     gdvParcelasDebitoEmConta.DataBind();
                     PopulateGridEmprestimos();
-                } else
+                }
+                else
                 {
                     gdvParcelasBoleto.DataSource = null;
                     gdvParcelasDebitoEmConta.DataSource = dt;
@@ -103,9 +102,15 @@ namespace SenaiBanking.Views
                     gdvParcelasBoleto.DataBind();
                     PopulateGridEmprestimos();
                 }
-                
+
             }
             Session["emprestimo"] = emprestimo;
+        }
+
+        protected void gdvEmprestimos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int id = Convert.ToInt32(e.CommandArgument);
+            PopulateGridParcelas(id);
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
@@ -117,7 +122,7 @@ namespace SenaiBanking.Views
         {
             int id = 0;
             string numero = e.CommandArgument.ToString();
-            if(numero.Length > 5)
+            if (numero.Length > 3)
             {
                 id = Convert.ToInt32(numero.Substring(0, 2));
             }
@@ -129,7 +134,8 @@ namespace SenaiBanking.Views
             Emprestimo emp = Session["emprestimo"] as Emprestimo;
             Parcela p = new Parcela();
             int count = 1;
-            emp.Parcelas.ForEach(item => {
+            emp.Parcelas.ForEach(item =>
+            {
                 if (count == id)
                     p = item;
                 count++;
@@ -141,9 +147,17 @@ namespace SenaiBanking.Views
 
         protected void gdvParcelasDebitoEmConta_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            Emprestimo emp = Session["emprestimo"] as Emprestimo;
+            Parcela p = new Parcela();
+
+            if (conta.Saldo >= emp.Parcelas[0].Valor)
+            {
+
+            }
             int id = 0;
             string numero = e.CommandArgument.ToString();
-            if (numero.Length > 5)
+            if(numero.Length > 3)
             {
                 id = Convert.ToInt32(numero.Substring(0, 2));
             }
@@ -152,10 +166,10 @@ namespace SenaiBanking.Views
                 id = Convert.ToInt32(numero.Substring(0, 1));
             }
 
-            Emprestimo emp = Session["emprestimo"] as Emprestimo;
-            Parcela p = new Parcela();
+            
             int count = 1;
-            emp.Parcelas.ForEach(item => {
+            emp.Parcelas.ForEach(item =>
+            {
                 if (count == id)
                     p = item;
                 count++;
@@ -163,7 +177,9 @@ namespace SenaiBanking.Views
             Session["parcela"] = p;
 
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
-            conta.PagarParcela(p);
+            emp.PagarParcela(p);
+            Session["ContaCorrente"] = conta;
+            PopulateGridParcelas(emp.Id);
         }
     }
 }
