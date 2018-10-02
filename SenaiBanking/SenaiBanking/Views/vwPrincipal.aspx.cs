@@ -13,6 +13,10 @@ namespace SenaiBanking.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            ContaContabilEmprestimo cce = Session["Emprestimos"] as ContaContabilEmprestimo;
+            ContaContabilInvestimento cci = Session["Investimentos"] as ContaContabilInvestimento;
+            lblContaContabilEmprestimo.Text = cce.CalcularSaldo().ToString();
+            lblContaContabilInvestimento.Text = cci.CalcularSaldo().ToString();
             if(conta != null)
             {
                 lblSaudacao.Text = conta.ClienteProp.Nome;
@@ -57,6 +61,12 @@ namespace SenaiBanking.Views
         protected void btnExtrato_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/vwExtrato.aspx");
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session["PrimeiroLogin"] = "Não";
+            Response.Redirect("~/Views/vwLogin.aspx");
         }
     }
 }
