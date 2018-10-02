@@ -28,7 +28,9 @@ namespace SenaiBanking.Views
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             Parcela parcela = Session["parcela"] as Parcela;
-            conta.PagarParcela(parcela);
+            Emprestimo emprestimo = Session["emprestimo"] as Emprestimo;
+
+            emprestimo.PagarParcela(parcela);
 
             lblMsg.Visible = true;
             lblMsg.Text = "OK parcela paga";
