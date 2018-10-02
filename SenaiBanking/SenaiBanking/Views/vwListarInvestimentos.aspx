@@ -21,16 +21,9 @@
                     <asp:BoundField DataField="Rendimento" HeaderText="Rendimento" />
                     <asp:BoundField DataField="Vencimento" HeaderText="Vencimento" />
                     <asp:BoundField DataField="Valortotal" HeaderText="Valor Total" />
-                    <asp:ButtonField HeaderText="Operações" Text="Resgatar" />
                 </Columns>
             </asp:GridView>
                 </div>
-            <br />
-             <div class="ajuste col-lg-12 col-sm-12">
-                 <asp:Label ID="lblValorResgate" runat="server" Text="Digite o Valor para Resgate"></asp:Label>
-                <br />
-                <asp:TextBox ID="txtValorResgate" runat="server" class="form-control" Width="40%" OnTextChanged="txtValorResgatar_TextChanged"></asp:TextBox>
-                 </div>
             <br />
             <br />
              <div class="col-lg-12 col-sm-12 col-md-12">

@@ -95,6 +95,7 @@
     <Content Include="Views\vwListarInvestimentos.aspx" />
     <Content Include="Views\vwLogin.aspx" />
     <Content Include="Views\vwPrincipal.aspx" />
+    <Content Include="Views\vwResgatar.aspx" />
     <Content Include="Views\vwSacar.aspx" />
     <Content Include="Views\vwSaldo.aspx" />
     <Content Include="Views\vwSolicitarEmprestimo.aspx" />
@@ -202,6 +203,13 @@
     </Compile>
     <Compile Include="Views\vwPrincipal.aspx.designer.cs">
       <DependentUpon>vwPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\vwResgatar.aspx.cs">
+      <DependentUpon>vwResgatar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\vwResgatar.aspx.designer.cs">
+      <DependentUpon>vwResgatar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\vwSacar.aspx.cs">
       <DependentUpon>vwSacar.aspx</DependentUpon>
