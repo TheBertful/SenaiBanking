@@ -10,6 +10,10 @@ namespace SenaiBanking.Models
         public InvestimentoCDB() : base()
         {
             TipoInvestimento = "CDB";
+            Indexador = 6.5;
+            Porcentagem = 110;
+            Random r = new Random();
+            Taxa = 0.3 + r.NextDouble() * 2;
         }
 
         // Colocar informações específicas padrão
