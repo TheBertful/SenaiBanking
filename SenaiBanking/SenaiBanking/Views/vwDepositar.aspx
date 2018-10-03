@@ -45,25 +45,28 @@
         </div>
     </div>
     <form id="form1" runat="server">
+          <h1 class="h1">Realizar Depósito</h1>
         <div class="exibirConta">
             <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
             <asp:Label ID="txtNumeroConta" runat="server" class="form-control tamanhoConta"></asp:Label>
         </div>
         <div class="container">
-            <div>
-                <asp:Label ID="lblMsg" runat="server" CssClass="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label><br />
-                <asp:Label ID="lblMsgError" runat="server" CssClass="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label><br />
-            </div>
-            <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+            <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">               
+                <asp:Label ID="lblMsg" runat="server" CssClass="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label>
+                <br />
+                <asp:Label ID="lblMsgError" runat="server" CssClass="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label>
+                <br />
                 <div class="ajuste col-lg-12 col-md-6 col-sm-12 col-xl-12">
                     <asp:Label ID="lblDeposito" runat="server" Text="Valor "></asp:Label>
                     <asp:TextBox ID="txtDeposito" runat="server" class="form-control" Width="20%"></asp:TextBox>
                 </div>
                 <div class="ajuste col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <asp:Button class="btn btn-secondary" ID="btnDepositar" runat="server" Text="Depositar" OnClick="btnDepositar_Click" />
-                    <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
                 </div>
             </div>
+        </div>
+        <div class="col-lg-12 col-sm-12 col-md-12">
+            <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
         </div>
     </form>
     <div class="footer"></div>

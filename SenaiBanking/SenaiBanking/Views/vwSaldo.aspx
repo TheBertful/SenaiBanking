@@ -55,14 +55,14 @@
                     <asp:Label ID="lblSaldo" runat="server" Text="Saldo"></asp:Label>
                     <asp:Label ID="lblMostrarSaldo" runat="server" class="form-control" Width="10%"></asp:Label>
                 </div>
-                <div class="ajuste col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <asp:Button class="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
-                </div>
                 <div>
                   <asp:Label ID="lblAviso" runat="server"></asp:Label>
                 </div>
             </div>
         </div>
+         <div class="col-lg-12 col-sm-12 col-md-12">
+            <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+        </div>     
     </form>
     <div class="footer"></div>
     <div class="footer1 text-center CorLetras">Direitos.</div>

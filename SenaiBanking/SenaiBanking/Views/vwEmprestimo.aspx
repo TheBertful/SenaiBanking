@@ -6,6 +6,7 @@
 <head runat="server">
     <link href="../css/template.css" rel="stylesheet" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/Principal.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
@@ -49,19 +50,20 @@
     </div>
     <form id="form1" runat="server">
         <div class="container">
-            <br />
-            <div class="col-lg-12 col-sm-12 col-md-12">
-                <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
-            </div>
-            <br />
 
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
-                <asp:Button ID="btnSolicitar" runat="server" Text="Solicitar Emprestimo" CssClass="btn btn-secondary" OnClick="btnSolicitar_Click" /><br />
-                <br />
-                <asp:Button ID="btnListar" runat="server" Text="Listar Emprestimos" CssClass="btn btn-secondary" OnClick="btnListar_Click" />
+            <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                    <asp:Button ID="btnSolicitar" runat="server" Text="Solicitar Emprestimo" CssClass="btn btn-secondary btn-lg mesmo-tamanho" OnClick="btnSolicitar_Click" /><br />
+                </div>
+                <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                    <asp:Button ID="btnListar" runat="server" Text="Listar Emprestimos" CssClass="btn btn-secondary btn-lg mesmo-tamanho" OnClick="btnListar_Click" />
+                </div>
             </div>
         </div>
-
+        <br />
+         <div class="col-lg-12 col-sm-12 col-md-12">
+            <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+        </div>       
     </form>
     <div class="footer"></div>
     <div class="footer1 text-center CorLetras">Direitos.</div>

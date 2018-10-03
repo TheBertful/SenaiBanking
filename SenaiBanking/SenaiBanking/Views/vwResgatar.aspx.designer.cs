@@ -13,6 +13,24 @@ namespace SenaiBanking.Views {
     public partial class vwResgatar {
         
         /// <summary>
+        /// Controle lblNumeroConta.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumeroConta;
+        
+        /// <summary>
+        /// Controle txtNumeroConta.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtNumeroConta;
+        
+        /// <summary>
         /// Controle form1.
         /// </summary>
         /// <remarks>
@@ -94,15 +112,6 @@ namespace SenaiBanking.Views {
         protected global::System.Web.UI.WebControls.TextBox txtMsgError;
         
         /// <summary>
-        /// Controle btnVoltar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVoltar;
-        
-        /// <summary>
         /// Controle btnConfirmar.
         /// </summary>
         /// <remarks>
@@ -110,5 +119,14 @@ namespace SenaiBanking.Views {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnConfirmar;
+        
+        /// <summary>
+        /// Controle btnVoltar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVoltar;
     }
 }

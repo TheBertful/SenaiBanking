@@ -6,6 +6,7 @@
 <head runat="server">
     <link href="../css/template.css" rel="stylesheet" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/Principal.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
@@ -48,15 +49,19 @@
         </div>
     </div>
     <form id="form1" runat="server">
+        <h1 class="h1">Investimentos</h1>
         <div class="container">
-            <br />
-            <br />
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
-                <asp:Button ID="btnMeusInvestimentos" runat="server" Text="Meus investimentos" CssClass="btn btn-secondary" OnClick="btnMeusInvestimentos_Click" /><br />
-                <br />
-                <asp:Button ID="btnAplicacao" runat="server" Text="Aplicação" CssClass="btn btn-secondary" OnClick="btnAplicacao_Click" /><br />
-                <br />
-                <asp:Button ID="btnResgate" runat="server" Text="Resgate" CssClass="btn btn-secondary" OnClick="btnResgate_Click" /><br />
+            <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+
+                <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
+                    <asp:Button ID="btnMeusInvestimentos" runat="server" Text="Meus investimentos" CssClass="btn btn-secondary btn-lg mesmo-tamanho" OnClick="btnMeusInvestimentos_Click" /><br />
+                </div>
+                <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
+                    <asp:Button ID="btnAplicacao" runat="server" Text="Aplicação" CssClass="btn btn-secondary btn-lg mesmo-tamanho" OnClick="btnAplicacao_Click" /><br />
+                </div>
+                <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
+                    <asp:Button ID="btnResgate" runat="server" Text="Resgate" CssClass="btn btn-secondary btn-lg mesmo-tamanho" OnClick="btnResgate_Click" /><br />
+                </div>
             </div>
         </div>
         <div class="col-lg-12 col-sm-12 col-md-12">

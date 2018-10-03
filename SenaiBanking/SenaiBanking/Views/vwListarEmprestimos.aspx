@@ -13,7 +13,7 @@
     <div class="head">
         <div class="exibirConta">
             <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
-            <asp:Label ID="txtNumeroConta" runat="server"  class="form-control tamanhoConta"></asp:Label>
+            <asp:Label ID="txtNumeroConta" runat="server" class="form-control tamanhoConta"></asp:Label>
         </div>
         <div class="logo"></div>
         <div class="menu">
@@ -51,9 +51,6 @@
         <h1 class="h1">Listar Emprestimos</h1>
         <form id="form1" runat="server">
             <br />
-            <div class="col-lg-12 col-sm-12 col-md-12">
-                <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
-            </div>
             <br />
             <!-- Onde serão exibidos avisos -->
             <asp:Label ID="lblAviso" runat="server" />
@@ -210,7 +207,11 @@
                     </Columns>
                 </asp:GridView>
             </div>
-        </form>
+        
+        <div class="col-lg-12 col-sm-12 col-md-12">
+            <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+        </div>
+            </form>
     </div>
     <div class="footer"></div>
     <div class="footer1 text-center CorLetras">Direitos.</div>
