@@ -28,6 +28,8 @@
                     <br />
                     <asp:TextBox ID="txtValorAplicar" runat="server" class="form-control" Width="40%" OnTextChanged="txtValorAplicar_TextChanged"></asp:TextBox>
                     <br />
+                    <asp:Label ID="lblMsg" runat="server" CssClass="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label>
+                    <br />
                     <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsgError" runat="server" role="alert"></asp:TextBox>
                     <br />
                     <asp:Label ID="lblDataAplicacao" runat="server" Text="Data da Aplicação"></asp:Label>
@@ -43,7 +45,6 @@
                         <asp:Button class="btn btn-secondary" ID="btnConfirmar" runat="server" Text="Confirmar" OnClick="btnConfirmar_Click" />
                     </div>
                     <br />
-
                 </div>
             </div>
         </form>

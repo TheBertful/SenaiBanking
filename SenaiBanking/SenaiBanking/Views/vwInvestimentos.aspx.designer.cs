@@ -13,15 +13,6 @@ namespace SenaiBanking.Views {
     public partial class Investimentos {
         
         /// <summary>
-        /// Controle form1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// Controle lblNumeroConta.
         /// </summary>
         /// <remarks>
@@ -37,7 +28,16 @@ namespace SenaiBanking.Views {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumeroConta;
+        protected global::System.Web.UI.WebControls.Label txtNumeroConta;
+        
+        /// <summary>
+        /// Controle form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// Controle btnMeusInvestimentos.
@@ -74,14 +74,5 @@ namespace SenaiBanking.Views {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnVoltar;
-        
-        /// <summary>
-        /// Controle lblAviso.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAviso;
     }
 }
