@@ -32,17 +32,20 @@ namespace SenaiBanking.Views
                 txtValorTotal.Visible = false;
                 lblValorTotal.Visible = false;
 
+                btnSimular.Visible = false;
                 btnConfirmar.Visible = false;
+
 
                 PopulateGridListarInvestimento();
             }
 
         }
 
-        public void PopulateGridListarInvestimento()
+        public void PopulateGridListarInvestimento() //Popula a grid com a lista de investimentos
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             DataTable dt = new DataTable();
+
 
             dt.Columns.Add("Id", Type.GetType("System.String"));
             dt.Columns.Add("Descricao", Type.GetType("System.String"));
@@ -76,12 +79,12 @@ namespace SenaiBanking.Views
 
         public void PopulateGridResgatarInvestimento()
         {
-            ContaCorrente contaCorrente = new ContaCorrente();
 
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
+          //  context.Response.Write("session_timeout;" + redirectLocation);
             Response.Redirect("~/Views/vwInvestimentos.aspx");
 
         }
@@ -131,28 +134,56 @@ namespace SenaiBanking.Views
 
         }
 
-        protected void gdvResgatarInvestimento_RowCommand(object sender, GridViewCommandEventArgs e) //operação "Render" da Grid
+        protected void gdvResgatarInvestimento_RowCommand(object sender, GridViewCommandEventArgs e) //operação "Selecionar" da Grid
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             Investimento investimento = conta.ListarInvestimentosNaoResgatados()[Convert.ToInt32(e.CommandArgument)];
 
-                investimento.Render();
-                Session["investimento"] = investimento;
-               
-                    txtDescricao.Visible = true;
-                    lblDescricao.Visible = true;
-                    txtRendimento.Visible = true;
-                    lblRendimento.Visible = true;
-                    txtValorTotal.Visible = true;
-                    lblValorTotal.Visible = true;
+            Session["investimento"] = investimento;
 
-                    btnConfirmar.Visible = true;
+            txtDescricao.Visible = true;
+            lblDescricao.Visible = true;
+            txtRendimento.Visible = true;
+            lblRendimento.Visible = true;
+            txtValorTotal.Visible = true;
+            lblValorTotal.Visible = true;
 
-                    txtDescricao.Text = investimento.Descricao;
-                    txtRendimento.Text = Convert.ToString(investimento.Rendimento);
-                    txtValorTotal.Text = Convert.ToString(investimento.Valor);
-                
+            btnSimular.Visible = true;
+            btnConfirmar.Visible = true;
+
+            txtDescricao.Text = investimento.Descricao;
+            txtRendimento.Text = Convert.ToString(investimento.Rendimento);
+            txtValorTotal.Text = Convert.ToString(investimento.Valor);
+
+
+        }
+
+        protected void btnSimularRendimento_Click(object sender, EventArgs e)  //Operação Simular Rendimento
+        {
+            // Carrego a sessão de Conta Corrente e investimento
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+
+            Investimento investimento = Session["investimento"] as Investimento;
+
+            // chamo o método render para cálculo
+            investimento.Render();
             
+            txtDescricao.Visible = true;
+            lblDescricao.Visible = true;
+            txtRendimento.Visible = true;
+            lblRendimento.Visible = true;
+            txtValorTotal.Visible = true;
+            lblValorTotal.Visible = true;
+            btnSimular.Visible = true;
+            btnConfirmar.Visible = true;
+
+            txtDescricao.Text = investimento.Descricao;
+            txtRendimento.Text = Convert.ToString(investimento.Rendimento);
+            txtValorTotal.Text = Convert.ToString(investimento.Valor);
+
+            gdvResgatarInvestimento.Visible = false;
+            btnSimular.Visible = false;
+
         }
     }
 }

@@ -95,10 +95,10 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Operações" ShowHeader="False">
                         <EditItemTemplate>
-                            <asp:LinkButton ID="txtSelecionar" runat="server" CausesValidation="false" CommandName="" Text="Render"></asp:LinkButton>
+                            <asp:LinkButton ID="txtSelecionar" runat="server" CausesValidation="false" CommandName="" Text="Selecionar"></asp:LinkButton>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:LinkButton ID="btnSelecionar" runat="server" CausesValidation="false" CommandName="RowCommand" Text="Render" CommandArgument='<%# Bind("Id") %>'></asp:LinkButton>
+                            <asp:LinkButton ID="btnSelecionar" runat="server" CausesValidation="false" CommandName="RowCommand" Text="Selecionar" CommandArgument='<%# Bind("Id") %>'></asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
@@ -121,6 +121,8 @@
             <br />
             <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsgError" runat="server" role="alert"></asp:TextBox>
             <br />
+            <asp:Button class="btn btn-secondary" ID="btnSimular" runat="server" Text="Simular Rendimento" OnClick="btnSimularRendimento_Click" />
+            <br /><br />
             <asp:Button class="btn btn-secondary" ID="btnConfirmar" runat="server" Text="Confirmar Resgate" OnClick="btnConfirmar_Click" />
         </div>
         <br />
