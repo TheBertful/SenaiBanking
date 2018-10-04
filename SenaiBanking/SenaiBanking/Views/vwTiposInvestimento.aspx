@@ -33,7 +33,7 @@
                 <li class="dropdown">
                     <a href="vwInvestimentos.aspx" class="dropbtn">Investimento</a>
                     <div class="dropdown-content">
-                        <a href="vwAplicacoes.aspx">Apliacação</a>
+                        <a href="vwAplicacoes.aspx">Aplicação</a>
                         <a href="#">Meus investimentos</a>
                         <a href="#">Resgate</a>
                     </div>
@@ -41,7 +41,7 @@
                 <li class="dropdown">
                     <a href="vwEmprestimo.aspx" class="dropbtn">Empréstimo</a>
                     <div class="dropdown-content">
-                        <a href="vwListarEmprestimos.aspx">Listar empréstimos</a>
+                        <a href="vwListarEmprestimos.aspx">Listar Empréstimos</a>
                         <a href="vwSolicitarEmprestimo.aspx">Solicitar Empréstimos</a>
                     </div>
                 </li>
@@ -49,27 +49,31 @@
         </div>
     </div>
     <form id="form1" runat="server">
-                <h1 class="h1">Tipos de Investimento</h1>
+        <h1 class="h1">Tipos de Investimento</h1>
         <div class="container">
-            <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
-
-                <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
-                    <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnCdb" runat="server" Text="CDB" OnClick="btnCDB_Click" />
+                <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                    <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
+                        <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnCdb" runat="server" Text="CDB" OnClick="btnCDB_Click" />
+                    </div>
                 </div>
-                <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
-                    <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnTesouro" runat="server" Text="Tesouro" OnClick="btnTesouro_Click" />
+                <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                    <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
+                        <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnTesouro" runat="server" Text="Tesouro" OnClick="btnTesouro_Click" />
+                    </div>
                 </div>
-                <div class="ajuste col-lg-6 col-md-6 col-sm-6 col-xl-12">
-                    <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnPoupanca" runat="server" Text="Poupança" OnClick="btnPoupanca_Click" />
+                <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                    <div class="ajuste col-lg-6 col-md-6 col-sm-6 col-xl-12">
+                        <asp:Button class="btn btn-secondary btn-lg mesmo-tamanho" ID="btnPoupanca" runat="server" Text="Poupança" OnClick="btnPoupanca_Click" />
+                    </div>
                 </div>
-                <div>
-                    <asp:Label ID="lblAviso" runat="server"></asp:Label>
-                </div>
-                 <div class="col-lg-12 col-sm-12 col-md-12">
-            <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
-        </div>     
             </div>
         </div>
+        <div class="col-lg-12 col-sm-12 col-md-12">
+            <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+        </div>
     </form>
+    <div class="footer"></div>
+    <div class="footer1 text-center CorLetras">Direitos.</div>
 </body>
 </html>
+

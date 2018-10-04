@@ -21,7 +21,7 @@
             <ul>
                 <li><a href="vwPrincipal.aspx">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="Conta" class="dropbtn">Conta Corrente</a>
+                    <a href="" class="dropbtn">Conta Corrente</a>
                     <div class="dropdown-content">
                         <a href="vwDepositar.aspx">Depósito</a>
                         <a href="vwExtrato.aspx">Extrato</a>
@@ -33,7 +33,7 @@
                 <li class="dropdown">
                     <a href="vwInvestimentos.aspx" class="dropbtn">Investimento</a>
                     <div class="dropdown-content">
-                        <a href="vwAplicacoes.aspx">Apliacação</a>
+                        <a href="vwAplicacoes.aspx">Aplicação</a>
                         <a href="#">Meus investimentos</a>
                         <a href="#">Resgate</a>
                     </div>
@@ -41,7 +41,7 @@
                 <li class="dropdown">
                     <a href="vwEmprestimo.aspx" class="dropbtn">Empréstimo</a>
                     <div class="dropdown-content">
-                        <a href="vwListarEmprestimos.aspx">Listar empréstimos</a>
+                        <a href="vwListarEmprestimos.aspx">Listar Empréstimos</a>
                         <a href="vwSolicitarEmprestimo.aspx">Solicitar Empréstimos</a>
                     </div>
                 </li>
@@ -53,14 +53,20 @@
         <div class="container">
             <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
 
-                <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
-                    <asp:Button ID="btnMeusInvestimentos" runat="server" Text="Meus investimentos" CssClass="btn btn-secondary btn-lg mesmo-tamanho" OnClick="btnMeusInvestimentos_Click" /><br />
+                <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                    <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
+                        <asp:Button ID="btnMeusInvestimentos" runat="server" Text="Meus investimentos" CssClass="btn btn-secondary btn-lg mesmo-tamanho" OnClick="btnMeusInvestimentos_Click" /><br />
+                    </div>
                 </div>
-                <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
-                    <asp:Button ID="btnAplicacao" runat="server" Text="Aplicação" CssClass="btn btn-secondary btn-lg mesmo-tamanho" OnClick="btnAplicacao_Click" /><br />
+                <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                    <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
+                        <asp:Button ID="btnAplicacao" runat="server" Text="Aplicação" CssClass="btn btn-secondary btn-lg mesmo-tamanho" OnClick="btnAplicacao_Click" /><br />
+                    </div>
                 </div>
-                <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
-                    <asp:Button ID="btnResgate" runat="server" Text="Resgate" CssClass="btn btn-secondary btn-lg mesmo-tamanho" OnClick="btnResgate_Click" /><br />
+                <div class="row col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                    <div class="ajuste col-lg-6 col-sm-6 col-md-6 col-xl-12">
+                        <asp:Button ID="btnResgate" runat="server" Text="Resgate" CssClass="btn btn-secondary btn-lg mesmo-tamanho" OnClick="btnResgate_Click" /><br />
+                    </div>
                 </div>
             </div>
         </div>

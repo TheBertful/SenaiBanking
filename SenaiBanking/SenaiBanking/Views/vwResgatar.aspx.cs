@@ -20,8 +20,22 @@ namespace SenaiBanking.Views
             {
                 Response.Redirect("~/Views/vwLogin.aspx");
             }
+            else
+            {
+                txtNumeroConta.Text = conta.Numero.ToString();
+                lblMsg.Visible = false;
+                txtMsgError.Visible = false;
+                txtDescricao.Visible = false;
+                lblDescricao.Visible = false;
+                txtRendimento.Visible = false;
+                lblRendimento.Visible = false;
+                txtValorTotal.Visible = false;
+                lblValorTotal.Visible = false;
 
-            PopulateGridListarInvestimento();
+                btnConfirmar.Visible = false;
+
+                PopulateGridListarInvestimento();
+            }
 
         }
 
@@ -87,20 +101,18 @@ namespace SenaiBanking.Views
 
         }
 
-        protected void btnConfirmar_Click(object sender, EventArgs e)
+        protected void btnConfirmar_Click(object sender, EventArgs e)  //Confirmar resgate do investimento
         {
 
             try
             {
-               Investimento investimento = Session["investimento"]as Investimento;
-
-             
+                Investimento investimento = Session["investimento"] as Investimento;
                 ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
 
                 conta.ResgatarInvestimento(investimento);
-  
-                txtMsgError.Visible = true;
-                txtMsgError.Text = "Valor Resgatado: R$ " + investimento.Valor;
+
+                lblMsg.Visible = true;
+                lblMsg.Text = "Valor Resgatado: R$ " + investimento.Valor;
 
                 PopulateGridListarInvestimento();
 
@@ -112,24 +124,35 @@ namespace SenaiBanking.Views
                 txtMsgError.Text = "Não foi possível realizar sua aplicação, verifique o campo Valor";
             }
         }
-    
+
 
         protected void gdvResgatarInvestimento_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
 
         }
 
-        protected void gdvResgatarInvestimento_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gdvResgatarInvestimento_RowCommand(object sender, GridViewCommandEventArgs e) //operação "Render" da Grid
         {
             ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
             Investimento investimento = conta.ListarInvestimentosNaoResgatados()[Convert.ToInt32(e.CommandArgument)];
-            investimento.Render();
-            Session["investimento"] = investimento;
 
-            txtDescricao.Text = investimento.Descricao;
-            txtRendimento.Text = Convert.ToString(investimento.Rendimento);
-            txtValorTotal.Text = Convert.ToString(investimento.Valor);
+                investimento.Render();
+                Session["investimento"] = investimento;
+               
+                    txtDescricao.Visible = true;
+                    lblDescricao.Visible = true;
+                    txtRendimento.Visible = true;
+                    lblRendimento.Visible = true;
+                    txtValorTotal.Visible = true;
+                    lblValorTotal.Visible = true;
 
+                    btnConfirmar.Visible = true;
+
+                    txtDescricao.Text = investimento.Descricao;
+                    txtRendimento.Text = Convert.ToString(investimento.Rendimento);
+                    txtValorTotal.Text = Convert.ToString(investimento.Valor);
+                
+            
         }
     }
 }

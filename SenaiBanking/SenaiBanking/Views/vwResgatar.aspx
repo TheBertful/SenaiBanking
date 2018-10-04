@@ -32,7 +32,7 @@
                 <li class="dropdown">
                     <a href="vwInvestimentos.aspx" class="dropbtn">Investimento</a>
                     <div class="dropdown-content">
-                        <a href="vwAplicacoes.aspx">Apliacação</a>
+                        <a href="vwAplicacoes.aspx">Aplicação</a>
                         <a href="#">Meus investimentos</a>
                         <a href="#">Resgate</a>
                     </div>
@@ -40,7 +40,7 @@
                 <li class="dropdown">
                     <a href="vwEmprestimo.aspx" class="dropbtn">Empréstimo</a>
                     <div class="dropdown-content">
-                        <a href="vwListarEmprestimos.aspx">Listar empréstimos</a>
+                        <a href="vwListarEmprestimos.aspx">Listar Empréstimos</a>
                         <a href="vwSolicitarEmprestimo.aspx">Solicitar Empréstimos</a>
                     </div>
                 </li>
@@ -50,7 +50,7 @@
     <form id="form1" runat="server">
         <h1 class="h1">Aplicações para Resgate</h1>
         <div class="container">
-            <br />     
+            <br />
             <asp:GridView ID="gdvResgatarInvestimento" CssClass="table-light text-center col-6" runat="server" AutoGenerateColumns="False" OnRowCommand="gdvResgatarInvestimento_RowCommand">
                 <Columns>
                     <asp:TemplateField HeaderText="Descrição">
@@ -117,14 +117,20 @@
             <br />
             <asp:TextBox ID="txtValorTotal" runat="server" class="form-control" Width="40%" OnTextChanged="txtValortotal_TextChanged"></asp:TextBox>
             <br />
+            <asp:Label ID="lblMsg" runat="server" CssClass="alert alert-primary col-lg-12 col-md-12 col-sm-12 col-xl-12"></asp:Label>
+            <br />
             <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsgError" runat="server" role="alert"></asp:TextBox>
             <br />
             <asp:Button class="btn btn-secondary" ID="btnConfirmar" runat="server" Text="Confirmar Resgate" OnClick="btnConfirmar_Click" />
         </div>
         <br />
-          <div class="col-lg-12 col-sm-12 col-md-12">
-        <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
-    </div>
+        <div class="col-lg-12 col-sm-12 col-md-12">
+            <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
+        </div>
+        <br />
     </form>
+    <div class="footer"></div>
+    <div class="footer1 text-center CorLetras">Direitos.</div>
 </body>
 </html>
+

@@ -61,7 +61,7 @@
                 <li class="dropdown">
                     <a href="vwInvestimentos.aspx" class="dropbtn">Investimento</a>
                     <div class="dropdown-content">
-                        <a href="vwAplicacoes.aspx">Apliacação</a>
+                        <a href="vwAplicacoes.aspx">Aplicação</a>
                         <a href="#">Meus investimentos</a>
                         <a href="#">Resgate</a>
                     </div>
@@ -69,7 +69,7 @@
                 <li class="dropdown">
                     <a href="vwEmprestimo.aspx" class="dropbtn">Empréstimo</a>
                     <div class="dropdown-content">
-                        <a href="vwListarEmprestimos.aspx">Listar empréstimos</a>
+                        <a href="vwListarEmprestimos.aspx">Listar Empréstimos</a>
                         <a href="vwSolicitarEmprestimos.aspx">Solicitar Empréstimos</a>
                     </div>
                 </li>
@@ -87,6 +87,7 @@
                 <asp:Label ID="lblMsg" runat="server" CssClass="alert alert-primary col-md-12"></asp:Label><br />
                 <asp:Label ID="lblMsgError" runat="server" CssClass="alert alert-danger col-md-12"></asp:Label><br />
             </div>
+            <br />
             <div class="row col-md-12 text-left">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">

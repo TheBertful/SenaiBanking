@@ -29,7 +29,7 @@
                 <li class="dropdown">
                     <a href="vwInvestimentos.aspx" class="dropbtn">Investimento</a>
                     <div class="dropdown-content">
-                        <a href="vwAplicacoes.aspx">Apliacação</a>
+                        <a href="vwAplicacoes.aspx">Aplicação</a>
                         <a href="#">Meus investimentos</a>
                         <a href="#">Resgate</a>
                     </div>
@@ -37,7 +37,7 @@
                 <li class="dropdown">
                     <a href="vwEmprestimo.aspx" class="dropbtn">Empréstimo</a>
                     <div class="dropdown-content">
-                        <a href="vwListarEmprestimos.aspx">Listar empréstimos</a>
+                        <a href="vwListarEmprestimos.aspx">Listar Empréstimos</a>
                         <a href="vwSolicitarEmprestimos.aspx">Solicitar Empréstimos</a>
                     </div>
                 </li>
@@ -45,6 +45,7 @@
         </div>
     </div>
     <form id="form1" runat="server">
+        <h1 class="h1">Realizar Transferência</h1>
         <div class="exibirConta">
             <asp:Label ID="lblNumeroConta" runat="server" Text="Conta:"></asp:Label>
             <asp:Label ID="txtNumeroConta" runat="server" class="form-control tamanhoConta"></asp:Label>
@@ -71,6 +72,7 @@
         <div class="col-lg-12 col-sm-12 col-md-12">
             <asp:Button CssClass="btn btn-secondary" ID="btnVoltar" runat="server" Text="Voltar" OnClick="btnVoltar_Click" />
         </div>
+        <br />
     </form>
     <div class="footer"></div>
     <div class="footer1 text-center CorLetras">Direitos.</div>

@@ -19,8 +19,11 @@ namespace SenaiBanking.Views
             {
                 Response.Redirect("~/Views/vwLogin.aspx");
             }
-          
-            PopulateGridInvestimento();
+            else
+            {
+                txtNumeroConta.Text = conta.Numero.ToString();
+                PopulateGridInvestimento();
+            }
 
         }
 
@@ -42,7 +45,7 @@ namespace SenaiBanking.Views
                 lista.ForEach(item =>
                 {
                     DataRow dr = dt.NewRow();
-                  
+
                     dr["Descricao"] = item.Descricao;
                     dr["DataSolicitacao"] = item.Data.ToShortDateString();
                     dr["Rendimento"] = item.Rendimento.ToString();

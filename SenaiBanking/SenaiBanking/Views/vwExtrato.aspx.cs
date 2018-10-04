@@ -60,14 +60,14 @@ namespace SenaiBanking.Views
                 else
                 {
                     lblMsgError.Visible = true;
-                    lblMsgError.Text = "Verifique se as datas estão corretas...";
+                    lblMsgError.Text = "Verifique se o período informado está correto";
                 }  
             }
             catch(Exception error)
             {
                 Console.WriteLine(error);
                 lblMsgError.Visible = true;
-                lblMsgError.Text = "Verifique se todos os campos estão preenchidos...";
+                lblMsgError.Text = "Verifique se todos os campos estão preenchidos";
             }     
         }
 

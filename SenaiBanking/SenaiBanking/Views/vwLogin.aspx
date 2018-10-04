@@ -9,13 +9,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
-<body class="corBody">
-    <form id="form1" runat="server">
-        <div>
-            <div class="container align-content-center">
-                <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsg" runat="server" role="alert"></asp:TextBox>
-                <div class="col-lg-12 col-sm-12">
-                    <center>
+<body>
+    <div class="corBody">
+        <form id="form1" runat="server">
+            <div>
+                <div class="container align-content-center">
+                    <asp:TextBox class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xl-12" ClientIDMode="AutoID" ID="txtMsg" runat="server" role="alert"></asp:TextBox>
+                    <div class="col-lg-12 col-sm-12">
+                        <center>
                         <div><h1>Preencha os campos para realizar o Login:</h1></div>
                         <div class="caixaLogin">
                             <div class="alinhar">
@@ -31,12 +32,13 @@
                             </div>
                         </div>
                     </center>
-                    <div>
-                        <asp:Label ID="lblAviso" runat="server"></asp:Label>
+                        <div>
+                            <asp:Label ID="lblAviso" runat="server"></asp:Label>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </body>
 </html>
