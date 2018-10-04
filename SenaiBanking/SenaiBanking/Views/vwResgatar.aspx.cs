@@ -117,6 +117,8 @@ namespace SenaiBanking.Views
                 lblMsg.Visible = true;
                 lblMsg.Text = "Valor Resgatado: R$ " + investimento.Valor;
 
+                //gera o rendimento e repopula a Grid
+                investimento.Render();
                 PopulateGridListarInvestimento();
 
             }
@@ -128,11 +130,6 @@ namespace SenaiBanking.Views
             }
         }
 
-
-        protected void gdvResgatarInvestimento_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
-        {
-
-        }
 
         protected void gdvResgatarInvestimento_RowCommand(object sender, GridViewCommandEventArgs e) //operação "Selecionar" da Grid
         {
@@ -160,14 +157,14 @@ namespace SenaiBanking.Views
 
         protected void btnSimularRendimento_Click(object sender, EventArgs e)  //Operação Simular Rendimento
         {
-            // Carrego a sessão de Conta Corrente e investimento
-            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            //Carrego a sessão de investimento
 
             Investimento investimento = Session["investimento"] as Investimento;
 
             // chamo o método render para cálculo
-            investimento.Render();
-            
+            // investimento.Render();
+          
+
             txtDescricao.Visible = true;
             lblDescricao.Visible = true;
             txtRendimento.Visible = true;
