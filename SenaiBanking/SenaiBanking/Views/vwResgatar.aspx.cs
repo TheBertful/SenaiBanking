@@ -84,7 +84,7 @@ namespace SenaiBanking.Views
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
-          //  context.Response.Write("session_timeout;" + redirectLocation);
+            //  context.Response.Write("session_timeout;" + redirectLocation);
             Response.Redirect("~/Views/vwInvestimentos.aspx");
 
         }
@@ -106,19 +106,42 @@ namespace SenaiBanking.Views
 
         protected void btnConfirmar_Click(object sender, EventArgs e)  //Confirmar resgate do investimento
         {
+            Investimento investimento = Session["investimento"] as Investimento;
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
 
+            // conta.ResgatarInvestimento(investimento);
             try
             {
-                Investimento investimento = Session["investimento"] as Investimento;
-                ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+                String texto = txtValorTotal.Text;     //txtValorAplicar.Text recebe como parâmetro o valor digitado pelo usuário e convertemos
+                texto = texto.Replace('.', ',');         // de .(ponto) para ,(vírgula), caso o mesmo digite (ponto) para tratativa no saldo
+                double valor = Convert.ToDouble(texto);
+                if (investimento.Descricao == "Poupança")  //Confirmação para poupança
+                {
+                    investimento.TipoInvestimento = txtDescricao.Text;
+
+                    investimento.Valor = valor;
+
+                }
+                else if (investimento.Descricao == "CDB")  //Confirmação para CDB
+                {
+                    investimento.TipoInvestimento = txtDescricao.Text;
+
+                    investimento.Valor = valor;
+
+                }
+                else if (investimento.Descricao == "Tesouro")  //Confirmação para Tesouro
+                {
+                    investimento.TipoInvestimento = txtDescricao.Text;
+
+                    investimento.Valor = valor;
+
+                }
 
                 conta.ResgatarInvestimento(investimento);
 
                 lblMsg.Visible = true;
-                lblMsg.Text = "Valor Resgatado: R$ " + investimento.Valor;
+                lblMsg.Text = "Valor Resgatado -(menos) Impostos: R$ " + investimento.Valor;
 
-                //gera o rendimento e repopula a Grid
-                investimento.Render();
                 PopulateGridListarInvestimento();
 
             }
@@ -146,24 +169,23 @@ namespace SenaiBanking.Views
             lblValorTotal.Visible = true;
 
             btnSimular.Visible = true;
-            btnConfirmar.Visible = true;
+            btnConfirmar.Visible = false;
 
             txtDescricao.Text = investimento.Descricao;
             txtRendimento.Text = Convert.ToString(investimento.Rendimento);
             txtValorTotal.Text = Convert.ToString(investimento.Valor);
-
 
         }
 
         protected void btnSimularRendimento_Click(object sender, EventArgs e)  //Operação Simular Rendimento
         {
             //Carrego a sessão de investimento
+            ContaCorrente conta = Session["ContaCorrente"] as ContaCorrente;
+            // InvestimentoPoupanca investimentoPoupanca = Session["InvestimentoPoupanca"] as InvestimentoPoupanca;
 
             Investimento investimento = Session["investimento"] as Investimento;
 
             // chamo o método render para cálculo
-            // investimento.Render();
-          
 
             txtDescricao.Visible = true;
             lblDescricao.Visible = true;
@@ -174,9 +196,43 @@ namespace SenaiBanking.Views
             btnSimular.Visible = true;
             btnConfirmar.Visible = true;
 
-            txtDescricao.Text = investimento.Descricao;
-            txtRendimento.Text = Convert.ToString(investimento.Rendimento);
-            txtValorTotal.Text = Convert.ToString(investimento.Valor);
+            String texto = txtValorTotal.Text;     //txtValorAplicar.Text recebe como parâmetro o valor digitado pelo usuário e convertemos
+            texto = texto.Replace('.', ',');         // de .(ponto) para ,(vírgula), caso o mesmo digite (ponto) para tratativa no saldo
+            double valor = Convert.ToDouble(texto);
+
+            if (investimento.Descricao == "Poupança")  //Silumação para poupança
+            {
+
+                double aumento = Math.Round(valor * ((5.15 / 12) / 100), 2); // divide no mês
+
+                txtDescricao.Text = investimento.Descricao;
+                txtRendimento.Text = Convert.ToString(investimento.Rendimento);
+                txtValorTotal.Text = Convert.ToString(aumento + valor);
+            }
+            else if (investimento.Descricao == "CDB") //Simulação para CDB
+            {
+
+                txtDescricao.Text = investimento.Descricao;
+                txtRendimento.Text = Convert.ToString(investimento.Rendimento);
+
+                String textoCDB = txtRendimento.Text;
+                textoCDB = textoCDB.Replace('.', ',');
+                double valorCDB = Math.Round(Convert.ToDouble(textoCDB), 2);
+
+                txtValorTotal.Text = Convert.ToString(valor + valorCDB);
+            }
+            else if (investimento.Descricao == "Tesouro") //Simulação para Tesouro
+
+            {
+                txtDescricao.Text = investimento.Descricao;
+                txtRendimento.Text = Convert.ToString(investimento.Rendimento);
+
+                String textoTesouro = txtRendimento.Text;
+                textoTesouro = textoTesouro.Replace('.', ',');
+                double valorTesouro = Math.Round(Convert.ToDouble(textoTesouro), 2);
+
+                txtValorTotal.Text = Convert.ToString(valor + valorTesouro);
+            }
 
             gdvResgatarInvestimento.Visible = false;
             btnSimular.Visible = false;
